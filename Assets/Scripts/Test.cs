@@ -4,4 +4,8 @@ using UnityEngine;
 public class Test : MonoBehaviour
 {
     [SerializeField] private HttpClient client;
+    private void Start()
+    {
+        
+    }
 }
