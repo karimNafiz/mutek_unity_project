@@ -8,15 +8,22 @@ namespace Models.Bots
 
 
         private int status;
+        private string location;
         public int Status
         {
             get { return status; }
-            set { status = value; }
+            //set { status = value; }
+        }
+        public string Location
+        {
+            get { return location; }
         }
 
-        public Bot(string name,int age, int status, int id) : base(name, age, id) 
+
+        public Bot(string name, string location, int age, int status, int id) : base(name, age, id) 
         {
             this.status = status;
+            this.location = location;
         }
 
     }

@@ -58,5 +58,9 @@ namespace Utility.HTTP
         {
             return JsonConvert.DeserializeObject<Dictionary<string, object>>(json);
         }
+        public List<Dictionary<string, object>> ParseJsonToDictionaryList(string json) 
+        {
+            return JsonConvert.DeserializeObject<List<Dictionary<string , object>>>(json);
+        }
     }
 }
