@@ -6,6 +6,7 @@ namespace Models.Users
     {
         private string name;
         private int age;
+        private int id;
 
         private string Name
         {
@@ -19,9 +20,15 @@ namespace Models.Users
             // add verifications for the age
             set { age = value; }
         }
-
-        public User(string name, int age) 
+        private int ID
         {
+            get { return id; }
+            set { id = value; }
+        }
+
+        public User(string name, int age, int id) 
+        {
+            this.id = id;
             this.age = age;
             this.name = name;
         }
