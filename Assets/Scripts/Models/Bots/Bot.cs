@@ -11,7 +11,7 @@ namespace Models.Bots
         public int Status
         {
             get { return status; }
-            set { return status; }
+            set { status = value; }
         }
 
         public Bot(string name,int age, int status, int id) : base(name, age, id) 

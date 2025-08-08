@@ -1,4 +1,4 @@
-using UnityEngine;
+using Utility.Singleton;
 using UnityEngine.Networking;
 using System.Collections;
 using System.Text;
@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 
 namespace Utility.HTTP
 {
-    public class HTTPClient : MonoBehaviour
+    public class HTTPClient : SingletonMonoBehavior<HTTPClient> 
     {
         // GET Request
         public IEnumerator GetRequest(string url, System.Action<string> onSuccess, System.Action<string> onError)
@@ -54,7 +54,7 @@ namespace Utility.HTTP
                 onSuccess?.Invoke(request.downloadHandler.text);
             }
         }
-        public static Dictionary<string, object> ParseJsonToDictionary(string json)
+        public Dictionary<string, object> ParseJsonToDictionary(string json)
         {
             return JsonConvert.DeserializeObject<Dictionary<string, object>>(json);
         }
