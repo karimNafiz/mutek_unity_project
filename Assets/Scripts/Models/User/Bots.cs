@@ -1,8 +1,8 @@
 
-namespace Models.User
+namespace Models.Chat
 {
 
-    public class User
+    public class Bots
     {
         private string name;
         private int age;
@@ -20,7 +20,7 @@ namespace Models.User
             set { age = value; }
         }
 
-        public User(string name, int age) 
+        public Bots(string name, int age) 
         {
             this.age = age;
             this.name = name;
