@@ -2,18 +2,18 @@ using Models.Bots;
 
 namespace Models.ChatBots
 {
-    public class ChatBots
+    public class ChatBot
     {
-        private Bots.Bots bot;
+        private Bot bot;
         // this status represents the chat status
         private int status;
-        public Bots.Bots Bot
+        public Bot Bot
         {
             get { return bot; }
             set { bot = value; }
         }
 
-        public ChatBots(Bots.Bots bot)
+        public ChatBot(Bot bot)
         {
             this.bot = bot;
         }

@@ -2,7 +2,7 @@ using Models.Chat;
 
 namespace Models.Bots
 {
-    public class Bots : Chat.Bots
+    public class Bot : Chat.User
     {
 
         private int id;
@@ -10,7 +10,7 @@ namespace Models.Bots
         private int status;
         public int ID { get { return id; } }
 
-        public Bots(string name, int age, int id) : base(name, age) 
+        public Bot(string name, int age, int id) : base(name, age) 
         {
             this.id = id;
         }

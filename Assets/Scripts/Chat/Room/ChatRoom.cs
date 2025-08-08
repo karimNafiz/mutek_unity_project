@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Models.Chat;
 using Models.ChatBots;
 using Models.Message;
 namespace Chat.Room
@@ -11,14 +10,14 @@ namespace Chat.Room
         private int id;
         // hash set to hold all the participants in the chat 
         // the reason I'm making it a hashset because, then we can cross check participants in O(1) time
-        private HashSet<ChatBots> participants;
+        private HashSet<ChatBot> participants;
         // this will hold the list of messages in chronological order
         private List<Message> messages_chronological;
 
-        public ChatRoom(int id , ChatBots participant1, ChatBots participant2) 
+        public ChatRoom(int id , ChatBot participant1, ChatBot participant2) 
         {
             this.id = id;
-            participants = new HashSet<ChatBots>() { participant1, participant2 };
+            participants = new HashSet<ChatBot>() { participant1, participant2 };
             messages_chronological = new List<Message>();
         }
         public bool AddMessage(Message message) 
