@@ -1,8 +1,9 @@
-using Models.Chat;
+
+using Models.Users;
 
 namespace Models.Bots
 {
-    public class Bot : Chat.User
+    public class Bot : User
     {
 
         private int id;

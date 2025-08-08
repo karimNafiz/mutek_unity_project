@@ -11,7 +11,17 @@ public class ChatFriends
     }
     private HashSet<ChatBot> friends;
 
-    public ChatFriends() { }
+    public ChatFriends() 
+    { 
+        this.friends = new HashSet<ChatBot>();
+    }
+
+
+    public void AddFriend(ChatBot bot) 
+    {
+        if (this.friends.Contains(bot)) return;
+        this.friends.Add(bot);  
+    }
 
 
 
