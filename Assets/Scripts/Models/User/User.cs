@@ -1,22 +1,32 @@
 
-public class User
+namespace Models.User
 {
-    private string name;
-    private int age;
 
-    private string Name
+    public class User
     {
-        get { return name; }
-        // if needed add verification checks on the name
-        set { name = value; }
+        private string name;
+        private int age;
+
+        private string Name
+        {
+            get { return name; }
+            // if needed add verification checks on the name
+            set { name = value; }
+        }
+        private int Age
+        {
+            get { return age; }
+            // add verifications for the age
+            set { age = value; }
+        }
+
+        public User(string name, int age) 
+        {
+            this.age = age;
+            this.name = name;
+        }
+
+
+
     }
-    private int Age
-    {
-        get { return age; }
-        // add verifications for the age
-        set { age = value; }
-    }
-
-
-
 }
