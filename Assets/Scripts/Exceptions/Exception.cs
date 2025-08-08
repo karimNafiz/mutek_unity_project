@@ -13,5 +13,11 @@ namespace Exceptions
 
     }
 
+    public class BadConnectionException : Exception 
+    {
+        public BadConnectionException(string message) : base(message) { }
+    
+    }
+
 
 }

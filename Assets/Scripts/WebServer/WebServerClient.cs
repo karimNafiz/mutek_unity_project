@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Models.Bots;
 using Utility.HTTP;
 using Exceptions;
+using UnityEngine;
 namespace WebServer
 {
     public class WebServerClient : SingletonMonoBehavior<WebServerClient>
@@ -16,7 +17,7 @@ namespace WebServer
         // have a class called the ChattableBotsManager -> has all the ChatBots that we can chat with 
         
         // have this function return the list of all the bots 
-        public void GetBots(Url url, string endpoint, Action<HashSet<Bot>> onSuccess, Action<string> onErr)  
+        public void GetBots(Url url, string endpoint, Action<HashSet<Bot>> onSuccess, Action<Exception> onErr)  
         {
 
             Action<string> onSuccCallback = new Action<string>((string json)=> 
@@ -37,24 +38,28 @@ namespace WebServer
                 }
                 catch (BadRequestException ex)
                 {
-                    // do something
+                    Debug.Log("Error while parsing json for a bot");
+                    Debug.Log($"Bad request Exception {ex.Message}");
+                    onErr(ex);
                 }
                 catch (Exception ex) 
-                { 
-                    // do something
+                {
+                    // do not really know what to do with this
+                    onErr(ex);
                 }
             });
 
 
             Action<string> onErrCallback = new Action<string>((string err)=> 
-            { 
-            
+            {
+                onErr?.Invoke(new BadConnectionException(err));
                 
             
             });
 
+            Debug.Log($"trying to make web request endpoint {url.GetHostUrl()}{endpoint}");
 
-            HTTPClient.Instance.GetRequest($"{url.GetHostUrl()}{endpoint}")
+            HTTPClient.Instance.GetRequest($"{url.GetHostUrl()}{endpoint}", onSuccCallback, onErrCallback);
             // get the json response back 
 
         }
