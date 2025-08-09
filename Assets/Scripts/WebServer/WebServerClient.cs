@@ -66,46 +66,87 @@ namespace WebServer
 
         }
 
-        // need functions to get the messages
-        //public void GetMessages(Url url, string endpoint, Action<List<Message>> onSuccess, Action<Exception> onErr) 
-        //{
-        //    Action<string> onSuccCallback = new Action<string>((string json)=>
-        //    {
-        //        try
-        //        {
-        //            List<Dictionary<string, object>> dictFrmJson = HTTPClient.Instance.ParseJsonToDictionaryList(json);
-        //            List<Message> messages = new List<Message>();
+       
+        // rn the bot id is hardcoded into the endpoint
+        // TODO: if we have time later, we need to fix it
+        public void GetMessages(Url url, string endpoint, Action<List<Message>> onSuccess, Action<Exception> onErr)
+        {
+            Action<string> onSuccCallback = new Action<string>((string json) =>
+            {
+                try
+                {
+                    List<Dictionary<string, object>> dictFrmJson = HTTPClient.Instance.ParseJsonToDictionaryList(json);
+                    List<Message> messages = new List<Message>();
 
-        //            foreach (Dictionary<string, object> pair in dictFrmJson) 
-        //            {
+                    foreach (Dictionary<string, object> pair in dictFrmJson)
+                    {
 
-        //                messages.Add(GetMessageFrmJson());
-        //            }
-
-
-        //        }
-        //        catch (Exception ex) 
-        //        { 
-                
-        //        }
-            
-        //    });
+                        messages.Add(GetMessageFrmJson(pair));
+                    }
 
 
+                }
+                catch (Exception ex)
+                {
 
-        //    StartCoroutine(HTTPClient.Instance.GetRequest($"{url.GetHostUrl()}{endpoint}",))
-        
-        
-        //}
+                }
+
+            });
 
 
-        //private Message GetMessageFrmJson(Dictionary<string, object> dict) 
-        //{ 
-            
-        
-        
-        //}
-        
+
+            StartCoroutine(HTTPClient.Instance.GetRequest($"{url.GetHostUrl()}{endpoint}",))
+
+
+
+        }
+
+
+        private Message GetMessageFrmJson(Dictionary<string, object> dict)
+        {
+            // Validate required keys
+            if (!dict.ContainsKey("sender")) throw new BadRequestException("json for message is missing the key sender");
+            if (!dict.ContainsKey("receiver")) throw new BadRequestException("json for message is missing the key receiver");
+            if (!dict.ContainsKey("message")) throw new BadRequestException("json for message is missing the key message");
+            if (!dict.ContainsKey("timestamp")) throw new BadRequestException("json for message is missing the key timestamp");
+
+            try
+            {
+                // Parse sender
+                ChatBot sender;
+                if (dict["sender"] is Dictionary<string, object> senderDict)
+                {
+                    // Reuse your bot parser; relies on Bot being assignable to ChatBot
+                    sender = GetBotFrmJson(senderDict);
+                }
+                else
+                {
+                    throw new BadRequestException("sender must be a JSON object representing a bot.");
+                }
+
+                // Parse receiver
+                ChatBot receiver;
+                if (dict["receiver"] is Dictionary<string, object> receiverDict)
+                {
+                    receiver = GetBotFrmJson(receiverDict);
+                }
+                else
+                {
+                    throw new BadRequestException("receiver must be a JSON object representing a bot.");
+                }
+
+                // Parse message + timestamp
+                string msg = dict["message"]?.ToString() ?? string.Empty;
+                string ts = dict["timestamp"]?.ToString() ?? string.Empty;
+
+                return new Message(sender, receiver, msg, ts);
+            }
+            catch (BadRequestException) { throw; }
+            catch (FormatException ex) { throw ex; }
+            catch (InvalidCastException ex) { throw ex; }
+            catch (OverflowException ex) { throw ex; }
+        }
+
         // IMPORTANT TODO: refactor all this bullshit code to it's dedicated file if we are expanding this project
         private Bot GetBotFrmJson(Dictionary<string, object> dict) 
         {
