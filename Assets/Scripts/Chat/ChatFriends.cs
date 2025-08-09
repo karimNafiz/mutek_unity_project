@@ -1,15 +1,26 @@
 using System.Collections.Generic;
 using Models.ChatBots;
+using Utility.Singleton;
+using WebServer;
+/*
+    This class will hold all the ChattableBots
+    the player can chat with
+    making it a monobehavior 
 
-
-public class ChatFriends
+ */
+public class ChatFriends: SingletonMonoBehavior<ChatFriends>
 {
-    public static ChatFriends instance;
-    public static ChatFriends Instance
-    {
-        get { return instance; }
-    }
+
     private HashSet<ChatBot> friends;
+
+
+    private void Start()
+    {
+        // during start
+        // we get all the chat bots
+
+    }
+
 
     public ChatFriends() 
     { 
@@ -23,6 +34,11 @@ public class ChatFriends
         this.friends.Add(bot);  
     }
 
+    //private void GetBotsFrmWebServer() 
+    //{ 
+    //    WebServerClient.Instance.GetBots            
+    
+    //}
 
 
 
