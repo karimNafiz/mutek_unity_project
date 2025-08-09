@@ -3,6 +3,9 @@ using Utility.Singleton;
 using WebServer;
 using Models.Bots;
 using System;
+using EventHandling;
+using EventHandling.Events;
+using UnityEngine;
 /*
     This class will hold all the ChattableBots
     the player can chat with
@@ -13,11 +16,13 @@ public class BotManager: SingletonMonoBehavior<BotManager>
 {
 
     private HashSet<Bot> bots;
+    private int botCount;
 
 
     private void Start()
     {
         bots = new HashSet<Bot>();
+        botCount = 0;
         GetBotsFrmWebServer();
 
 
@@ -53,7 +58,53 @@ public class BotManager: SingletonMonoBehavior<BotManager>
 
     private void GetBotsOnSuccess(HashSet<Bot> bots) 
     {
-        this.bots.UnionWith(bots);
+        // we first need to check if the number of bots have changed or not
+        // if the number hasn't changed then we don't really do anything
+        // i know checking the number isn't the most safe way
+        // but we are prototyping
+        if (bots.Count == this.botCount) return;
+        // if the new bot count is more then we have more bots 
+        HashSet<Bot> difference;
+        if (bots.Count > this.botCount)
+        {
+            // if there are more bots than what the bots manager has
+            // then the difference hashset has to be created from the incoming bot hashset
+            // because we want to find out the new bots except for the ones already in this.bots
+            difference = new HashSet<Bot>(bots);
+            difference.ExceptWith(this.bots);
+            foreach (Bot bot in difference)
+            {
+                this.bots.Add(bot);
+            }
+            EventBus<OnBotCountIncrease>.Raise(new OnBotCountIncrease()
+            {
+                _difference = difference
+            }) ;
+            return;
+        }
+        else 
+        {
+            // read the comment for the if statement
+            // in the else block the logic for the if statement is reverse
+            difference = new HashSet<Bot>(this.bots);
+            difference.ExceptWith(bots);
+            foreach (Bot bot in difference) 
+            {
+                this.bots.Remove(bot);
+            }
+            EventBus<OnBotCountDecrease>.Raise(new OnBotCountDecrease()
+            {
+                _difference = difference
+
+            }) ;
+            return;
+        }
+
+
+
+
+
+        
     
     }
     /// <summary>

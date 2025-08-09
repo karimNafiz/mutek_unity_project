@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472543df8baf6e04796235685c0caa8e, type: 3}
   m_Name: GlobalConstants_SO
   m_EditorClassIdentifier: 
-  domain: localhost
+  domain: http://localhost
   port: 5000
-  bots_endpoint_get: 
-  bot_endpoint_get: bots
+  bots_endpoint_get: /bots
+  bot_endpoint_get: 
   bot_endpoint_post: 
   message_endpoint_get: 
   message_endpoint_post: 
