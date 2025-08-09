@@ -5,6 +5,8 @@ using Models.Bots;
 using Utility.HTTP;
 using Exceptions;
 using UnityEngine;
+using Models.Message;
+
 namespace WebServer
 {
     public class WebServerClient : SingletonMonoBehavior<WebServerClient>
@@ -59,13 +61,53 @@ namespace WebServer
 
             Debug.Log($"trying to make web request endpoint {url.GetHostUrl()}{endpoint}");
 
-            HTTPClient.Instance.GetRequest($"{url.GetHostUrl()}{endpoint}", onSuccCallback, onErrCallback);
+            StartCoroutine(HTTPClient.Instance.GetRequest($"{url.GetHostUrl()}{endpoint}", onSuccCallback, onErrCallback));
             // get the json response back 
 
         }
 
+        // need functions to get the messages
+        //public void GetMessages(Url url, string endpoint, Action<List<Message>> onSuccess, Action<Exception> onErr) 
+        //{
+        //    Action<string> onSuccCallback = new Action<string>((string json)=>
+        //    {
+        //        try
+        //        {
+        //            List<Dictionary<string, object>> dictFrmJson = HTTPClient.Instance.ParseJsonToDictionaryList(json);
+        //            List<Message> messages = new List<Message>();
+
+        //            foreach (Dictionary<string, object> pair in dictFrmJson) 
+        //            {
+
+        //                messages.Add(GetMessageFrmJson());
+        //            }
+
+
+        //        }
+        //        catch (Exception ex) 
+        //        { 
+                
+        //        }
+            
+        //    });
+
+
+
+        //    StartCoroutine(HTTPClient.Instance.GetRequest($"{url.GetHostUrl()}{endpoint}",))
+        
+        
+        //}
+
+
+        //private Message GetMessageFrmJson(Dictionary<string, object> dict) 
+        //{ 
+            
+        
+        
+        //}
+        
         // IMPORTANT TODO: refactor all this bullshit code to it's dedicated file if we are expanding this project
-        public Bot GetBotFrmJson(Dictionary<string, object> dict) 
+        private Bot GetBotFrmJson(Dictionary<string, object> dict) 
         {
             
             if (!dict.ContainsKey("id")) throw new BadRequestException("json for bot is missing the key id ");        

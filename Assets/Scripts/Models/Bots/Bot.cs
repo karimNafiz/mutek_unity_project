@@ -1,6 +1,6 @@
 
 using Models.Users;
-
+using UnityEngine;
 namespace Models.Bots
 {
     public class Bot : User
@@ -24,6 +24,11 @@ namespace Models.Bots
         {
             this.status = status;
             this.location = location;
+        }
+
+        public override string ToString()
+        {
+            return $"Bot: id{this.id} name {this.name} age {this.age} status{this.status} location{this.location}";
         }
 
     }

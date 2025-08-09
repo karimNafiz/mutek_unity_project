@@ -4,9 +4,9 @@ namespace Models.Users
 
     public class User
     {
-        private string name;
-        private int age;
-        private int id;
+        protected string name;
+        protected int age;
+        protected int id;
 
         private string Name
         {
