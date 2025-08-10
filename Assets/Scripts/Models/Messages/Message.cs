@@ -11,6 +11,16 @@ namespace Models.Message
         private string botResponse;
         private string timestamp;
 
+        public string UserMessage
+        {
+            get { return userMessage; }
+        }
+        public string BotResponse
+        {
+            get { return botResponse; }
+        }
+
+
         //public User User
         //{
         //    get { return user; }

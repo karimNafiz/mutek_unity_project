@@ -16,10 +16,10 @@ using System;
 
 public class ChatRoomVisual : SingletonMonoBehavior<ChatRoomVisual>
 {
-    [SerializeField] private MessageVisual messageVisualPrefab;
+   
     // have a script for this
-    [SerializeField] private Transform messageContainer;
-    private ChatBotVisual currentChatBot;
+    [SerializeField] private MessageVisualManager messageContainer;
+    private ChatBotVisual currentChatBotVisual;
     private EventBinding<OnChatBotVisualClicked> eventBinding_OnChatBotVisualClicked;
     private void Awake()
     {
@@ -32,6 +32,7 @@ public class ChatRoomVisual : SingletonMonoBehavior<ChatRoomVisual>
     // TODO try to remove http logic from this class mainly concerned UI
     private void EventBus_OnChatBotVisualClicked(OnChatBotVisualClicked eventArgs) 
     {
+        if (currentChatBotVisual != null && currentChatBotVisual == eventArgs._chatBotVisual) return;
         // we need to do a web request
         WebServerClient.Instance.GetMessages(GlobalConfigs.Instance.GetServerUrl(), GlobalConfigs.Instance.globalConstant.message_endpoint_get, eventArgs._chatBotVisual.Bot, OnGetMessageSuccess, OnGetMessageErr);
     
@@ -39,29 +40,17 @@ public class ChatRoomVisual : SingletonMonoBehavior<ChatRoomVisual>
 
     private void OnGetMessageSuccess(List<Message> messages) 
     {
-        foreach (Message message in messages) 
-        { 
-            
-        
-        
-        
-        }            
+        messageContainer.AddMessageVisuals(messages);          
     
     }
-    private void OnGetMessageErr(Exception e) { }
-
-
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void OnGetMessageErr(Exception e) 
     {
-        
+        Debug.Log($"encountered exception while trying to read messages from the webser exception -> {e.Message}");
+    
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
+
+
 }
