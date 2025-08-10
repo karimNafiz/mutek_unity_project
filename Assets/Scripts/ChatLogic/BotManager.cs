@@ -22,7 +22,7 @@ public class BotManager: SingletonMonoBehavior<BotManager>
     private Dictionary<int, Bot> botsDict;
     private int botCount;
     private User user;
-
+    private bool isFirstLoad;
 
     public User User
     {
@@ -35,8 +35,13 @@ public class BotManager: SingletonMonoBehavior<BotManager>
     private void Start()
     {
         bots = new HashSet<Bot>();
+        botsDict = new Dictionary<int, Bot>();
         botCount = 0;
+        isFirstLoad = true;
+        // this function here will fill up the variables bots and botsDict
         GetBotsFrmWebServer();
+        Debug.Log($"got the bots ");
+
 
 
     }
@@ -63,65 +68,80 @@ public class BotManager: SingletonMonoBehavior<BotManager>
     /// </summary>
     // TODO: due to the fact that everything is a pointer, make sure to not making too many changes to keep bullshit errors to a minimum 
 
-    private void GetBotsOnSuccess(HashSet<Bot> bots) 
+    private void GetBotsOnSuccess(HashSet<Bot> incomingBots)
     {
-        // we first need to check if the number of bots have changed or not
-        // if the number hasn't changed then we don't really do anything
-        // i know checking the number isn't the most safe way
-        // but we are prototyping
-        if (bots.Count == this.botCount) return;
-        // if the new bot count is more then we have more bots 
-        HashSet<Bot> difference;
-        if (bots.Count > this.botCount)
+        // Build a map from the server result
+        Dictionary<int, Bot> incoming = new Dictionary<int, Bot>();
+        foreach (var b in incomingBots)
+            incoming[b.ID] = b;
+
+        // Compute differences
+        var added = new Dictionary<int, Bot>();
+        var removed = new Dictionary<int, Bot>();
+
+        // Added or updated
+        foreach (var kv in incoming)
         {
-            // if there are more bots than what the bots manager has
-            // then the difference hashset has to be created from the incoming bot hashset
-            // because we want to find out the new bots except for the ones already in this.bots
-            difference = new HashSet<Bot>(bots);
-            difference.ExceptWith(this.bots);
-            // add the new bots to the set
-            foreach (Bot bot in difference)
+            int id = kv.Key;
+            var bot = kv.Value;
+
+            if (!botsDict.ContainsKey(id))
             {
-                this.bots.Add(bot);
-                this.botsDict.Add(bot.ID, bot);
+                added[id] = bot;
             }
-
-
-            EventBus<OnBotCountIncrease>.Raise(new OnBotCountIncrease()
-            {
-                _difference = difference
-            }) ;
-            return;
-        }
-        else 
-        {
-            // read the comment for the if statement
-            // in the else block the logic for the if statement is reverse
-            difference = new HashSet<Bot>(this.bots);
-            difference.ExceptWith(bots);
-            foreach (Bot bot in difference) 
-            {
-                this.bots.Remove(bot);
-                this.botsDict.Remove(bot.ID);
-            }
-            EventBus<OnBotCountDecrease>.Raise(new OnBotCountDecrease()
-            {
-                _difference = difference
-
-            }) ;
-            return;
         }
 
+        // Removed
+        foreach (var kv in botsDict)
+        {
+            if (!incoming.ContainsKey(kv.Key))
+                removed[kv.Key] = kv.Value;
+        }
 
+        // Apply changes to local state
+        foreach (var kv in added)
+        {
+            bots.Add(kv.Value);          // consider removing HashSet entirely (see note below)
+            botsDict[kv.Key] = kv.Value;
+        }
+        foreach (var kv in removed)
+        {
+            bots.Remove(kv.Value);
+            botsDict.Remove(kv.Key);
+        }
 
+        botCount = botsDict.Count;
 
+        // Now raise the correct events
+        if (this.isFirstLoad)
+        {
+            this.isFirstLoad = false;
+            EventBus<OnBotManagerInitialized>.Raise(new OnBotManagerInitialized
+            {
+                _bots = new Dictionary<int, Bot>(botsDict)
+            });
+            
+        }
+        else
+        {
+            if (added.Count > 0)
+                EventBus<OnBotCountIncrease>.Raise(new OnBotCountIncrease { _bots = added });
 
-        
-    
+            if (removed.Count > 0)
+                EventBus<OnBotCountDecrease>.Raise(new OnBotCountDecrease { _bots = removed });
+        }
     }
-    /// <summary>
-    /// this is the callback that will be run when the get request (to get all the bots) is unsuccessful
-    /// </summary>
+
+
+
+
+
+
+
+
+/// <summary>
+/// this is the callback that will be run when the get request (to get all the bots) is unsuccessful
+/// </summary>
     private void GetBotsOnErr(Exception e) 
     { 
         
