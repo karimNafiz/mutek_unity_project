@@ -7,6 +7,10 @@ using Newtonsoft.Json;
 
 
 
+/*
+    TODO: need better error handling, at this point in time its a bit hard to tell whats the reason for the failure in the web request
+ 
+ */
 
 
 
