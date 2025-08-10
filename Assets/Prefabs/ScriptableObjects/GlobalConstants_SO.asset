@@ -18,4 +18,4 @@ MonoBehaviour:
   bot_endpoint_get: 
   bot_endpoint_post: 
   message_endpoint_get: /message
-  message_endpoint_post: 
+  message_endpoint_post: /message

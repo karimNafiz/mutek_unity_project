@@ -45,12 +45,23 @@ public class ChatRoomVisual : SingletonMonoBehavior<ChatRoomVisual>
         textInput.OnTextEnter += TextInput_OnTextEnter;
     }
 
-    private void TextInput_OnTextEnter(object sender, string e)
+    private void TextInput_OnTextEnter(object sender, string message)
     {
         // take the text, and add it to the message container
-        messageContainer.AddMessageVisualUser(e);
+        messageContainer.AddMessageVisualUser(message);
         // I need to send this information back to the server 
+        WebServerClient.Instance.SendMessageToBot(GlobalConfigs.Instance.GetServerUrl(), GlobalConfigs.Instance.globalConstant.message_endpoint_post, message , currentChatBotVisual.Bot,OnPostMessageSuccess, OnPostMessageErr );
       
+    }
+    private void OnPostMessageSuccess(string responseFrmBot) 
+    {
+        messageContainer.AddMessageVisualBot(responseFrmBot);
+    }
+    private void OnPostMessageErr(Exception e) 
+    {
+        Debug.LogWarning($" exception encountered while trying to send message to bot exception ->{e.Message}");
+
+    
     }
 
 

@@ -8,6 +8,7 @@ using UnityEngine;
 using Models.Message;
 using Models.Users;
 
+
 namespace WebServer
 {
     public class WebServerClient : SingletonMonoBehavior<WebServerClient>
@@ -178,8 +179,39 @@ namespace WebServer
         
         
         }
-        
 
+        public void SendMessageToBot(Url url, string endpoint, string message, Bot bot, Action<string> onSuccess, Action<Exception> onErr)
+        {
+            /*
+                the json is design like bot_id
+                and the user_message 
+             */
+            try
+            {
+                Dictionary<string, string> msgDict = new Dictionary<string, string>();
+                msgDict["bot_id"] = bot.ID.ToString();
+                msgDict["user_message"] = message;
+
+                string final_endpoint = $"{url.GetHostUrl()}{endpoint}";
+                string json_body = HTTPClient.Instance.SerializeDict(msgDict);
+                StartCoroutine(HTTPClient.Instance.PostRequest(final_endpoint, json_body, (string res) => 
+                {
+                    onSuccess?.Invoke(json_body);
+                }, (string err) => 
+                {
+                    throw new BadConnectionException(err);
+                }));
+
+
+
+            }
+            catch (Exception e) 
+            {
+                // rn I do not know what type of exception will it be
+                onErr?.Invoke(e);
+            }
+        
+        }
 
 
         // need a function for GetMessagesForASpecificBot
