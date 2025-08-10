@@ -39,6 +39,7 @@ public class ChatBotVisual : MonoBehaviour
 
     private void RayCastTarget_OnUIClicked(object sender, EventArgs e)
     {
+        Debug.Log($"On RayCastTarget clicked ->chat bot visual {this.name}");
         OnChatBatVisualClicked?.Invoke(this, EventArgs.Empty);
     }
 

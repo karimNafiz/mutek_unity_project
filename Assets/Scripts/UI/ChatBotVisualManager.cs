@@ -61,6 +61,7 @@ public class ChatBotVisualManager : SingletonMonoBehavior<ChatBotVisualManager>
     {
         ChatBotVisual sender = (obj as ChatBotVisual);
         // if the sender isn't a chat bot visual we just return
+        Debug.Log($"chat bot visual clicked ");
         if (sender == null) return;
 
         EventBus<OnChatBotVisualClicked>.Raise(new OnChatBotVisualClicked()

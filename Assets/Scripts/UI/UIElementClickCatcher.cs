@@ -8,12 +8,9 @@ public class UIElementClickCatcher : MonoBehaviour, IPointerClickHandler
     
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log($"UI area clicked {eventData.position}");
-
-    }
-
-    public void InvokeOnUIClicked() 
-    {
         OnUIClicked?.Invoke(this, EventArgs.Empty);
+
     }
+
+
 }
