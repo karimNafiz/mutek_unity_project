@@ -5,7 +5,10 @@ using Models.Bots;
 using System;
 using EventHandling;
 using EventHandling.Events;
+using Exceptions;
+using Models.Message;
 using UnityEngine;
+using Models.Users;
 /*
     This class will hold all the ChattableBots
     the player can chat with
@@ -16,7 +19,17 @@ public class BotManager: SingletonMonoBehavior<BotManager>
 {
 
     private HashSet<Bot> bots;
+    private Dictionary<int, Bot> botsDict;
     private int botCount;
+    private User user;
+
+
+    public User User
+    {
+        get { return user; }
+        set { user = value; }
+    
+    }
 
 
     private void Start()
@@ -29,13 +42,7 @@ public class BotManager: SingletonMonoBehavior<BotManager>
     }
 
 
-    public BotManager() 
-    { 
-        this.bots = new HashSet<Bot>();
-    }
-
-
-    public void AddFriend(Bot bot) 
+    public void AddBot(Bot bot) 
     {
         if (this.bots.Contains(bot)) return;
         this.bots.Add(bot);  
@@ -72,10 +79,14 @@ public class BotManager: SingletonMonoBehavior<BotManager>
             // because we want to find out the new bots except for the ones already in this.bots
             difference = new HashSet<Bot>(bots);
             difference.ExceptWith(this.bots);
+            // add the new bots to the set
             foreach (Bot bot in difference)
             {
                 this.bots.Add(bot);
+                this.botsDict.Add(bot.ID, bot);
             }
+
+
             EventBus<OnBotCountIncrease>.Raise(new OnBotCountIncrease()
             {
                 _difference = difference
@@ -91,6 +102,7 @@ public class BotManager: SingletonMonoBehavior<BotManager>
             foreach (Bot bot in difference) 
             {
                 this.bots.Remove(bot);
+                this.botsDict.Remove(bot.ID);
             }
             EventBus<OnBotCountDecrease>.Raise(new OnBotCountDecrease()
             {
@@ -115,6 +127,26 @@ public class BotManager: SingletonMonoBehavior<BotManager>
         
     
     }
+
+    //public List<Message> GetMessagesWithBot(int botID)
+    //{
+    //    if (!this.botsDict.ContainsKey(botID)) 
+    //    {
+    //        throw new BotDoesNotExistException(botID);
+    //    }
+    //    return GetMessagesWithBot(this.botsDict[botID]);
+        
+    
+    //}
+    
+    //// task this function needs to make a web request 
+    //public List<Message> GetMessagesWithBot(Bot bot) 
+    //{ 
+
+    //    WebSer
+        
+    
+    //}
 
 
 

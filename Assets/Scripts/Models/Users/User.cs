@@ -8,19 +8,19 @@ namespace Models.Users
         protected int age;
         protected int id;
 
-        private string Name
+        public string Name
         {
             get { return name; }
             // if needed add verification checks on the name
             set { name = value; }
         }
-        private int Age
+        public int Age
         {
             get { return age; }
             // add verifications for the age
             set { age = value; }
         }
-        private int ID
+        public int ID
         {
             get { return id; }
             set { id = value; }

@@ -1,23 +1,33 @@
 using Models.ChatBots;
-
+using Models.Users;
+using Models.Bots;
 namespace Models.Message 
 { 
     public class Message
     {
-        private ChatBot sender;
-        private ChatBot receiver;
-        private string message;
+        private User user;
+        private Bot  bot;
+        private string userMessage;
+        private string botResponse;
         private string timestamp;
 
-        public ChatBot Sender { get { return sender; } }
-        public ChatBot Receiver { get { return receiver; } }
-
-
-        public Message(ChatBot sender, ChatBot receiver, string message, string timestamp)
+        public User User
         {
-            this.sender = sender;
-            this.receiver = receiver;
-            this.message = message;
+            get { return user; }
+        
+        }
+        public Bot Bot
+        {
+            get { return bot; }
+            set { bot = value; }        
+        }
+
+        public Message(User user, Bot bot, string userMessage, string botResponse, string timestamp)
+        {
+            this.user = user;
+            this.bot = bot;
+            this.userMessage = userMessage;
+            this.botResponse = botResponse;
             this.timestamp = timestamp;
         }
 

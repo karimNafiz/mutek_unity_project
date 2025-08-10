@@ -6,6 +6,7 @@ using Utility.HTTP;
 using Exceptions;
 using UnityEngine;
 using Models.Message;
+using Models.Users;
 
 namespace WebServer
 {
@@ -69,8 +70,10 @@ namespace WebServer
        
         // rn the bot id is hardcoded into the endpoint
         // TODO: if we have time later, we need to fix it
-        public void GetMessages(Url url, string endpoint, Action<List<Message>> onSuccess, Action<Exception> onErr)
+        public void GetMessages(Url url, string endpoint,User user, Bot bot, Action<List<Message>> onSuccess, Action<Exception> onErr)
         {
+            string final_endpoint = $"{url.GetHostUrl()}{endpoint}/{bot.ID}";
+
             Action<string> onSuccCallback = new Action<string>((string json) =>
             {
                 try
@@ -80,71 +83,69 @@ namespace WebServer
 
                     foreach (Dictionary<string, object> pair in dictFrmJson)
                     {
+                        try
+                        {
+                            messages.Add(GetMessageFrmJson(pair, user, bot));
 
-                        messages.Add(GetMessageFrmJson(pair));
+                        }
+                        catch (Exception ex) 
+                        {
+                            Debug.Log("exception while parsing the json for getting messages for a bot from the webser");
+                            Debug.Log($"exception -> {ex.Message}");
+                            continue;
+                        }
+
+
                     }
+                    onSuccess(messages);
 
 
                 }
                 catch (Exception ex)
                 {
-
+                    onErr(ex);
                 }
+
+            });
+            Action<string> onErrCallback = new Action<string>((string err) => 
+            {
+                onErr?.Invoke(new BadConnectionException(err));
+
 
             });
 
 
-
-            StartCoroutine(HTTPClient.Instance.GetRequest($"{url.GetHostUrl()}{endpoint}",))
+            StartCoroutine(HTTPClient.Instance.GetRequest(final_endpoint, onSuccCallback, onErrCallback));
 
 
 
         }
 
 
-        private Message GetMessageFrmJson(Dictionary<string, object> dict)
+        private Message GetMessageFrmJson(Dictionary<string, object> dict, User user, Bot bot)
         {
             // Validate required keys
-            if (!dict.ContainsKey("sender")) throw new BadRequestException("json for message is missing the key sender");
-            if (!dict.ContainsKey("receiver")) throw new BadRequestException("json for message is missing the key receiver");
-            if (!dict.ContainsKey("message")) throw new BadRequestException("json for message is missing the key message");
-            if (!dict.ContainsKey("timestamp")) throw new BadRequestException("json for message is missing the key timestamp");
+            if (!dict.ContainsKey("id")) throw new BadRequestException("json for message is missing the key sender");
+            if (!dict.ContainsKey("user_message")) throw new BadRequestException("json for message is missing the key receiver");
+            if (!dict.ContainsKey("bot_response")) throw new BadRequestException("json for message is missing the key message");
+            if (!dict.ContainsKey("bot_id")) throw new BadRequestException("json for message is missing the key timestamp");
 
             try
             {
-                // Parse sender
-                ChatBot sender;
-                if (dict["sender"] is Dictionary<string, object> senderDict)
-                {
-                    // Reuse your bot parser; relies on Bot being assignable to ChatBot
-                    sender = GetBotFrmJson(senderDict);
-                }
-                else
-                {
-                    throw new BadRequestException("sender must be a JSON object representing a bot.");
-                }
+                int rcvdBotID = int.Parse(dict["bot_id"].ToString());
+                if (rcvdBotID != bot.ID) throw new BotIDMismatchExeption();
 
-                // Parse receiver
-                ChatBot receiver;
-                if (dict["receiver"] is Dictionary<string, object> receiverDict)
-                {
-                    receiver = GetBotFrmJson(receiverDict);
-                }
-                else
-                {
-                    throw new BadRequestException("receiver must be a JSON object representing a bot.");
-                }
+                return new Message(user, bot, dict["user_message"].ToString(), dict["bot_response"].ToString(),"amir sucks");
 
-                // Parse message + timestamp
-                string msg = dict["message"]?.ToString() ?? string.Empty;
-                string ts = dict["timestamp"]?.ToString() ?? string.Empty;
 
-                return new Message(sender, receiver, msg, ts);
+                
             }
+            // I'm creating these catch blocks so that, if need we can add more functionality while handling exceptions
             catch (BadRequestException) { throw; }
             catch (FormatException ex) { throw ex; }
             catch (InvalidCastException ex) { throw ex; }
             catch (OverflowException ex) { throw ex; }
+            catch (BotIDMismatchExeption ex) { throw ex; }
         }
 
         // IMPORTANT TODO: refactor all this bullshit code to it's dedicated file if we are expanding this project
