@@ -1,8 +1,9 @@
 using UnityEngine;
 using System;
+using Utility.Singleton;
 namespace InputActons
 {
-    public class InputReader : MonoBehaviour
+    public class InputReader : SingletonMonoBehavior<InputReader> 
     {
         private PlayerInputActions playerInputActions;
         public event Action<Vector2> OnPlayerMove_FirstPersonMode;
@@ -12,8 +13,9 @@ namespace InputActons
         // maybe we can keep track of the game state and according to the game state we can change the bindings
 
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             // create a new instance of the class
             playerInputActions = new PlayerInputActions();
             // TODO: later on when we introduce more stuff, we take care of enabling which action map to use
