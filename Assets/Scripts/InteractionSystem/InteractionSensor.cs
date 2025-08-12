@@ -32,6 +32,7 @@ namespace InteractionSystem
             raycastSensor.castLength = castLength;
             raycastSensor.layermask = interactionMask;
             raycastSensor.SetCastDirection(RaycastSensor.CastDirection.Forward);
+            Debug.Log($"interaction sensor is running ");
         }
 
         private void LateUpdate()
@@ -54,6 +55,8 @@ namespace InteractionSystem
             // if we hit something interactable
             if (raycastSensor.HasDetectedHit())
             {
+                Debug.Log($"detected hit ->->->->->->->->->->->->");
+
                 var hitTransform = raycastSensor.GetTransform();
                 var interactable = hitTransform.GetComponentInParent<IInteractable>();
 

@@ -50,6 +50,8 @@ namespace InteractionSystem
             // listen to the interaction OnInteractionEnd event
             currentInteractable.OnInteractionEnd += CurrentInteractable_OnInteractionEnd;
             // need to change to game state
+
+            Debug.Log($"Starting Interaction from the interaction manager ");
             EventBus<OnGameStateChange>.Raise(new OnGameStateChange()
             {
                 _gameState = EGameState.INTERACTION

@@ -134,6 +134,34 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Interaction"",
+            ""id"": ""04ad6b67-a4b8-4a23-9be1-99d65fcb3492"",
+            ""actions"": [
+                {
+                    ""name"": ""QuiteInteraction"",
+                    ""type"": ""Button"",
+                    ""id"": ""fe75e4d8-15b8-47e1-9082-ba20732599fb"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""d70d470b-f922-4d97-9fef-70aa36e762a1"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""QuiteInteraction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -143,11 +171,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_FirstPersonMovement_Movement = m_FirstPersonMovement.FindAction("Movement", throwIfNotFound: true);
         m_FirstPersonMovement_Looking = m_FirstPersonMovement.FindAction("Looking", throwIfNotFound: true);
         m_FirstPersonMovement_Interaction = m_FirstPersonMovement.FindAction("Interaction", throwIfNotFound: true);
+        // Interaction
+        m_Interaction = asset.FindActionMap("Interaction", throwIfNotFound: true);
+        m_Interaction_QuiteInteraction = m_Interaction.FindAction("QuiteInteraction", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
     {
         UnityEngine.Debug.Assert(!m_FirstPersonMovement.enabled, "This will cause a leak and performance issues, PlayerInputActions.FirstPersonMovement.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Interaction.enabled, "This will cause a leak and performance issues, PlayerInputActions.Interaction.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -267,10 +299,60 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         }
     }
     public FirstPersonMovementActions @FirstPersonMovement => new FirstPersonMovementActions(this);
+
+    // Interaction
+    private readonly InputActionMap m_Interaction;
+    private List<IInteractionActions> m_InteractionActionsCallbackInterfaces = new List<IInteractionActions>();
+    private readonly InputAction m_Interaction_QuiteInteraction;
+    public struct InteractionActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public InteractionActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @QuiteInteraction => m_Wrapper.m_Interaction_QuiteInteraction;
+        public InputActionMap Get() { return m_Wrapper.m_Interaction; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(InteractionActions set) { return set.Get(); }
+        public void AddCallbacks(IInteractionActions instance)
+        {
+            if (instance == null || m_Wrapper.m_InteractionActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_InteractionActionsCallbackInterfaces.Add(instance);
+            @QuiteInteraction.started += instance.OnQuiteInteraction;
+            @QuiteInteraction.performed += instance.OnQuiteInteraction;
+            @QuiteInteraction.canceled += instance.OnQuiteInteraction;
+        }
+
+        private void UnregisterCallbacks(IInteractionActions instance)
+        {
+            @QuiteInteraction.started -= instance.OnQuiteInteraction;
+            @QuiteInteraction.performed -= instance.OnQuiteInteraction;
+            @QuiteInteraction.canceled -= instance.OnQuiteInteraction;
+        }
+
+        public void RemoveCallbacks(IInteractionActions instance)
+        {
+            if (m_Wrapper.m_InteractionActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IInteractionActions instance)
+        {
+            foreach (var item in m_Wrapper.m_InteractionActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_InteractionActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public InteractionActions @Interaction => new InteractionActions(this);
     public interface IFirstPersonMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnLooking(InputAction.CallbackContext context);
         void OnInteraction(InputAction.CallbackContext context);
+    }
+    public interface IInteractionActions
+    {
+        void OnQuiteInteraction(InputAction.CallbackContext context);
     }
 }

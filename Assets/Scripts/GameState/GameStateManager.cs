@@ -24,11 +24,15 @@ namespace GameStates
             base.Awake();
             
             currentGameState = gameStartState;
+        }
+        private void Start()
+        {
             EventBus<OnGameStateChange>.Raise(new OnGameStateChange()
             {
 
                 _gameState = gameStartState
             }) ;
+            
         }
 
     }

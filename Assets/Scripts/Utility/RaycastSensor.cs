@@ -26,7 +26,7 @@ namespace Utility
             Vector3 worldOrigin = tr.TransformPoint(origin);
             Vector3 worldDirection = GetCastDirection();
 
-            Physics.Raycast(worldOrigin, worldDirection, out hitInfo, castLength, layermask, QueryTriggerInteraction.Ignore);
+            Physics.Raycast(worldOrigin, worldDirection, out hitInfo, castLength, layermask);
         }
 
         public bool HasDetectedHit() => hitInfo.collider != null;
