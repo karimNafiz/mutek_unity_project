@@ -34,9 +34,9 @@ public class ChatRoomVisual : SingletonMonoBehavior<ChatRoomVisual>
     private ChatBotVisual currentChatBotVisual;
     // we use this to keep track of which chat bot the player is trying to speak
     private EventBinding<OnChatBotVisualClicked> eventBinding_OnChatBotVisualClicked;
-    private void Awake()
+    protected override void Awake()
     {
-
+        base.Awake();
         eventBinding_OnChatBotVisualClicked = new EventBinding<OnChatBotVisualClicked>(EventBus_OnChatBotVisualClicked);
         EventBus<OnChatBotVisualClicked>.Register(eventBinding_OnChatBotVisualClicked);
     }
