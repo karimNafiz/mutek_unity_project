@@ -7,7 +7,7 @@ namespace EventHandling.Events
 
     public class BotEvent : IEvent
     {
-        public HashSet<Bot> _difference;
+        public Dictionary<int , Bot> _bots;
     }
 
     public class OnBotCountIncrease : BotEvent 
@@ -17,6 +17,11 @@ namespace EventHandling.Events
     public class OnBotCountDecrease : BotEvent
 
     { 
+    }
+
+    public class OnBotManagerInitialized : BotEvent 
+    { 
+    
     }
 
 

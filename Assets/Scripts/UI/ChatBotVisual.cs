@@ -1,16 +1,51 @@
 using UnityEngine;
-
+using Models.Bots;
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
+using System;
+using TMPro;
 public class ChatBotVisual : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private Bot bot;
+
+    [SerializeField] private TMP_Text nameTextField; 
+    [SerializeField] private TMP_Text statusTextField;
+    // this gameobject will hold will raycasttarget so that we can detece clicks
+    [SerializeField] private ChatBotVisualClickCatcher rayCastTarget;
+
+
+    // events
+    public event EventHandler OnChatBatVisualClicked;
+
+    public Bot Bot
     {
-        
+        get { return bot; }
+        set 
+        {
+            this.bot = value;
+            this.nameTextField.text = this.bot.Name;
+            this.statusTextField.text = this.bot.Status.ToString();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+
+
+    public void Show() 
     {
-        
+        this.gameObject.SetActive(true);
+        this.rayCastTarget.OnUIClicked += RayCastTarget_OnUIClicked;
+    
+    }
+
+    private void RayCastTarget_OnUIClicked(object sender, EventArgs e)
+    {
+        Debug.Log($"On RayCastTarget clicked ->chat bot visual {this.name}");
+        OnChatBatVisualClicked?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void Hide() 
+    {
+        this.rayCastTarget.OnUIClicked -= RayCastTarget_OnUIClicked;
+        this.gameObject.SetActive(false);
     }
 }

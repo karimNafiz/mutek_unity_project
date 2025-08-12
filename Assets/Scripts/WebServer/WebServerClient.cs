@@ -8,6 +8,7 @@ using UnityEngine;
 using Models.Message;
 using Models.Users;
 
+
 namespace WebServer
 {
     public class WebServerClient : SingletonMonoBehavior<WebServerClient>
@@ -70,7 +71,7 @@ namespace WebServer
        
         // rn the bot id is hardcoded into the endpoint
         // TODO: if we have time later, we need to fix it
-        public void GetMessages(Url url, string endpoint,User user, Bot bot, Action<List<Message>> onSuccess, Action<Exception> onErr)
+        public void GetMessages(Url url, string endpoint,Bot bot, Action<List<Message>> onSuccess, Action<Exception> onErr)
         {
             string final_endpoint = $"{url.GetHostUrl()}{endpoint}/{bot.ID}";
 
@@ -85,7 +86,7 @@ namespace WebServer
                     {
                         try
                         {
-                            messages.Add(GetMessageFrmJson(pair, user, bot));
+                            messages.Add(GetMessageFrmJson(pair,bot));
 
                         }
                         catch (Exception ex) 
@@ -122,7 +123,7 @@ namespace WebServer
         }
 
 
-        private Message GetMessageFrmJson(Dictionary<string, object> dict, User user, Bot bot)
+        private Message GetMessageFrmJson(Dictionary<string, object> dict, Bot bot)
         {
             // Validate required keys
             if (!dict.ContainsKey("id")) throw new BadRequestException("json for message is missing the key sender");
@@ -135,7 +136,7 @@ namespace WebServer
                 int rcvdBotID = int.Parse(dict["bot_id"].ToString());
                 if (rcvdBotID != bot.ID) throw new BotIDMismatchExeption();
 
-                return new Message(user, bot, dict["user_message"].ToString(), dict["bot_response"].ToString(),"amir sucks");
+                return new Message(bot, dict["user_message"].ToString(), dict["bot_response"].ToString(),"amir sucks");
 
 
                 
@@ -178,8 +179,39 @@ namespace WebServer
         
         
         }
-        
 
+        public void SendMessageToBot(Url url, string endpoint, string message, Bot bot, Action<string> onSuccess, Action<Exception> onErr)
+        {
+            /*
+                the json is design like bot_id
+                and the user_message 
+             */
+            try
+            {
+                Dictionary<string, string> msgDict = new Dictionary<string, string>();
+                msgDict["bot_id"] = bot.ID.ToString();
+                msgDict["user_message"] = message;
+
+                string final_endpoint = $"{url.GetHostUrl()}{endpoint}";
+                string json_body = HTTPClient.Instance.SerializeDict(msgDict);
+                StartCoroutine(HTTPClient.Instance.PostRequest(final_endpoint, json_body, (string res) => 
+                {
+                    onSuccess?.Invoke(json_body);
+                }, (string err) => 
+                {
+                    throw new BadConnectionException(err);
+                }));
+
+
+
+            }
+            catch (Exception e) 
+            {
+                // rn I do not know what type of exception will it be
+                onErr?.Invoke(e);
+            }
+        
+        }
 
 
         // need a function for GetMessagesForASpecificBot

@@ -4,6 +4,7 @@ using System.Collections;
 using System.Text;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using System;
 
 
 
@@ -19,7 +20,7 @@ namespace Utility.HTTP
     public class HTTPClient : SingletonMonoBehavior<HTTPClient> 
     {
         // GET Request
-        public IEnumerator GetRequest(string url, System.Action<string> onSuccess, System.Action<string> onError)
+        public IEnumerator GetRequest(string url, Action<string> onSuccess, Action<string> onError)
         {
             using (UnityWebRequest request = UnityWebRequest.Get(url))
             {
@@ -38,7 +39,7 @@ namespace Utility.HTTP
         }
 
         // POST Request with JSON body
-        public IEnumerator PostRequest(string url, string jsonBody, System.Action<string> onSuccess, System.Action<string> onError)
+        public IEnumerator PostRequest(string url, string jsonBody, Action<string> onSuccess, Action<string> onError)
         {
             var request = new UnityWebRequest(url, "POST");
             byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonBody);
@@ -57,6 +58,10 @@ namespace Utility.HTTP
             {
                 onSuccess?.Invoke(request.downloadHandler.text);
             }
+        }
+        public string SerializeDict(Dictionary<string, string> dict) 
+        {
+            return JsonConvert.SerializeObject(dict);
         }
         public Dictionary<string, object> ParseJsonToDictionary(string json)
         {
