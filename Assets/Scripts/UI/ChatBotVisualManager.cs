@@ -14,8 +14,9 @@ public class ChatBotVisualManager : SingletonMonoBehavior<ChatBotVisualManager>
     
     
     
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         eventBinding_OnBotManagerInitialized = new EventBinding<OnBotManagerInitialized>(EventBus_OnBotManagerInitialized);
         EventBus<OnBotManagerInitialized>.Register(eventBinding_OnBotManagerInitialized);
     }

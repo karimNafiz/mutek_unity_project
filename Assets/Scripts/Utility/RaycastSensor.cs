@@ -1,6 +1,7 @@
 using UnityEngine;
 
-namespace AdvancedController
+namespace Utility
+
 {
     public class RaycastSensor
     {
@@ -61,6 +62,16 @@ namespace AdvancedController
             Debug.DrawLine(hitInfo.point + Vector3.up * markerSize, hitInfo.point - Vector3.up * markerSize, Color.green, Time.deltaTime);
             Debug.DrawLine(hitInfo.point + Vector3.right * markerSize, hitInfo.point - Vector3.right * markerSize, Color.green, Time.deltaTime);
             Debug.DrawLine(hitInfo.point + Vector3.forward * markerSize, hitInfo.point - Vector3.forward * markerSize, Color.green, Time.deltaTime);
+        }
+        public void DrawDebugAlways() 
+        {
+            Vector3 worldOrigin = tr.TransformPoint(origin);
+            Vector3 worldDirection = GetCastDirection();
+
+            // Draw the ray direction regardless of hit
+            Debug.DrawRay(worldOrigin, worldDirection * castLength, Color.yellow, Time.deltaTime);
+
+
         }
     }
 }
