@@ -43,8 +43,11 @@ namespace InteractionSystem
 
         private void Instance_OnPlayerInteract_FirstPersonMode(bool obj)
         {
+            Debug.Log("Interaction button pressed ");
+            Debug.Log($"obj value -> {obj}");
             if (!obj) return;
             if (currentInteractable == null) return;
+            Debug.Log("should run interactions ");
             // first Unsubscribe to InteractionSensor
             UnsubscribeToInteractionSensor();
             // listen to the interaction OnInteractionEnd event
@@ -90,13 +93,13 @@ namespace InteractionSystem
 
         private void InteractionSensor_OnInteractionDetectionEnd(object sender, IInteractable e)
         {
-            if (e == null) return;
-            currentInteractable = e;
+            currentInteractable = null;
         }
 
         private void InteractionSensor_OnInteractionDetect(object sender, IInteractable e)
         {
-            currentInteractable = null;
+            if (e == null) return;
+            currentInteractable = e;
         }
     }
 }
