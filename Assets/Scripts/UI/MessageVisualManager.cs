@@ -17,23 +17,25 @@ public class MessageVisualManager : SingletonMonoBehavior<MessageVisualManager>
 
     public void AddMessageVisual(Message message) 
     {
-        AddMessageVisualUser(message.UserMessage);
-        AddMessageVisualBot(message.BotResponse);
+        AddMessageVisualUser(message.UserMessage, "user");
+        AddMessageVisualBot(message.BotResponse, message.Bot.Name);
     
     }
-    public void AddMessageVisualUser(string message) 
+    public void AddMessageVisualUser(string message, string sender) 
     {
         MessageVisual msgVisual = Instantiate(messageVisualPrefab, new Vector3(0, 0, 0), Quaternion.identity, this.transform);
+        msgVisual.SetSenderFieldColor(Color.blue);
+        msgVisual.SetSender(sender);
         msgVisual.SetMessage(message);
-        msgVisual.SetTextColor(Color.blue);
         messages.Add(msgVisual);
     
     }
-    public void AddMessageVisualBot(string message) 
+    public void AddMessageVisualBot(string message, string sender) 
     {
         MessageVisual msgVisual = Instantiate(messageVisualPrefab, new Vector3(0, 0, 0), Quaternion.identity, this.transform);
+        msgVisual.SetSenderFieldColor(Color.red);
+        msgVisual.SetSender(sender);
         msgVisual.SetMessage(message);
-        msgVisual.SetTextColor(Color.red);
         messages.Add(msgVisual);
     }
 

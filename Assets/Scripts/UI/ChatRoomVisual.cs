@@ -48,7 +48,7 @@ public class ChatRoomVisual : SingletonMonoBehavior<ChatRoomVisual>
     private void TextInput_OnTextEnter(object sender, string message)
     {
         // take the text, and add it to the message container
-        messageContainer.AddMessageVisualUser(message);
+        messageContainer.AddMessageVisualUser(message, "User");
         // I need to send this information back to the server 
         // I'm going to comment this part of the code out because the server is not ready yet
         //WebServerClient.Instance.SendMessageToBot(GlobalConfigs.Instance.GetServerUrl(), GlobalConfigs.Instance.globalConstant.message_endpoint_post, message , currentChatBotVisual.Bot,OnPostMessageSuccess, OnPostMessageErr );
@@ -56,7 +56,9 @@ public class ChatRoomVisual : SingletonMonoBehavior<ChatRoomVisual>
     }
     private void OnPostMessageSuccess(string responseFrmBot) 
     {
-        messageContainer.AddMessageVisualBot(responseFrmBot);
+        // currently I'm hard coding chadwick as the bot name 
+        // but later we will make it dynamic 
+        messageContainer.AddMessageVisualBot(responseFrmBot, "chadwick");
     }
     private void OnPostMessageErr(Exception e) 
     {
