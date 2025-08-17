@@ -886,8 +886,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5556579715182516451}
   - component: {fileID: 1748946524621181016}
+  - component: {fileID: 622231789141054863}
   m_Layer: 0
-  m_Name: FlipbookModel
+  m_Name: FlipbookVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -933,6 +934,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &622231789141054863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3423205130150560715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0518e1867a8b34b43a63a0654079b9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pageContents:
+  - pageTransform: {fileID: 307466174763911664}
+    contentTextGUI: {fileID: 3548136607475251802}
+  - pageTransform: {fileID: 7128847131421016036}
+    contentTextGUI: {fileID: 4290354726986795505}
 --- !u!1 &3750786647975660587
 GameObject:
   m_ObjectHideFlags: 0
