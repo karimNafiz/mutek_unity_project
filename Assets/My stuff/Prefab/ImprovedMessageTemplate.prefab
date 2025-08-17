@@ -238,7 +238,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: all hail big brother for he is god
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -455,6 +455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1501515429792710392}
   - component: {fileID: 9011932612117878012}
+  - component: {fileID: 1466876190924725735}
   m_Layer: 5
   m_Name: ImprovedMessageTemplate
   m_TagString: Untagged
@@ -490,7 +491,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8975395422864431216}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e632e4b5c8a0f5f4f91ffdcd92094a79, type: 3}
   m_Name: 
@@ -498,3 +499,16 @@ MonoBehaviour:
   timeMessageSent: {fileID: 209336839318434301}
   username: {fileID: 463014688235516923}
   messageText: {fileID: 8250701902491852247}
+--- !u!114 &1466876190924725735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8975395422864431216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c2ea352ba9387f4b8e62b72e8f4d2e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messageTextField: {fileID: 0}
