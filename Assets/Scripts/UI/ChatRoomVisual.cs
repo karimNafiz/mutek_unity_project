@@ -50,8 +50,9 @@ public class ChatRoomVisual : SingletonMonoBehavior<ChatRoomVisual>
         // take the text, and add it to the message container
         messageContainer.AddMessageVisualUser(message);
         // I need to send this information back to the server 
-        WebServerClient.Instance.SendMessageToBot(GlobalConfigs.Instance.GetServerUrl(), GlobalConfigs.Instance.globalConstant.message_endpoint_post, message , currentChatBotVisual.Bot,OnPostMessageSuccess, OnPostMessageErr );
-      
+        // I'm going to comment this part of the code out because the server is not ready yet
+        //WebServerClient.Instance.SendMessageToBot(GlobalConfigs.Instance.GetServerUrl(), GlobalConfigs.Instance.globalConstant.message_endpoint_post, message , currentChatBotVisual.Bot,OnPostMessageSuccess, OnPostMessageErr );
+        OnPostMessageSuccess("This is a dummy response from the bot for testing purposes"); // remove this line later, this is just for testing purposes
     }
     private void OnPostMessageSuccess(string responseFrmBot) 
     {

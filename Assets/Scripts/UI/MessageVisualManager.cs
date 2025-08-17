@@ -25,6 +25,7 @@ public class MessageVisualManager : SingletonMonoBehavior<MessageVisualManager>
     {
         MessageVisual msgVisual = Instantiate(messageVisualPrefab, new Vector3(0, 0, 0), Quaternion.identity, this.transform);
         msgVisual.SetMessage(message);
+        msgVisual.SetTextColor(Color.blue);
         messages.Add(msgVisual);
     
     }
@@ -32,6 +33,7 @@ public class MessageVisualManager : SingletonMonoBehavior<MessageVisualManager>
     {
         MessageVisual msgVisual = Instantiate(messageVisualPrefab, new Vector3(0, 0, 0), Quaternion.identity, this.transform);
         msgVisual.SetMessage(message);
+        msgVisual.SetTextColor(Color.red);
         messages.Add(msgVisual);
     }
 

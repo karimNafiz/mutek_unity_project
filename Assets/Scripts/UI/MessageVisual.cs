@@ -7,7 +7,7 @@ public class MessageVisual : MonoBehaviour
     [SerializeField] private TMP_Text messageTextField;
     [SerializeField] private TMP_Text senderNameTextField;
     [SerializeField] private TMP_Text timeField;
-
+    private Color msgColor = Color.black;
 
     public void SetMessage(string message) 
     {
@@ -16,6 +16,12 @@ public class MessageVisual : MonoBehaviour
     public void SetSender(string sender) 
     {
         senderNameTextField.text = sender;
+    }
+
+    public void SetTextColor(Color color) 
+    {
+        this.msgColor = color;
+        messageTextField.color = this.msgColor;
     }
     public void SetTime(string time) 
     {

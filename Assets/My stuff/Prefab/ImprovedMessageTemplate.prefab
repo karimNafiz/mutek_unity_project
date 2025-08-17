@@ -511,4 +511,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2ea352ba9387f4b8e62b72e8f4d2e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageTextField: {fileID: 0}
+  messageTextField: {fileID: 8250701902491852247}
+  senderNameTextField: {fileID: 463014688235516923}
+  timeField: {fileID: 209336839318434301}
