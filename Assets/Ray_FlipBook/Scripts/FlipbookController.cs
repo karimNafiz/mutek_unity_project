@@ -19,7 +19,7 @@ namespace Flipbook
             }
             
             // Make sure to show the current page to initialize the GUI display
-            ShowCurrentPage();
+            UpdateCurrentPage();
         }
 
         [ContextMenu("Flipbook Up")]
@@ -34,12 +34,12 @@ namespace Flipbook
             _flipbookVisual.PutDownFlipbook();
         }
 
-        public void ShowCurrentPage()
+        public void UpdateCurrentPage()
         {
             SO_FlipbookPageContent content = null;
             if (_flipbookPageCollection.GetCurrentPage(out content))
             {
-                Debug.Log(content.PageContent);   
+                _flipbookVisual.UpdateCurrentPage(content.PageContent);
             }
         }
         

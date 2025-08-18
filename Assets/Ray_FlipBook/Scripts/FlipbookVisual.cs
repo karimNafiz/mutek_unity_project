@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using TMPro;
 
+
 namespace Flipbook
 {
     [RequireComponent(typeof(Animator))]
@@ -11,7 +12,7 @@ namespace Flipbook
         /// A serializeable struct to store a page's transform and text field
         /// </summary>
         [Serializable]
-        private struct PageContent
+        private struct PageDisplay
         {
             public Transform pageTransform;
             public TextMeshProUGUI contentTextGUI;
@@ -24,8 +25,9 @@ namespace Flipbook
 
         
         // Array of page content structs to represent multiple flippable pages
-        [SerializeField] private PageContent[] _pageContents;
-        private int _pageIndex = 0;
+        // Now using it as a double buffer display.
+        [SerializeField] private PageDisplay[] _pageDisplay;
+        private int _displayIndex = 0;
         
         private void Awake()
         {
@@ -54,7 +56,7 @@ namespace Flipbook
         /// <param name="contentToDisplay"></param>
         public void UpdateCurrentPage(string contentToDisplay)
         {
-            
+            _pageDisplay[_displayIndex].contentTextGUI.text = contentToDisplay;
         }
         
         /// <summary>
