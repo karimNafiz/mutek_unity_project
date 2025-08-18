@@ -49,7 +49,7 @@ namespace Flipbook
             SO_FlipbookPageContent content = null;
             if (_flipbookPageCollection.GetNextPage(out content))
             {
-                Debug.Log(content.PageContent);   
+                _flipbookVisual.ShowNextPage(content.PageContent); 
             }
         }
 
@@ -59,7 +59,7 @@ namespace Flipbook
             SO_FlipbookPageContent content = null;
             if (_flipbookPageCollection.GetPrevPage(out content))
             {
-                Debug.Log(content.PageContent);   
+                _flipbookVisual.ShowPreviousPage(content.PageContent);
             }
         }
         

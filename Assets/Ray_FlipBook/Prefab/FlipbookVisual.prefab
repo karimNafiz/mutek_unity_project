@@ -122,7 +122,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.0012100043, y: -0.0070999726}
+  m_AnchoredPosition: {x: -0.0012100043, y: -0.0072}
   m_SizeDelta: {x: 19.15199, y: 26.50563}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &765784601655328022
@@ -946,7 +946,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0518e1867a8b34b43a63a0654079b9e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pageContents:
+  pageFlipDuration: 1.3
+  originalPageLocalRotation: {x: 0, y: 180, z: 0}
+  _pageDisplay:
   - pageTransform: {fileID: 307466174763911664}
     contentTextGUI: {fileID: 3548136607475251802}
   - pageTransform: {fileID: 7128847131421016036}
@@ -1914,7 +1916,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.00121, y: -0.0071}
+  m_AnchoredPosition: {x: -0.0012, y: -0.0072}
   m_SizeDelta: {x: 19.15199, y: 26.50563}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7092498571292614041
@@ -2389,8 +2391,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Here's the Intro to the story. \nExample of <b>bold</b> text.\nExample
-    of <i>itallic</i> text."
+  m_text: something else
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3175,14 +3176,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7462473631330392699}
   serializedVersion: 2
-  m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0.004072325, y: 0.00009863026, z: -0.00005904725}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7859924351035871373}
   m_Father: {fileID: 5556579715182516451}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &8781867317339718025
 MeshFilter:
   m_ObjectHideFlags: 0
