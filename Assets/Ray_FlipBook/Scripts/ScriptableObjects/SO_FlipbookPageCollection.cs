@@ -32,7 +32,7 @@ namespace ScriptableObjects
         /// <returns></returns>
         public void InitializeBook(int pageIndex)
         {
-            currentPageIndex = pageIndex;
+            currentPageIndex = Mathf.Clamp(pageIndex, 0, PageCollection.Length - 1);
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace ScriptableObjects
         /// </summary>
         /// <param name="currentPage"></param>
         /// <returns>true if the requested page exists. false otherwise</returns>
-        public bool GetCurrentPage(out SO_FlipbookPageContent currentPage)
+        public bool TryGetCurrentPage(out SO_FlipbookPageContent currentPage)
         {
             if (IsIndexValid(currentPageIndex))
             {
@@ -78,7 +78,7 @@ namespace ScriptableObjects
         /// </summary>
         /// <param name="nextPage"></param>
         /// <returns>true if the requested page exists. false otherwise</returns>
-        public bool GetNextPage(out SO_FlipbookPageContent nextPage)
+        public bool TryGetNextPage(out SO_FlipbookPageContent nextPage)
         {
             if (IsIndexValid(currentPageIndex + 1))
             {
@@ -99,7 +99,7 @@ namespace ScriptableObjects
         /// </summary>
         /// <param name="prevPage"></param>
         /// <returns>true if the requested page exists. false otherwise</returns>
-        public bool GetPrevPage(out SO_FlipbookPageContent prevPage)
+        public bool TryGetPrevPage(out SO_FlipbookPageContent prevPage)
         {
             if (IsIndexValid(currentPageIndex - 1))
             {

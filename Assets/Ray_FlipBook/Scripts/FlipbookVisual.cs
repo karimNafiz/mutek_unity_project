@@ -89,7 +89,7 @@ namespace Flipbook
             Vector3 targetRotation = new Vector3(targetXRot, originalPageLocalRotation.y, originalPageLocalRotation.z);
             
             target.DOLocalRotate(targetRotation, pageFlipDuration, RotateMode.FastBeyond360).
-                OnComplete(() =>
+                OnComplete(delegate
                 {
                     // chain the external callback
                     onCompleteCallback?.Invoke();
@@ -160,7 +160,7 @@ namespace Flipbook
             // Flip away the current page
             Transform currentPageTransform = pageDisplay[_displayIndex].pageTransform;
             PlayPageFlipAnimation(currentPageTransform, PageFlipDirection.Next,
-                () =>
+                delegate
                 {
                     // chain the external callback
                     onPageFlipCompleteCallback?.Invoke();

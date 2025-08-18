@@ -73,7 +73,7 @@ namespace Flipbook
         /// </summary>
         private void UpdateCurrentPage()
         {
-            if (flipbookPageCollection.GetCurrentPage(out SO_FlipbookPageContent content))
+            if (flipbookPageCollection.TryGetCurrentPage(out SO_FlipbookPageContent content))
             {
                 flipbookVisual.UpdateCurrentPage(content.PageContent);
                 // update next/prev page button activities
@@ -141,7 +141,7 @@ namespace Flipbook
                 return;
             }
             
-            if (flipbookPageCollection.GetNextPage(out SO_FlipbookPageContent content))
+            if (flipbookPageCollection.TryGetNextPage(out SO_FlipbookPageContent content))
             {
                 // mark the _isPageFlipping flag to prevent the next page flip from being triggered during animation
                 _isPageFlipping = true;
@@ -164,7 +164,7 @@ namespace Flipbook
                 return;
             }
             
-            if (flipbookPageCollection.GetPrevPage(out SO_FlipbookPageContent content))
+            if (flipbookPageCollection.TryGetPrevPage(out SO_FlipbookPageContent content))
             {
                 // mark the _isPageFlipping flag to prevent the next page flip from being triggered during animation
                 _isPageFlipping = true;
