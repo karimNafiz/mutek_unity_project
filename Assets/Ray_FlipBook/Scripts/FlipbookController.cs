@@ -6,60 +6,173 @@ namespace Flipbook
 {
     public class FlipbookController : MonoBehaviour
     {
-        [SerializeField] private SO_FlipbookPageCollection _flipbookPageCollection;
-        [SerializeField] private FlipbookVisual _flipbookVisual;
+        [SerializeField] private SO_FlipbookPageCollection flipbookPageCollection;
+        [SerializeField] private FlipbookVisual flipbookVisual;
+        [SerializeField] private FlipbookButtons flipbookButtons;
 
+        // keep track of the animation state of page flipping.
+        private bool _isPageFlipping = false;
+        private bool _isBookUp = false;
+        
         private void Awake()
         {
             // Optional: start the book at page 0.
             // Not writing this line will have the book (page collection) to remember the last page it was on.
-            if (_flipbookPageCollection != null)
+            if (flipbookPageCollection != null)
             {
-                _flipbookPageCollection.InitializeBook(0);
+                flipbookPageCollection.InitializeBook(0);
+            }
+        }
+
+        private void Start()
+        {
+            flipbookButtons.OnNextPageClicked += FlipbookButtons_OnNextPageClicked;
+            flipbookButtons.OnPrevPageClicked += FlipbookButtons_OnPrevPageClicked;
+            
+            // Initialize book position
+            if (_isBookUp)
+            {
+                flipbookVisual.HoldUpFlipbook();
+            }
+            else
+            {
+                flipbookVisual.PutDownFlipbook();
             }
             
             // Make sure to show the current page to initialize the GUI display
             UpdateCurrentPage();
         }
 
-        [ContextMenu("Flipbook Up")]
-        public void HoldUpFlipbook()
+        private void OnDestroy()
         {
-            _flipbookVisual.HoldUpFlipbook();
+            flipbookButtons.OnNextPageClicked -= FlipbookButtons_OnNextPageClicked;
+            flipbookButtons.OnPrevPageClicked -= FlipbookButtons_OnPrevPageClicked;
         }
 
-        [ContextMenu("Flipbook Down")]
-        public void PutDownFlipbook()
+        private void FlipbookButtons_OnNextPageClicked(object sender, EventArgs e)
         {
-            _flipbookVisual.PutDownFlipbook();
-        }
-
-        public void UpdateCurrentPage()
-        {
-            SO_FlipbookPageContent content = null;
-            if (_flipbookPageCollection.GetCurrentPage(out content))
-            {
-                _flipbookVisual.UpdateCurrentPage(content.PageContent);
-            }
+            ShowNextPage();
         }
         
-        [ContextMenu("Show Next Page")]
-        public void ShowNextPage()
+        private void FlipbookButtons_OnPrevPageClicked(object sender, EventArgs e)
         {
-            SO_FlipbookPageContent content = null;
-            if (_flipbookPageCollection.GetNextPage(out content))
+            ShowPreviousPage();
+        }
+
+        /// <summary>
+        /// To be passed as a callback to the FlipbookVisual, to release the page flip lock when
+        /// the page flipping animation has completed.
+        /// </summary>
+        private void ReleasePageFlipLock()
+        {
+            _isPageFlipping = false;
+        }
+        
+        /// <summary>
+        /// Update the text display content of with the current page content.
+        /// </summary>
+        private void UpdateCurrentPage()
+        {
+            if (flipbookPageCollection.GetCurrentPage(out SO_FlipbookPageContent content))
             {
-                _flipbookVisual.ShowNextPage(content.PageContent); 
+                flipbookVisual.UpdateCurrentPage(content.PageContent);
+                // update next/prev page button activities
+                flipbookButtons.UpdateButtonActivities(
+                    flipbookPageCollection.GetCurrentPageIndex(), 
+                    flipbookPageCollection.GetPageCount());
             }
         }
 
-        [ContextMenu("Show Previous Page")]
+        
+        ////////////////////// PUBLIC METHODS ////////////////////////////////
+        /// <summary>
+        /// Sets a new page collection to the flipbook and displays the current page recorded
+        /// in the collection.
+        /// </summary>
+        /// <param name="flipbookPageCollection"></param>
+        public void SetFlipbookPageCollection(SO_FlipbookPageCollection flipbookPageCollection)
+        {
+            if (_isPageFlipping)
+            {
+                Debug.LogWarning("Page flipping animation in progress, change book request blocked");
+                return;
+            }
+            this.flipbookPageCollection = flipbookPageCollection;
+            UpdateCurrentPage();
+        }
+        
+        /// <summary>
+        /// To Show the flip book with a holding up animation
+        /// </summary>
+        public void HoldUpFlipbook()
+        {
+            if (_isBookUp)
+            {
+                return;
+            }
+            
+            flipbookVisual.HoldUpFlipbook();
+            _isBookUp = true;
+        }
+        
+        /// <summary>
+        /// To Hide the flip book with a putting down animation
+        /// </summary>
+        public void PutDownFlipbook()
+        {
+            if (!_isBookUp)
+            {
+                return;
+            }
+            
+            flipbookVisual.PutDownFlipbook();
+            _isBookUp = false;
+        }
+
+        
+        /// <summary>
+        /// To show the next page of the flipbook, with a page flip animation.
+        /// </summary>
+        public void ShowNextPage()
+        {
+            if (_isPageFlipping)
+            {
+                Debug.Log("Page flipping animation in progress, new request blocked");
+                return;
+            }
+            
+            if (flipbookPageCollection.GetNextPage(out SO_FlipbookPageContent content))
+            {
+                // mark the _isPageFlipping flag to prevent the next page flip from being triggered during animation
+                _isPageFlipping = true;
+                flipbookVisual.ShowNextPage(content.PageContent, ReleasePageFlipLock);
+                // update next/prev page button activities
+                flipbookButtons.UpdateButtonActivities(
+                    flipbookPageCollection.GetCurrentPageIndex(), 
+                    flipbookPageCollection.GetPageCount());
+            }
+        }
+
+        /// <summary>
+        /// To show the previous page of the flipbook, with a page flip animation.
+        /// </summary>
         public void ShowPreviousPage()
         {
-            SO_FlipbookPageContent content = null;
-            if (_flipbookPageCollection.GetPrevPage(out content))
+            if (_isPageFlipping)
             {
-                _flipbookVisual.ShowPreviousPage(content.PageContent);
+                Debug.Log("Page flipping animation in progress, new request blocked");
+                return;
+            }
+            
+            if (flipbookPageCollection.GetPrevPage(out SO_FlipbookPageContent content))
+            {
+                // mark the _isPageFlipping flag to prevent the next page flip from being triggered during animation
+                _isPageFlipping = true;
+                flipbookVisual.ShowPreviousPage(content.PageContent, ReleasePageFlipLock);
+                // update next/prev page button activities
+                flipbookButtons.UpdateButtonActivities(
+                    flipbookPageCollection.GetCurrentPageIndex(), 
+                    flipbookPageCollection.GetPageCount());
             }
         }
         

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62b3ab7ca79050468aa55d9fd119595, type: 3}
+  m_Name: SO_FlipbookPageCollection2
+  m_EditorClassIdentifier: 
+  <PageCollection>k__BackingField:
+  - {fileID: 11400000, guid: b3e90a51ad0f948489cf7cb18b4fea1f, type: 2}
+  - {fileID: 11400000, guid: b2f2be6950e619d418dbcf3c56a9ef22, type: 2}
+  - {fileID: 11400000, guid: 19c3833683adb6346850be9631a280eb, type: 2}
+  - {fileID: 11400000, guid: a27dd220fbe4ca749bc3403c43c4ac8f, type: 2}
+  - {fileID: 11400000, guid: bb4b5848ee544d040898b7f8af1b4112, type: 2}
+  - {fileID: 11400000, guid: 3e442fa8e53e67f41a5cd9f27de008b2, type: 2}
+  - {fileID: 11400000, guid: 002d484c6738821478fe7facd4a36a53, type: 2}
+  currentPageIndex: 4

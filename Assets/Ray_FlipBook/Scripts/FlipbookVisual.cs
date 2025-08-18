@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using DG.Tweening;
 using System.Collections;
+using UnityEngine.Serialization;
 
 namespace Flipbook
 {
@@ -21,7 +22,7 @@ namespace Flipbook
             public TextMeshProUGUI contentTextGUI;
         }
         
-        [SerializeField] private float pageFlipDuration = 1.3f;
+        [SerializeField] private float pageFlipDuration = 1f;
         [SerializeField] private Vector3 originalPageLocalRotation = new Vector3(0f, 180f, 0f);
         
         // const string trigger names for Animator
@@ -32,7 +33,8 @@ namespace Flipbook
         
         // Array of page content structs to represent multiple flippable pages
         // Now using it as a double buffer display.
-        [SerializeField] private PageDisplay[] _pageDisplay;
+        [FormerlySerializedAs("_pageDisplay")] 
+        [SerializeField] private PageDisplay[] pageDisplay;
         private int _displayIndex = 0;
         
         
@@ -52,9 +54,9 @@ namespace Flipbook
             
             if (_displayIndex < 0)
             {
-                _displayIndex = _pageDisplay.Length - 1;
+                _displayIndex = pageDisplay.Length - 1;
             }
-            else if (_displayIndex >= _pageDisplay.Length)
+            else if (_displayIndex >= pageDisplay.Length)
             {
                 _displayIndex = 0;
             }
@@ -89,7 +91,9 @@ namespace Flipbook
             target.DOLocalRotate(targetRotation, pageFlipDuration, RotateMode.FastBeyond360).
                 OnComplete(() =>
                 {
+                    // chain the external callback
                     onCompleteCallback?.Invoke();
+                    // add new custom logic:
                     // reset target local rotation to make sure the page position is correct for the next display
                     target.localRotation = Quaternion.Euler(originalPageLocalRotation);
                 }).
@@ -108,9 +112,9 @@ namespace Flipbook
         {
             yield return new WaitForSeconds(delay);
             // make sure the current display index transform is active
-            _pageDisplay[index].pageTransform.gameObject.SetActive(true);
+            pageDisplay[index].pageTransform.gameObject.SetActive(true);
             // update the text field
-            _pageDisplay[index].contentTextGUI.text = contentToDisplay;
+            pageDisplay[index].contentTextGUI.text = contentToDisplay;
         }
         
         
@@ -150,17 +154,24 @@ namespace Flipbook
         /// Show the next page with the content to Display
         /// </summary>
         /// <param name="contentToDisplay"></param>
-        public void ShowNextPage(string contentToDisplay)
+        /// <param name="onPageFlipCompleteCallback"></param>
+        public void ShowNextPage(string contentToDisplay, Action onPageFlipCompleteCallback = null)
         {
             // Flip away the current page
-            Transform currentPageTransform = _pageDisplay[_displayIndex].pageTransform;
-            PlayPageFlipAnimation(currentPageTransform, PageFlipDirection.Next, 
-                () => { currentPageTransform.gameObject.SetActive(false); });
+            Transform currentPageTransform = pageDisplay[_displayIndex].pageTransform;
+            PlayPageFlipAnimation(currentPageTransform, PageFlipDirection.Next,
+                () =>
+                {
+                    // chain the external callback
+                    onPageFlipCompleteCallback?.Invoke();
+                    // add new custom logic:
+                    currentPageTransform.gameObject.SetActive(false); 
+                });
             
-            // Advance index and show the next page with the delay = 10% of pageFlipDuration
+            // Advance index and show the next page with the delay = 20% of pageFlipDuration
             // delay is to make sure the new text does not overlap with the old text. 
             AdvanceDisplayIndex(1);
-            UpdateCurrentPage(contentToDisplay, 0.1f * pageFlipDuration);
+            UpdateCurrentPage(contentToDisplay, 0.2f * pageFlipDuration);
         }
 
         /// <summary>
@@ -168,22 +179,29 @@ namespace Flipbook
         /// show the prev page with the content to display
         /// </summary>
         /// <param name="contentToDisplay"></param>
-        public void ShowPreviousPage(string contentToDisplay)
+        /// <param name="onPageFlipCompleteCallback"></param>
+        public void ShowPreviousPage(string contentToDisplay, Action onPageFlipCompleteCallback = null)
         {
             // keep an record of the current page
-            Transform currentPageTransform = _pageDisplay[_displayIndex].pageTransform;
+            Transform currentPageTransform = pageDisplay[_displayIndex].pageTransform;
             // hide current page content at the last 20% of pageFlipDuration, 
             // so that the new text does not overlap with the old text.
             UpdateCurrentPage("", 0.8f * pageFlipDuration);
             
             // advance index to the previous page, then update its content
             AdvanceDisplayIndex(-1);
-            Transform prevPageTransform = _pageDisplay[_displayIndex].pageTransform;
+            Transform prevPageTransform = pageDisplay[_displayIndex].pageTransform;
             UpdateCurrentPage(contentToDisplay);
             
             // flip in the previous page, and turn off the current page when the prev page is flipped in.
-            PlayPageFlipAnimation(prevPageTransform, PageFlipDirection.Previous, 
-                () => { currentPageTransform.gameObject.SetActive(false); });
+            PlayPageFlipAnimation(prevPageTransform, PageFlipDirection.Previous,
+                () =>
+                {
+                    // chain the external callback
+                    onPageFlipCompleteCallback?.Invoke();
+                    // add custom logic:
+                    currentPageTransform.gameObject.SetActive(false);
+                });
             
         }
     }

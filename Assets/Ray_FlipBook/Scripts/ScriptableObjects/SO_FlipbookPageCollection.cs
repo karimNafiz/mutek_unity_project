@@ -14,7 +14,7 @@ namespace ScriptableObjects
         /// <summary>
         /// Keeps track of the current page index.
         /// </summary>
-        [SerializeField] int _currentPageIndex = 0;
+        [SerializeField] int currentPageIndex = 0;
         
         /// <summary>
         /// Internal helper method to check if the current page index is valid.
@@ -32,7 +32,7 @@ namespace ScriptableObjects
         /// <returns></returns>
         public void InitializeBook(int pageIndex)
         {
-            _currentPageIndex = pageIndex;
+            currentPageIndex = pageIndex;
         }
 
         /// <summary>
@@ -41,7 +41,16 @@ namespace ScriptableObjects
         /// <returns></returns>
         public int GetCurrentPageIndex()
         {
-            return _currentPageIndex;
+            return currentPageIndex;
+        }
+
+        /// <summary>
+        /// Query the total number of pages in this page collection
+        /// </summary>
+        /// <returns></returns>
+        public int GetPageCount()
+        {
+            return PageCollection.Length;
         }
         
         /// <summary>
@@ -51,9 +60,9 @@ namespace ScriptableObjects
         /// <returns>true if the requested page exists. false otherwise</returns>
         public bool GetCurrentPage(out SO_FlipbookPageContent currentPage)
         {
-            if (IsIndexValid(_currentPageIndex))
+            if (IsIndexValid(currentPageIndex))
             {
-                currentPage = PageCollection[_currentPageIndex];
+                currentPage = PageCollection[currentPageIndex];
                 return true;
             }
             else
@@ -71,10 +80,10 @@ namespace ScriptableObjects
         /// <returns>true if the requested page exists. false otherwise</returns>
         public bool GetNextPage(out SO_FlipbookPageContent nextPage)
         {
-            if (IsIndexValid(_currentPageIndex + 1))
+            if (IsIndexValid(currentPageIndex + 1))
             {
-                nextPage = PageCollection[_currentPageIndex + 1];
-                _currentPageIndex++;
+                nextPage = PageCollection[currentPageIndex + 1];
+                currentPageIndex++;
                 return true;
             }
             else
@@ -92,10 +101,10 @@ namespace ScriptableObjects
         /// <returns>true if the requested page exists. false otherwise</returns>
         public bool GetPrevPage(out SO_FlipbookPageContent prevPage)
         {
-            if (IsIndexValid(_currentPageIndex - 1))
+            if (IsIndexValid(currentPageIndex - 1))
             {
-                prevPage = PageCollection[_currentPageIndex - 1];
-                _currentPageIndex--;
+                prevPage = PageCollection[currentPageIndex - 1];
+                currentPageIndex--;
                 return true;
             }
             else
