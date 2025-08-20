@@ -3,7 +3,7 @@ using GameManager;
 using SelectableBase;
 using UnityEngine;
 
-public class ComputerSelector : ObjSelectorBase<ComputerSelector>
+public class ComputerSelector_ObjSelectorBase : ObjSelectorBase<ComputerSelector_ObjSelectorBase>
 {
 /*
  
@@ -47,7 +47,7 @@ public class ComputerSelector : ObjSelectorBase<ComputerSelector>
     {
         if (selectedObj == null && hoveredObj != null && GameInput.Instance.IsLMBPressedThisFrame())
         {
-            if (hoveredObj.GetComponent<Computer>() != null)
+            if (hoveredObj.GetComponent<Computer_SelectableObjBase>() != null)
             {
                 SetSelectedObject(hoveredObj);
             }

@@ -1,28 +1,29 @@
-using UnityEngine;
-using SelectableBase;
 using System;
-public class Computer : SelectableObjBase
+using SelectableBase;
+using UnityEngine;
+
+public class Document_SelectableObjBase : SelectableObjBase
 {
-    private void RegisterToSelectorEvents() 
-    { 
+    private void RegisterToSelectorEvents()
+    {
         /*
             these two functions already exist in the base class
             if I want my own implementation, I need to override them 
          
          */
-        ComputerSelector.Instance.OnSelectObj += ObjSelector_OnSelectObj;
-        ComputerSelector.Instance.OnHoverObj += ObjSelector_OnHoverObj;
+        ComputerSelector_ObjSelectorBase.Instance.OnSelectObj += ObjSelector_OnSelectObj;
+        ComputerSelector_ObjSelectorBase.Instance.OnHoverObj += ObjSelector_OnHoverObj;
 
     }
 
-    private void DeregisterToSelectorEvents() 
-    { 
-        ComputerSelector.Instance.OnSelectObj -= ObjSelector_OnSelectObj;
-        ComputerSelector.Instance.OnHoverObj -= ObjSelector_OnHoverObj;
+    private void DeregisterToSelectorEvents()
+    {
+        ComputerSelector_ObjSelectorBase.Instance.OnSelectObj -= ObjSelector_OnSelectObj;
+        ComputerSelector_ObjSelectorBase.Instance.OnHoverObj -= ObjSelector_OnHoverObj;
 
     }
 
-    void Start() 
+    void Start()
     {
         RegisterToSelectorEvents();
     }
