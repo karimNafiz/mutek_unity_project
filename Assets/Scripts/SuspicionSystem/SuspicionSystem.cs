@@ -1,6 +1,8 @@
 using UnityEngine;
 using EventHandling;
-using EventHandling.Events; 
+using EventHandling.Events;
+using UnityEditor;
+using Utility.Singleton;
 
 namespace SuspicionSystem
 {
@@ -8,7 +10,7 @@ namespace SuspicionSystem
     /// Core suspicion logic: clamp, bump up/down, and fire events when crossing threshold.
     /// Keep this on a single GameObject in the scene (logical singleton by design, but not static).
     /// </summary>
-    public class SuspicionSystem : MonoBehaviour
+    public class SuspicionSystem : SingletonMonoBehavior<SuspicionSystem>
     {
         [Header("Config")]
         [Tooltip("Starting suspicion value on play.")]
@@ -87,8 +89,10 @@ namespace SuspicionSystem
 
         // --- Unity lifecycle -------------------------------------------------
 
-        private void Awake()
+        protected  override void Awake()
         {
+            base.Awake(); // important
+
             currentValue = Mathf.Clamp(startingValue, 0f, maxValue);
             isAtOrAboveThreshold = currentValue >= threshold;
         }
@@ -126,7 +130,7 @@ namespace SuspicionSystem
 
     // --- Editor helper to show readonly fields without making them public ---
 #if UNITY_EDITOR
-    using UnityEditor;
+    
     public class ReadOnlyInInspectorAttribute : PropertyAttribute { }
     [CustomPropertyDrawer(typeof(ReadOnlyInInspectorAttribute))]
     public class ReadOnlyInInspectorDrawer : PropertyDrawer
