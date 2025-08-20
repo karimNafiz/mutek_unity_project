@@ -40,7 +40,7 @@ public class DocumentSelector_ObjSelectorBase : ObjSelectorBase<DocumentSelector
     {
         if (selectedObj == null && hoveredObj != null && GameInput.Instance.IsLMBPressedThisFrame())
         {
-            if (hoveredObj.GetComponent<Document_SelectableObjBase>() != null)
+            if (hoveredObj.GetComponent<Document>() != null)
             {
                 SetSelectedObject(hoveredObj);
             }
