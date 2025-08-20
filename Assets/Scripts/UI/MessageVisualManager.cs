@@ -23,7 +23,7 @@ public class MessageVisualManager : SingletonMonoBehavior<MessageVisualManager>
     }
     public void AddMessageVisualUser(string message, string sender) 
     {
-        MessageVisual msgVisual = Instantiate(messageVisualPrefab, new Vector3(0, 0, 0), Quaternion.identity, this.transform);
+        MessageVisual msgVisual = Instantiate(messageVisualPrefab, new Vector3(0, 0, 0), this.transform.rotation, this.transform);
         msgVisual.SetSenderFieldColor(Color.blue);
         msgVisual.SetSender(sender);
         msgVisual.SetMessage(message);
@@ -32,7 +32,7 @@ public class MessageVisualManager : SingletonMonoBehavior<MessageVisualManager>
     }
     public void AddMessageVisualBot(string message, string sender) 
     {
-        MessageVisual msgVisual = Instantiate(messageVisualPrefab, new Vector3(0, 0, 0), Quaternion.identity, this.transform);
+        MessageVisual msgVisual = Instantiate(messageVisualPrefab, new Vector3(0, 0, 0), this.transform.rotation, this.transform);
         msgVisual.SetSenderFieldColor(Color.red);
         msgVisual.SetSender(sender);
         msgVisual.SetMessage(message);
