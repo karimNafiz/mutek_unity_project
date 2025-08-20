@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40303cdc1d3556f4f851d4c4a7e94c72, type: 3}
+  m_Name: SO_RackType_Grid
+  m_EditorClassIdentifier: 
+  <Description>k__BackingField: Grid Rack
+  <IconMesh>k__BackingField: {fileID: 3919190428474693317, guid: a43252e6b4af9f345b8ac8e913395eba, type: 3}
+  <ModName>k__BackingField: N/A
+  <graphicIcon>k__BackingField: {fileID: 21300000, guid: f3b3cff574e7d064db812b961404bb47, type: 3}
+  <Question>k__BackingField: Rate how much you like the <b>Grid</b> bike rack design
+  <InitialQuestion>k__BackingField: N/A
+  <normalizedTextSO>k__BackingField: {fileID: 11400000, guid: 25d9d8e60cfe09a419d32c4a8b5c1f9c, type: 2}
+  <IsOverrideFirstContactFlags>k__BackingField: 1
+  <IsOverrideShowQuestionnairePanel>k__BackingField: 0
+  <ExpectedAnswers>k__BackingField: 00000000000000

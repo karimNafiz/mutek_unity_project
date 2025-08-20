@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12eea6e9a35a5e24e844c5d3904e8220, type: 3}
+  m_Name: office
+  m_EditorClassIdentifier: 
+  usageName: Offices
+  maps:
+  - {fileID: 8900000, guid: 1305557cb17fb604b972e47a4b882fd3, type: 3}
+  - {fileID: 8900000, guid: f8ab825d80c9fe648923aa3ea4bb8846, type: 3}
+  - {fileID: 8900000, guid: 12d7da9dbab47104682ff7d5a9145fc8, type: 3}
+  - {fileID: 8900000, guid: 492e13da54de8bc459b468bb7a2dbf1d, type: 3}
+  - {fileID: 8900000, guid: 988ba7554f2703b4ba1548d3a3404161, type: 3}
+  - {fileID: 8900000, guid: 5505eff8aa9476040a88ebd264bb2039, type: 3}
+  - {fileID: 8900000, guid: 58c9dd5287368214c91da1953d1bb30f, type: 3}
+  - {fileID: 8900000, guid: 0795f63e9dffa684e87f9578757f0ee0, type: 3}
+  - {fileID: 8900000, guid: 057dd9da5c4cb5e489b5a639808a6a7b, type: 3}
+  - {fileID: 8900000, guid: a3c27779740532f49b8aab6f5671caf8, type: 3}
+  - {fileID: 8900000, guid: 18605862344f3e1428198bb1c6ba179f, type: 3}
+  - {fileID: 8900000, guid: 291c72d4bfb6a4f4894d36a36728b451, type: 3}

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2bc2cb34c0e3fa45a2a01f49ae527c6, type: 3}
+  m_Name: bldg56
+  m_EditorClassIdentifier: 
+  bldgID: bldg56
+  bldgName: Not Available
+  bldgHeight: 20
+  bldgUsage: Retail, Pharmacy, Grocery Store
+  usages:
+  - {fileID: 11400000, guid: e37a1ef5be2ac394ab693061cf7a6b42, type: 2}
+  - {fileID: 11400000, guid: 13f436ced4074c44286820d0c9eded88, type: 2}
+  - {fileID: 11400000, guid: 6ff604ca519d72f47a9d8937aeb75d98, type: 2}
+  bldgAddress: "1100 Ren\uFFFD-L\uFFFDvesque Blvd W, Montreal, QC H3B 4N4, Canada"
+  bldgArea: 6555
+  bldgYear: 1982

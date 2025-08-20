@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7f5a510db05ed479c3c5ce998de16b, type: 3}
+  m_Name: Trees_1484
+  m_EditorClassIdentifier: 
+  uniqueID: 1484
+  coordinates:
+  - lon: -73.56750999999997
+    lat: 45.496012000000064
+  INV_TYPE: R
+  place_loca: "Parterre Gazonn\xE9"
+  species_la: Quercus rubra
+  species_fr: "Ch\xEAne rouge"
+  species_en: Red Oak
+  trunk_dia: 5
+  data_src: OpenData
+  height: 8
+  treeID: tree1485
+  parentFamily: {fileID: 11400000, guid: bd7ea1b64924272459add9dffe905801, type: 2}
+  originalPosition: {x: 348.63818, y: 64.79277, z: 171.01807}
+  positionOffset: {x: 0, y: 0, z: 0}

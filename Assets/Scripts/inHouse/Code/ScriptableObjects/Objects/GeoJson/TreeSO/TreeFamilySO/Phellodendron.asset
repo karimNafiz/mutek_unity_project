@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab279584652918d44941f6f2168ed44a, type: 3}
+  m_Name: Phellodendron
+  m_EditorClassIdentifier: 
+  familyName_la: Phellodendron
+  familyName_en: 
+  subspeciesNamesCSV: Amur Cork tree
+  treesInFamily:
+  - {fileID: 11400000, guid: 3f7b5d866d9240943aff30cd0318c55f, type: 2}
+  - {fileID: 11400000, guid: 9f880b6f12db9104fb5a0e9eb5f060d7, type: 2}
+  - {fileID: 11400000, guid: c381a6183b137eb4aa48d5a846ba48b0, type: 2}
+  - {fileID: 11400000, guid: 9e92592c8aec2414699ed46f3d12df0c, type: 2}
+  - {fileID: 11400000, guid: a6873c7530617b946a23c2834c6719dd, type: 2}
+  - {fileID: 11400000, guid: 5d96c661353ff2d4a91dfe51c634f863, type: 2}
+  - {fileID: 11400000, guid: 88c88014bf0d79e4d92838af9dbcd910, type: 2}
+  - {fileID: 11400000, guid: d84f544c05046e849a2b6c6b8d35474b, type: 2}
+  - {fileID: 11400000, guid: 38ae4ccdd25091e4192f20bf2cba7bd1, type: 2}
+  - {fileID: 11400000, guid: 2c2cbf84c50b86f4f8498c055e249a27, type: 2}
+  - {fileID: 11400000, guid: f23c4eb461ab3a74dba9478f07117b05, type: 2}
+  - {fileID: 11400000, guid: 9cd4e6ab77d38984ab32c37a4d0dd83a, type: 2}
+  prefab:
+  - {fileID: 6773209392622042942, guid: b175897d2e09c774280a94549f9c2649, type: 3}

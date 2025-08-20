@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2bc2cb34c0e3fa45a2a01f49ae527c6, type: 3}
+  m_Name: bldg34
+  m_EditorClassIdentifier: 
+  bldgID: bldg34
+  bldgName: Mary Queen of the World Cathedral
+  bldgHeight: 79
+  bldgUsage: Church
+  usages:
+  - {fileID: 11400000, guid: 43e90d7a37d40f049904b4f97d29c919, type: 2}
+  bldgAddress: "1085 Rue de la Cath\uFFFDdrale, Montr\uFFFDal, QC H3B 2V3, Canada"
+  bldgArea: 7490
+  bldgYear: 1991

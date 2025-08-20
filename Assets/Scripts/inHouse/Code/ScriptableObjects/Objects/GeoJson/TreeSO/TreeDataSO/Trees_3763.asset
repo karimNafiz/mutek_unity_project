@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7f5a510db05ed479c3c5ce998de16b, type: 3}
+  m_Name: Trees_3763
+  m_EditorClassIdentifier: 
+  uniqueID: 3763
+  coordinates:
+  - lon: -73.57591926999999
+    lat: 45.494801478000056
+  INV_TYPE: 
+  place_loca: 
+  species_la: Ulmus pumila
+  species_fr: "Orme de Sib\xE9rie"
+  species_en: Siberian Elm
+  trunk_dia: 5
+  data_src: FromLiDAR
+  height: 22
+  treeID: tree3764
+  parentFamily: {fileID: 11400000, guid: 02367904d5cd1254eab2de72d7f50049, type: 2}
+  originalPosition: {x: 0, y: 0, z: 0}
+  positionOffset: {x: 0, y: 0, z: 0}

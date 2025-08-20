@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab279584652918d44941f6f2168ed44a, type: 3}
+  m_Name: Cladastris
+  m_EditorClassIdentifier: 
+  familyName_la: Cladastris
+  familyName_en: 
+  subspeciesNamesCSV: American Yellowwood, American Yellowwood
+  treesInFamily:
+  - {fileID: 11400000, guid: bf766e190f0c1b74a95515efed0dab5b, type: 2}
+  - {fileID: 11400000, guid: 5f24b7193dad5ba4e95310066136b08a, type: 2}
+  prefab:
+  - {fileID: 2985495824339387108, guid: a1062da9ea2df58409347353a1e36ced, type: 3}
+  - {fileID: 5611361815724041948, guid: c8d987a897c31ae48a25b193d5d5e3aa, type: 3}

@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab279584652918d44941f6f2168ed44a, type: 3}
+  m_Name: Fraxinus
+  m_EditorClassIdentifier: 
+  familyName_la: Fraxinus
+  familyName_en: 
+  subspeciesNamesCSV: Red Ash, Ash, White Ash, Patmore Red Ash, Kleinberg White Ash,
+    Marshall Seedless Red Ash, Northern Blaze White Ash, Summit Red Ash
+  treesInFamily:
+  - {fileID: 11400000, guid: 69b7e3a0c794951439bfcd96e3d2b3f0, type: 2}
+  - {fileID: 11400000, guid: 8da18d4eb03887745b2aec44d27a92bb, type: 2}
+  - {fileID: 11400000, guid: c1aeef3f43a36284aabb40732fa273d6, type: 2}
+  - {fileID: 11400000, guid: aabfc2fe173f21f4e9c9cec9aee473bf, type: 2}
+  - {fileID: 11400000, guid: a2193dc5023bc3749adfe52bec950b0a, type: 2}
+  - {fileID: 11400000, guid: 9d860deef0e34174497fcd5ebf9fc886, type: 2}
+  - {fileID: 11400000, guid: 7aebb7c4131c71d4396c8e219c010aa1, type: 2}
+  - {fileID: 11400000, guid: 9006feecf723b89488d01d9b220b8c72, type: 2}
+  - {fileID: 11400000, guid: a9d10dc7adacc7947b8d0992d4b96078, type: 2}
+  - {fileID: 11400000, guid: a5bfbf2910fd1dc40b6809032a736366, type: 2}
+  - {fileID: 11400000, guid: 4a9d28c684eb51546a730614a05ecc62, type: 2}
+  - {fileID: 11400000, guid: 3da4b498c723fc84888794a6ffe97ba4, type: 2}
+  - {fileID: 11400000, guid: 898a9abad8e1d19458ad581bceeff7ea, type: 2}
+  - {fileID: 11400000, guid: f1afde2f400b5554eb66c8f068daa4a0, type: 2}
+  - {fileID: 11400000, guid: 626fc0ed803e0ef4d9c4e9b83deeff3d, type: 2}
+  - {fileID: 11400000, guid: d2b4bca0574169c419115501152d90cc, type: 2}
+  - {fileID: 11400000, guid: 570a53d8a73e39841835da05c98b857e, type: 2}
+  - {fileID: 11400000, guid: b5f7837c34a16644e86948c96ee37db6, type: 2}
+  - {fileID: 11400000, guid: a46ec6bcde46b3c4fa9809753a5206cd, type: 2}
+  - {fileID: 11400000, guid: d9812a119507a564a84c6ab77f3336e0, type: 2}
+  - {fileID: 11400000, guid: d92c01fd259add349814cdad117f1439, type: 2}
+  - {fileID: 11400000, guid: cc85bcfa627a2f7428f13abd199dce47, type: 2}
+  - {fileID: 11400000, guid: d146a9271a4844f478dce9ec6db1aec3, type: 2}
+  - {fileID: 11400000, guid: ddd6757889e89d341ab11b5838d36ed1, type: 2}
+  - {fileID: 11400000, guid: 5484f84841bcd1749bccf2bb10ba5074, type: 2}
+  - {fileID: 11400000, guid: 94336ff7bf76e1c47aac2496b0ba33d3, type: 2}
+  - {fileID: 11400000, guid: 7aa369e65d5d5cd4198b87558468a3f2, type: 2}
+  - {fileID: 11400000, guid: af66de3153e7a6445932e785ac2a7be6, type: 2}
+  - {fileID: 11400000, guid: 472d3c2b000791a4e8d5c073250f461c, type: 2}
+  - {fileID: 11400000, guid: 13b41fcda7196e440887791777f2ad27, type: 2}
+  - {fileID: 11400000, guid: be7fed2fc5ef16349bd4ccd52af2394c, type: 2}
+  - {fileID: 11400000, guid: 2e465d64b334fa24a96081ffd8566add, type: 2}
+  - {fileID: 11400000, guid: 0921103d211ab3f41a1176e2ebb24f44, type: 2}
+  - {fileID: 11400000, guid: d110b0c3683d1ec46baa312da62c20d5, type: 2}
+  - {fileID: 11400000, guid: 14e01434774ceec448929e0e19ce71c7, type: 2}
+  - {fileID: 11400000, guid: 09f5ec21434e5a14bbbe274f50865d05, type: 2}
+  - {fileID: 11400000, guid: 86e50d7f639eba441a68fba8bc2e58ca, type: 2}
+  - {fileID: 11400000, guid: a57965d77e9bbb147a56c33b7f871e33, type: 2}
+  - {fileID: 11400000, guid: fced5273c49546f48bd5f3873ad58d9b, type: 2}
+  - {fileID: 11400000, guid: f108e7d6301e4cc48ab776aad0f544c2, type: 2}
+  - {fileID: 11400000, guid: ba7b69228f32e5a408306cb841899416, type: 2}
+  - {fileID: 11400000, guid: 188528b5e3105d445a7da0996ad08351, type: 2}
+  - {fileID: 11400000, guid: 183f3bd10854c9645bfa79d662f8dce9, type: 2}
+  - {fileID: 11400000, guid: 60126904211d5bd4aa3353278a1b3728, type: 2}
+  - {fileID: 11400000, guid: 26d9c209ba87eb1489f955dd475ce85f, type: 2}
+  - {fileID: 11400000, guid: f338278f6851f9f409060a49fca88147, type: 2}
+  - {fileID: 11400000, guid: da20e8ed3d98b114a83edc13516356f6, type: 2}
+  - {fileID: 11400000, guid: 0881d4f38bfc83342a40a3d7d4bb3405, type: 2}
+  - {fileID: 11400000, guid: f574397b49fc24b4182f0de11634e225, type: 2}
+  - {fileID: 11400000, guid: 0ea76b9e464939242a4623be9768f64f, type: 2}
+  - {fileID: 11400000, guid: 9f395c47b63e1d240bac038882d42f20, type: 2}
+  - {fileID: 11400000, guid: 5a3fe81a45cef2443b2828fd553fcada, type: 2}
+  prefab:
+  - {fileID: 6773209392622042942, guid: b175897d2e09c774280a94549f9c2649, type: 3}

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7f5a510db05ed479c3c5ce998de16b, type: 3}
+  m_Name: Trees_4254
+  m_EditorClassIdentifier: 
+  uniqueID: 4254
+  coordinates:
+  - lon: -73.56279468299994
+    lat: 45.49805744100007
+  INV_TYPE: 
+  place_loca: 
+  species_la: Ulmus x hollandica 'Pioneer'
+  species_fr: Orme Pioneer
+  species_en: Pioneer Elm
+  trunk_dia: 20
+  data_src: FromLiDAR
+  height: 13
+  treeID: tree4255
+  parentFamily: {fileID: 11400000, guid: 02367904d5cd1254eab2de72d7f50049, type: 2}
+  originalPosition: {x: 717.19666, y: 62.023132, z: 398.35132}
+  positionOffset: {x: 0, y: 0, z: 0}

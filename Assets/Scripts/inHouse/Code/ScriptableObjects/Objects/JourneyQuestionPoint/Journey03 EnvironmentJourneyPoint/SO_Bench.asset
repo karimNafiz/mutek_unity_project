@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40303cdc1d3556f4f851d4c4a7e94c72, type: 3}
+  m_Name: SO_Bench
+  m_EditorClassIdentifier: 
+  <Description>k__BackingField: Seating
+  <IconMesh>k__BackingField: {fileID: 1030502986543492687, guid: ff5d9753fd00df7459f1c2aafa31bb1f, type: 3}
+  <ModName>k__BackingField: Seating
+  <graphicIcon>k__BackingField: {fileID: 1699070962, guid: 069a00c4a21d8654bbe27600f3ba7103, type: 3}
+  <Question>k__BackingField: How does seating affect the atmosphere?
+  <InitialQuestion>k__BackingField: Let's add somewhere to sit!
+  <normalizedTextSO>k__BackingField: {fileID: 11400000, guid: f59152c999eb36942a8cd42323dd723b, type: 2}
+  <IsOverrideFirstContactFlags>k__BackingField: 0
+  <IsOverrideShowQuestionnairePanel>k__BackingField: 1
+  <ExpectedAnswers>k__BackingField: 00000000010101

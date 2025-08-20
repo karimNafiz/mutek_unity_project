@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab279584652918d44941f6f2168ed44a, type: 3}
+  m_Name: Ostrya
+  m_EditorClassIdentifier: 
+  familyName_la: Ostrya
+  familyName_en: 
+  subspeciesNamesCSV: American HopHornbeam Ironwood, Ostryer de Virginie
+  treesInFamily:
+  - {fileID: 11400000, guid: 62351962fd3c98847ad16f411a775b24, type: 2}
+  - {fileID: 11400000, guid: 7ed571e003449e04899ad851eefd1d8f, type: 2}
+  - {fileID: 11400000, guid: 427eac72b815f4e4abd30a9c12c966d0, type: 2}
+  - {fileID: 11400000, guid: 02b5e246dd705104e9ea8df5233e7af9, type: 2}
+  - {fileID: 11400000, guid: 9c735c64d3caa324381d926f25f8090a, type: 2}
+  - {fileID: 11400000, guid: 490cef8091c7cc8469671b49abf42d2d, type: 2}
+  - {fileID: 11400000, guid: 4424d3d9dcc507a49abbdfd353fd44ab, type: 2}
+  - {fileID: 11400000, guid: 1bc003ff4ed63f0489b4c47fcbaf28e1, type: 2}
+  - {fileID: 11400000, guid: a0bb8d6069a7a8d498e7447bcecb8590, type: 2}
+  - {fileID: 11400000, guid: 17f8063fadaf52f4698a971c0d62e478, type: 2}
+  - {fileID: 11400000, guid: e5e49c4a083f5a247956797ef1ae0b8a, type: 2}
+  - {fileID: 11400000, guid: d0d61a04df6b85d4a806407563e33034, type: 2}
+  - {fileID: 11400000, guid: a2e5f6f6885b1584883190a0fb4e0839, type: 2}
+  - {fileID: 11400000, guid: e7ed8c56527a04941b5c758d44cdd775, type: 2}
+  - {fileID: 11400000, guid: f8d265851d1eb604ab26f52cdf277160, type: 2}
+  prefab:
+  - {fileID: 2985495824339387108, guid: a1062da9ea2df58409347353a1e36ced, type: 3}

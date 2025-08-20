@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2bc2cb34c0e3fa45a2a01f49ae527c6, type: 3}
+  m_Name: bldg59
+  m_EditorClassIdentifier: 
+  bldgID: bldg59
+  bldgName: Not Available
+  bldgHeight: 12
+  bldgUsage: Residential
+  usages:
+  - {fileID: 11400000, guid: 2230f4854853c15478c5364f6c599f38, type: 2}
+  bldgAddress: "1047 Rue da la Montagne, Montr\uFFFDal, QC H3C 0E9, Canada"
+  bldgArea: 1217
+  bldgYear: 2016

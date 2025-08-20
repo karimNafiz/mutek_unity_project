@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7f5a510db05ed479c3c5ce998de16b, type: 3}
+  m_Name: Trees_4284
+  m_EditorClassIdentifier: 
+  uniqueID: 4284
+  coordinates:
+  - lon: -73.56785260299995
+    lat: 45.499423480000075
+  INV_TYPE: 
+  place_loca: 
+  species_la: Ulmus
+  species_fr: Orme
+  species_en: Elm
+  trunk_dia: 17
+  data_src: FromLiDAR
+  height: 24
+  treeID: tree4285
+  parentFamily: {fileID: 11400000, guid: 02367904d5cd1254eab2de72d7f50049, type: 2}
+  originalPosition: {x: 321.8706, y: 77.786194, z: 550.1748}
+  positionOffset: {x: 0, y: 0, z: 0}

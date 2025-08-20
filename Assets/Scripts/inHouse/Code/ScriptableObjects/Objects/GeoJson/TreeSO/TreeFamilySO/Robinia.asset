@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab279584652918d44941f6f2168ed44a, type: 3}
+  m_Name: Robinia
+  m_EditorClassIdentifier: 
+  familyName_la: Robinia
+  familyName_en: 
+  subspeciesNamesCSV: Black Locust
+  treesInFamily:
+  - {fileID: 11400000, guid: 6ff49f1af1d737f4ca333dcd93d859c1, type: 2}
+  - {fileID: 11400000, guid: 9fc0934cc866dfc42bab8fadb6524517, type: 2}
+  - {fileID: 11400000, guid: c364bbc296f06514a959079c73010400, type: 2}
+  - {fileID: 11400000, guid: 069d38b2fe0df464fbf309eeaebf23d1, type: 2}
+  - {fileID: 11400000, guid: 9380fcbf2495b2e4f8acb2d26ca07e80, type: 2}
+  - {fileID: 11400000, guid: 25009761e2aff734eb5da2e94dab0850, type: 2}
+  - {fileID: 11400000, guid: 6ac8fd8a66ca47e40a5e0bba63b8846b, type: 2}
+  - {fileID: 11400000, guid: 3f05ba0fd5dd6a047a9f047e3d1c244c, type: 2}
+  - {fileID: 11400000, guid: d1d79219a8dd783458118b35181fd49f, type: 2}
+  - {fileID: 11400000, guid: a6a0d64f08280a6419451bc809dea7cc, type: 2}
+  - {fileID: 11400000, guid: 02b2a386e178d0d4ea8c7a9e37144761, type: 2}
+  - {fileID: 11400000, guid: 887af1db4861bc9499964a474a7c13bf, type: 2}
+  - {fileID: 11400000, guid: 3bc75fd709669f847b34d9be388809b5, type: 2}
+  - {fileID: 11400000, guid: 92e303c975092b543920e1e342d1ad70, type: 2}
+  - {fileID: 11400000, guid: 689e960e85d55194c9ba9576273b95c4, type: 2}
+  - {fileID: 11400000, guid: 1cba11c451706da448bbbce765592d96, type: 2}
+  - {fileID: 11400000, guid: f5a8016224fedff448f0b3d109553284, type: 2}
+  - {fileID: 11400000, guid: 0ae618d8ea79a9d4c9c83a6b2a2ae565, type: 2}
+  - {fileID: 11400000, guid: 33105238db725584fa5ad96ba0e76a1f, type: 2}
+  - {fileID: 11400000, guid: 7f4350329f5fa03478001d97f161e4c3, type: 2}
+  - {fileID: 11400000, guid: 83ba579f7fbd09b47bdf3cce589be18c, type: 2}
+  - {fileID: 11400000, guid: 5c5cc774d8319b6498291cedc87d1764, type: 2}
+  - {fileID: 11400000, guid: 0d6f5bf8f4c97c843af8899e5b44cab8, type: 2}
+  - {fileID: 11400000, guid: 562dd0259b70d9645925e3d93e371d9b, type: 2}
+  - {fileID: 11400000, guid: 1dc42dddf981a8445b20e44550b1444e, type: 2}
+  - {fileID: 11400000, guid: bc48bb597740ee041b453bf8bbb04d7f, type: 2}
+  - {fileID: 11400000, guid: 74ed4d085a11e7541b89c5f6631f5ea4, type: 2}
+  - {fileID: 11400000, guid: 7b3c93e231e55d24f9393f29e784a8b7, type: 2}
+  - {fileID: 11400000, guid: 6430e6b0d335b894b8942b82bb846315, type: 2}
+  - {fileID: 11400000, guid: 914908a0cbf25f6478edad2595fe27c0, type: 2}
+  - {fileID: 11400000, guid: a181abcd37ef14e4fb8f37a7678be7d7, type: 2}
+  - {fileID: 11400000, guid: 9f789f1ca1cb11c4f83a06c2aadfdf7c, type: 2}
+  - {fileID: 11400000, guid: 6f1645cbc05a6654abca5677b10c4004, type: 2}
+  - {fileID: 11400000, guid: ef8228325f12a26498790bb4625a086f, type: 2}
+  - {fileID: 11400000, guid: e2ca01da654fb934b8ab16db953a2b2a, type: 2}
+  - {fileID: 11400000, guid: f763ed7518d87fa43b2b806ba0eee728, type: 2}
+  - {fileID: 11400000, guid: d5cb7f272e79f2045835cd38ba161902, type: 2}
+  - {fileID: 11400000, guid: 386dcd7fed6ff8f48a7958492584cd04, type: 2}
+  - {fileID: 11400000, guid: 495320437f2c6e2458c1638912be4334, type: 2}
+  prefab:
+  - {fileID: 6423587854889710822, guid: 3d781f919eb85a3409006ff94407d0a4, type: 3}
+  - {fileID: 7733364804039803976, guid: bcf248bb8a62726439cd6b74e9f8afcb, type: 3}
+  - {fileID: 1113212750830880424, guid: 3a8dbf4ea8ede054684a12fe5ffa1b52, type: 3}
+  - {fileID: 6647774662596550557, guid: eada3b27a9e03a040ae1d6080f390149, type: 3}
+  - {fileID: 2751897326888341889, guid: d4cbd2b566079fa4fb8b50ec62a908a2, type: 3}
+  - {fileID: 8221876165972354899, guid: 8ddd2f044c59a294cb7672aaea2e1727, type: 3}
+  - {fileID: 1711812228745148666, guid: c03ac8916eeb39247b136803cf09b3c3, type: 3}

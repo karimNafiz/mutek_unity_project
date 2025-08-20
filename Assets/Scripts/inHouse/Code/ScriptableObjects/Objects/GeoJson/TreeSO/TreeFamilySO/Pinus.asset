@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab279584652918d44941f6f2168ed44a, type: 3}
+  m_Name: Pinus
+  m_EditorClassIdentifier: 
+  familyName_la: Pinus
+  familyName_en: 
+  subspeciesNamesCSV: Austrian Pine, Scots Pine
+  treesInFamily:
+  - {fileID: 11400000, guid: 8114721cd496c7f45a9bb4f527987aff, type: 2}
+  - {fileID: 11400000, guid: 19995b77eee924e4f98a2dc730f1af1a, type: 2}
+  - {fileID: 11400000, guid: b8622aa578825ef4ea2fefbcbd38528f, type: 2}
+  - {fileID: 11400000, guid: d627684a1358d544790657a8f2bd6284, type: 2}
+  - {fileID: 11400000, guid: 561ad79c06993bc489e1bb1c31d6aea8, type: 2}
+  - {fileID: 11400000, guid: ae9c20a3600f3db4d84b9b999e268405, type: 2}
+  - {fileID: 11400000, guid: 4f601da573727cb4b91acb56116ccb7b, type: 2}
+  - {fileID: 11400000, guid: e005b902cc3a51144b447300b9736208, type: 2}
+  - {fileID: 11400000, guid: 7a5f1e669bf1add478befc95b5735705, type: 2}
+  - {fileID: 11400000, guid: 796449beb74dc2540a1d09521929a3f5, type: 2}
+  - {fileID: 11400000, guid: 5376a071615bb3448b6da70a8f3f954f, type: 2}
+  - {fileID: 11400000, guid: 09de05422b073af43ad26dd99f074f25, type: 2}
+  - {fileID: 11400000, guid: 6eefc2cc3ca3ee14486f698c20876b14, type: 2}
+  - {fileID: 11400000, guid: 96c3e12c7e81b1f4783f1b9ca8f0a87f, type: 2}
+  - {fileID: 11400000, guid: c483308faa722114f8ca91ac2100bcf9, type: 2}
+  - {fileID: 11400000, guid: 7c7529ac173043f4fb6020ef2ce6078a, type: 2}
+  - {fileID: 11400000, guid: 4a1d7013c6d6da74e99992df0ab5a8ed, type: 2}
+  - {fileID: 11400000, guid: aa211bce18eb51145909a2d348c016c3, type: 2}
+  - {fileID: 11400000, guid: ca62887d40b580e448ca8a5c87a1683c, type: 2}
+  - {fileID: 11400000, guid: 913b95a7abe4efd4a8ebbbe50a3553d2, type: 2}
+  - {fileID: 11400000, guid: 6a7151bcd10ac2246a42e7a752853c2a, type: 2}
+  - {fileID: 11400000, guid: 78ea9766429a4034f82a9b822dcdc780, type: 2}
+  - {fileID: 11400000, guid: c3ffd6a1ce700144cadbcc717323d0e6, type: 2}
+  - {fileID: 11400000, guid: 83c03eb3e2edcf14a813e1be5378b4bc, type: 2}
+  - {fileID: 11400000, guid: 46ff43d59a5bbc54d9c4fbe615239f18, type: 2}
+  - {fileID: 11400000, guid: ba24bf11be5e55646aaf9d0743f38ea9, type: 2}
+  - {fileID: 11400000, guid: 1a3beebdb9930c647a48c1fcb95888c6, type: 2}
+  - {fileID: 11400000, guid: 79feb3eef2e1b0e44931b3b962553c4a, type: 2}
+  - {fileID: 11400000, guid: 6f2a240a5b25c4449a8a80c9c58faca6, type: 2}
+  - {fileID: 11400000, guid: 2daa18d3333a05646b5eddbfa55d59ff, type: 2}
+  - {fileID: 11400000, guid: aaa5402992dcbc647bc3f4d6c1b152ed, type: 2}
+  - {fileID: 11400000, guid: 35d0c425f7de83f41a180a48e00a4860, type: 2}
+  - {fileID: 11400000, guid: 8197c67a52987614ab91a32cdc6e219e, type: 2}
+  - {fileID: 11400000, guid: 48418c5204565d040b80228bf21ae936, type: 2}
+  - {fileID: 11400000, guid: 6bfbd65090d399b438257b85ed23cf33, type: 2}
+  - {fileID: 11400000, guid: 140eb021bd599fb4e8f0a3d788355ffc, type: 2}
+  - {fileID: 11400000, guid: 3c76815c8e9530c4ebd4702c90b0d873, type: 2}
+  - {fileID: 11400000, guid: 5db1e7304735861478d37713c8a19a72, type: 2}
+  prefab:
+  - {fileID: 4921672397796337747, guid: b7efc82d030027c4abe65133743730cc, type: 3}

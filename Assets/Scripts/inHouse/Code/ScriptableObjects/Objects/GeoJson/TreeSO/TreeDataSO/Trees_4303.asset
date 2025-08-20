@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7f5a510db05ed479c3c5ce998de16b, type: 3}
+  m_Name: Trees_4303
+  m_EditorClassIdentifier: 
+  uniqueID: 4303
+  coordinates:
+  - lon: -73.57067617899997
+    lat: 45.50185484100007
+  INV_TYPE: 
+  place_loca: 
+  species_la: Malus
+  species_fr: Pommier
+  species_en: Crab Apple
+  trunk_dia: 14
+  data_src: FromLiDAR
+  height: 5
+  treeID: tree4304
+  parentFamily: {fileID: 11400000, guid: 838cbcd44760c1c47a789c1af8da2daa, type: 2}
+  originalPosition: {x: 101.20093, y: 88.41024, z: 820.40015}
+  positionOffset: {x: 0, y: 0, z: 0}

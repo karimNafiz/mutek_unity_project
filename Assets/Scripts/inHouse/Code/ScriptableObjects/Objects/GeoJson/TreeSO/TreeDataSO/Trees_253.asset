@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7f5a510db05ed479c3c5ce998de16b, type: 3}
+  m_Name: Trees_253
+  m_EditorClassIdentifier: 
+  uniqueID: 253
+  coordinates:
+  - lon: -73.56840899999997
+    lat: 45.49420500000008
+  INV_TYPE: H
+  place_loca: "Parterre Gazonn\xE9"
+  species_la: Pinus sylvestris
+  species_fr: Pin sylvestre
+  species_en: Scots Pine
+  trunk_dia: 5
+  data_src: OpenData
+  height: 15
+  treeID: tree254
+  parentFamily: {fileID: 11400000, guid: 72d05f6bf55cfe644aaec26f80cc17cf, type: 2}
+  originalPosition: {x: -233.6383, y: -1.87365, z: -541.8143}
+  positionOffset: {x: 0, y: 0, z: 0}

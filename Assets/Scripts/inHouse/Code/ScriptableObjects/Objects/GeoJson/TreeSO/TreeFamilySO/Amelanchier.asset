@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab279584652918d44941f6f2168ed44a, type: 3}
+  m_Name: Amelanchier
+  m_EditorClassIdentifier: 
+  familyName_la: Amelanchier
+  familyName_en: 
+  subspeciesNamesCSV: Amelanchier laevis, Serviceberry, Downy Serviceberry
+  treesInFamily:
+  - {fileID: 11400000, guid: 7265877657c9a4f4f8002db739c80259, type: 2}
+  - {fileID: 11400000, guid: 8e97b648bc57ef54b8c25b5b87f0e705, type: 2}
+  - {fileID: 11400000, guid: de36a6716ec86074a9a706b822d9a1bf, type: 2}
+  - {fileID: 11400000, guid: ef7a9fa7cde8a1b45b62fb9cc64563d5, type: 2}
+  - {fileID: 11400000, guid: c5425183682ab2e429d0021622abea02, type: 2}
+  - {fileID: 11400000, guid: 9069224e8b4f8bb47b478af7ebc29764, type: 2}
+  - {fileID: 11400000, guid: 70898ba9fc045824f901d7d39baf6763, type: 2}
+  - {fileID: 11400000, guid: b1f9bb7324f739649b5cfab0242be500, type: 2}
+  - {fileID: 11400000, guid: 6af52c679e18d894b92e89eb56245bf0, type: 2}
+  - {fileID: 11400000, guid: 77d5ae02166ac6b43bcb2617a6abbcb6, type: 2}
+  - {fileID: 11400000, guid: d9802d6b2ac74494dbc1c76824c5a56a, type: 2}
+  - {fileID: 11400000, guid: 3b226a49236a4e14f9d169ecc5190617, type: 2}
+  - {fileID: 11400000, guid: f4a83bbefd3a34a4f95c8c898a7fa657, type: 2}
+  - {fileID: 11400000, guid: 302716ce8a8fc2f47826a6403630d541, type: 2}
+  - {fileID: 11400000, guid: 2ea519bd9f5a5524094e72f146c118d4, type: 2}
+  - {fileID: 11400000, guid: 3f9032fb4d3d7664d8d4426b023f106b, type: 2}
+  - {fileID: 11400000, guid: 70d39ac7fbdfa9d47a93add7543e4106, type: 2}
+  - {fileID: 11400000, guid: 58edaa640ddc08e45a1000e8e069c0e3, type: 2}
+  - {fileID: 11400000, guid: 57c4d9c5dce67e84fa69a44a03910ab8, type: 2}
+  - {fileID: 11400000, guid: d5a5950c8cb935e41a1f5b6d5089d585, type: 2}
+  - {fileID: 11400000, guid: 3539c02e13197044eb80d248238c3ca1, type: 2}
+  - {fileID: 11400000, guid: 95cd23211b436404093083abc6b79181, type: 2}
+  - {fileID: 11400000, guid: ae4adca76012db44d88bdf17c5b4dd2b, type: 2}
+  - {fileID: 11400000, guid: e5b74f655d06af3478ff00ea3dc425d5, type: 2}
+  - {fileID: 11400000, guid: f32e6f8f4967b184e983393876866098, type: 2}
+  - {fileID: 11400000, guid: e6e41e611b09fdb46ae13864515e6814, type: 2}
+  - {fileID: 11400000, guid: 11ea2c1bdc4542849b81f138be8f3785, type: 2}
+  - {fileID: 11400000, guid: edfe23ff6ac5cb34bbbce5351b010a19, type: 2}
+  - {fileID: 11400000, guid: 52ee880b5d709ca4490cb819f6458de2, type: 2}
+  - {fileID: 11400000, guid: 3973ecbc2f5ae9144b0a06fa3cb2f203, type: 2}
+  - {fileID: 11400000, guid: 6a3335cb163913b449462c5eb257430a, type: 2}
+  - {fileID: 11400000, guid: 318c3efb6729f394e8bc653e7fba8b22, type: 2}
+  prefab:
+  - {fileID: 6121209762352956878, guid: e16135a6acc152648a6f8572526041b6, type: 3}

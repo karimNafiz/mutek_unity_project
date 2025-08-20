@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7f5a510db05ed479c3c5ce998de16b, type: 3}
+  m_Name: Trees_2520
+  m_EditorClassIdentifier: 
+  uniqueID: 2520
+  coordinates:
+  - lon: -73.57144499999998
+    lat: 45.50157100000007
+  INV_TYPE: R
+  place_loca: TRottoir
+  species_la: Gymnocladus dioicus
+  species_fr: Chicot du Canada
+  species_en: Kentucky Coffee Tree
+  trunk_dia: 5
+  data_src: OpenData
+  height: 5
+  treeID: tree2521
+  parentFamily: {fileID: 11400000, guid: 05ae1fab941d0af40ae713fcb2f83b10, type: 2}
+  originalPosition: {x: 41.11084, y: 87.83953, z: 788.85364}
+  positionOffset: {x: 0, y: 0, z: 0}

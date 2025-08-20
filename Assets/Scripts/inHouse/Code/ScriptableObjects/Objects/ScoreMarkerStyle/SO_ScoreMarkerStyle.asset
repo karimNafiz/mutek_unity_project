@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71095af497572424eb6029e60176baeb, type: 3}
+  m_Name: SO_ScoreMarkerStyle
+  m_EditorClassIdentifier: 
+  leftNormal: {fileID: 21300000, guid: 494c98cb6b5a7154b8c79bd91346cb6f, type: 3}
+  leftSelected: {fileID: 21300000, guid: 8055eb14f8ea5c5469e127d581a780ec, type: 3}
+  centerNormal: {fileID: 21300000, guid: a3028e99c76f5274bb7af6d25439fe02, type: 3}
+  centerSelected: {fileID: 21300000, guid: 1e6227032f7886e41a037c3e43b83c9c, type: 3}
+  rightNormal: {fileID: 21300000, guid: f66abc6f8dc3fbb479d707fc365c0a66, type: 3}
+  rightSelected: {fileID: 21300000, guid: 067dc5457e99e9445a36aacf1fe9a197, type: 3}

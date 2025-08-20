@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab279584652918d44941f6f2168ed44a, type: 3}
+  m_Name: Carpinus
+  m_EditorClassIdentifier: 
+  familyName_la: Carpinus
+  familyName_en: 
+  subspeciesNamesCSV: Bluebeech
+  treesInFamily:
+  - {fileID: 11400000, guid: 11d8aa10ce84ca0448124274e7cdbde6, type: 2}
+  - {fileID: 11400000, guid: 509cf27a4ef9d2e46aaf71c6de58aef3, type: 2}
+  - {fileID: 11400000, guid: 47c6dfe1ff2979e4bb606d0d83f03601, type: 2}
+  - {fileID: 11400000, guid: d925e4c847460ee4f971fb6235969472, type: 2}
+  - {fileID: 11400000, guid: 6740844d1fbf16c4a8ca1630f030b5a3, type: 2}
+  - {fileID: 11400000, guid: c008aabda177b0b478c7ed792cef6411, type: 2}
+  - {fileID: 11400000, guid: 0d81f4cdab555564b901fd0b02bf59a7, type: 2}
+  - {fileID: 11400000, guid: 6cb0994b482d98f4184cb6b3be0a5c29, type: 2}
+  - {fileID: 11400000, guid: f3f5d0b96a49ce14db8bbb91ac620f90, type: 2}
+  prefab:
+  - {fileID: 2585441931857979160, guid: 44e818a454bfa1744ab7a122f949b4ce, type: 3}

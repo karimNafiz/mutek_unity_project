@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02a62dc5f197f904196738d39c81d58a, type: 3}
+  m_Name: SittingPeoplePrefabCollection
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 731283054025208158, guid: e6779b22975813541a8ec02b9090e657, type: 3}
+  - {fileID: 5072151589709955988, guid: 2a426c27c9afd3e4099af77c71efdd64, type: 3}
+  - {fileID: 4220517068054241253, guid: c2216845ee4951c48a4011b63513c3dc, type: 3}
+  - {fileID: 4751781492746652000, guid: 87f5369b72b607f4e90449a550f0a5a8, type: 3}
+  - {fileID: 4683533512281599001, guid: 79b8b385c86d7264083d7a0faed5a708, type: 3}

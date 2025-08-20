@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab279584652918d44941f6f2168ed44a, type: 3}
+  m_Name: Catalpa
+  m_EditorClassIdentifier: 
+  familyName_la: Catalpa
+  familyName_en: 
+  subspeciesNamesCSV: Western Catalpa
+  treesInFamily:
+  - {fileID: 11400000, guid: cbea53578c4a8e940aa7e4cffa543583, type: 2}
+  prefab:
+  - {fileID: 4440008304630290461, guid: 4c03876f5d5306c4b9882e4d2154de39, type: 3}

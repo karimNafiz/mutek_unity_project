@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40303cdc1d3556f4f851d4c4a7e94c72, type: 3}
+  m_Name: SO_RepairStation
+  m_EditorClassIdentifier: 
+  <Description>k__BackingField: Bike Repair Station
+  <IconMesh>k__BackingField: {fileID: 3919190428474693317, guid: a43252e6b4af9f345b8ac8e913395eba, type: 3}
+  <ModName>k__BackingField: Repair Station
+  <graphicIcon>k__BackingField: {fileID: 21300000, guid: 49b77071bf2c38041bbc93c8cdd7284e, type: 3}
+  <Question>k__BackingField: How <b>important</b> is it for you to have a <b>bike
+    repair station</b> here?
+  <InitialQuestion>k__BackingField: Maybe a bike repair station would be useful?
+  <normalizedTextSO>k__BackingField: {fileID: 11400000, guid: 37b259c76affacd48a91cf0a2cc81eb8, type: 2}
+  <ExpectedAnswers>k__BackingField: 00000000000000

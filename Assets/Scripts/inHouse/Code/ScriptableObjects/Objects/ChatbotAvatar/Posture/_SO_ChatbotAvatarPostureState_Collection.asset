@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e8a18b655196f242967ac58db3df26f, type: 3}
+  m_Name: _SO_ChatbotAvatarPostureState_Collection
+  m_EditorClassIdentifier: 
+  postureStates:
+  - {fileID: 11400000, guid: a73a75a2923391d44b491694a11e8039, type: 2}
+  - {fileID: 11400000, guid: c80df4a295e1f414f9249942c1c3c4c8, type: 2}
+  - {fileID: 11400000, guid: 7904f379d6401d14b879d53bdb32e8ec, type: 2}
+  - {fileID: 11400000, guid: 71178db86906de4409359618ba3f8c51, type: 2}
+  - {fileID: 11400000, guid: 80a2448b9c78648498561b186b214e69, type: 2}
+  - {fileID: 11400000, guid: 9b4195c737c249b4f9caf6bc7ffd0024, type: 2}

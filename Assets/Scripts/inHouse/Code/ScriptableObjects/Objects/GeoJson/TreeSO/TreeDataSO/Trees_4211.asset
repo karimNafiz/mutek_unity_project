@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7f5a510db05ed479c3c5ce998de16b, type: 3}
+  m_Name: Trees_4211
+  m_EditorClassIdentifier: 
+  uniqueID: 4211
+  coordinates:
+  - lon: -73.56353224499998
+    lat: 45.49662591900005
+  INV_TYPE: 
+  place_loca: 
+  species_la: Quercus macrocarpa
+  species_fr: "Ch\xEAne \xE0 gros fruits"
+  species_en: Bur Oak
+  trunk_dia: 5
+  data_src: FromLiDAR
+  height: 21
+  treeID: tree4212
+  parentFamily: {fileID: 11400000, guid: bd7ea1b64924272459add9dffe905801, type: 2}
+  originalPosition: {x: 659.552, y: 62.023132, z: 239.25}
+  positionOffset: {x: 0, y: 0, z: 0}

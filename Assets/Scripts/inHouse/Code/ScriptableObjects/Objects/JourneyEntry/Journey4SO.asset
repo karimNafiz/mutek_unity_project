@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a51a92499b21de408b81f0b65ffe38c, type: 3}
+  m_Name: Journey4SO
+  m_EditorClassIdentifier: 
+  journeyPrefab: {fileID: 8662208883570620883, guid: cadf66200a0374a489bb17292c450e5f, type: 3}
+  journeyStartWeatherConfigs: {fileID: 11400000, guid: ce3dea601b0998441a6cd8c4ac8d6b08, type: 2}
+  trafficPedConfigs: {fileID: 11400000, guid: 4a6d682ca150a14469fb30d71cefbee8, type: 2}
+  journeyFocus: Metro station convenience

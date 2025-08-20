@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12eea6e9a35a5e24e844c5d3904e8220, type: 3}
+  m_Name: bank
+  m_EditorClassIdentifier: 
+  usageName: Bank
+  maps:
+  - {fileID: 8900000, guid: 0795f63e9dffa684e87f9578757f0ee0, type: 3}
+  - {fileID: 8900000, guid: 057dd9da5c4cb5e489b5a639808a6a7b, type: 3}
+  - {fileID: 8900000, guid: a3c27779740532f49b8aab6f5671caf8, type: 3}
+  - {fileID: 8900000, guid: 18605862344f3e1428198bb1c6ba179f, type: 3}
+  - {fileID: 8900000, guid: 291c72d4bfb6a4f4894d36a36728b451, type: 3}
+  - {fileID: 8900000, guid: 8283241560e12974da84f0ddcfe25ea2, type: 3}
+  - {fileID: 8900000, guid: 39f03dc1a9f507049b7f01bf61304106, type: 3}
+  - {fileID: 8900000, guid: 75d97405a5336b945ae87a9e1134d5a4, type: 3}
+  - {fileID: 8900000, guid: ee04feb6f7c80db4ba9db069f3c6c27d, type: 3}

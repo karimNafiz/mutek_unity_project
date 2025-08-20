@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 476fc26df12a6a4429e283b92d732d36, type: 3}
+  m_Name: SO_JourneyPreview_Joruney1
+  m_EditorClassIdentifier: 
+  <Title>k__BackingField: Night Bus Journey
+  <Thumbnail>k__BackingField: {fileID: 21300000, guid: da14ee8f2bff3bc49880ec3925aed455, type: 3}
+  <Description>k__BackingField: You arrive at the terminal on foot, from Rue Saint-Jacques.
+    Go get your bus.
+  <BulletPoints>k__BackingField:
+  - icon: {fileID: 21300000, guid: daf68c99e2f99e145b3f7f43f6ffd6da, type: 3}
+    text: Bus stop
+  - icon: {fileID: 21300000, guid: 2d9693252876364499e5fc1699a34675, type: 3}
+    text: 11:55 PM
+  - icon: {fileID: 21300000, guid: 92490cecaad9c6e47a2ffdcc5318923b, type: 3}
+    text: Clear Night

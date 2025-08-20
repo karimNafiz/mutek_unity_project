@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2bc2cb34c0e3fa45a2a01f49ae527c6, type: 3}
+  m_Name: bldg5
+  m_EditorClassIdentifier: 
+  bldgID: bldg5
+  bldgName: Les Terrasses Windsor
+  bldgHeight: 44
+  bldgUsage: Residential, Post-Office, Restuarant, Pharmacy
+  usages:
+  - {fileID: 11400000, guid: 2230f4854853c15478c5364f6c599f38, type: 2}
+  - {fileID: 11400000, guid: 46628a3e1b53a5742ae5792b996148ba, type: 2}
+  - {fileID: 11400000, guid: de251e4bd8dc5094abb127a63cf588fc, type: 2}
+  - {fileID: 11400000, guid: 13f436ced4074c44286820d0c9eded88, type: 2}
+  bldgAddress: 1225 Notre-Dame St W, Montreal, Quebec H3C 0B1, Canada
+  bldgArea: 10714
+  bldgYear: 2005

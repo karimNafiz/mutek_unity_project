@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7f5a510db05ed479c3c5ce998de16b, type: 3}
+  m_Name: Trees_208
+  m_EditorClassIdentifier: 
+  uniqueID: 208
+  coordinates:
+  - lon: -73.56837999999993
+    lat: 45.493982000000074
+  INV_TYPE: H
+  place_loca: "Parterre Gazonn\xE9"
+  species_la: Carpinus caroliniana
+  species_fr: Charme de Caroline
+  species_en: Blue-beech
+  trunk_dia: 5
+  data_src: OpenData
+  height: 16
+  treeID: tree209
+  parentFamily: {fileID: 11400000, guid: 8ff82a2e8461b9b4eb89148128afc64a, type: 2}
+  originalPosition: {x: -231.3724, y: -3.06142, z: -566.5989}
+  positionOffset: {x: 0, y: 0, z: 0}

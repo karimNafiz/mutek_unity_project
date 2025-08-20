@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab279584652918d44941f6f2168ed44a, type: 3}
+  m_Name: Carya
+  m_EditorClassIdentifier: 
+  familyName_la: Carya
+  familyName_en: 
+  subspeciesNamesCSV: Bitternut Hickory
+  treesInFamily:
+  - {fileID: 11400000, guid: 0b85de1fae7792e40b36641e79e7bf3a, type: 2}
+  - {fileID: 11400000, guid: e6b0cc9a0d296c44ba4ccc0778da63c8, type: 2}
+  - {fileID: 11400000, guid: 02665c315725ef54585f621ca8c8dc5e, type: 2}
+  prefab:
+  - {fileID: 5449959339410808433, guid: 9ec4902dad50bf64b8de16ea922e84b9, type: 3}

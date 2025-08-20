@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2bc2cb34c0e3fa45a2a01f49ae527c6, type: 3}
+  m_Name: bldg42
+  m_EditorClassIdentifier: 
+  bldgID: bldg42
+  bldgName: L'Avenue
+  bldgHeight: 186
+  bldgUsage: Residential, Bank, Restuarant, Grocery Store
+  usages:
+  - {fileID: 11400000, guid: 2230f4854853c15478c5364f6c599f38, type: 2}
+  - {fileID: 11400000, guid: 12416111d5ad3d148bf5cb4bbed62cb8, type: 2}
+  - {fileID: 11400000, guid: de251e4bd8dc5094abb127a63cf588fc, type: 2}
+  - {fileID: 11400000, guid: 6ff604ca519d72f47a9d8937aeb75d98, type: 2}
+  bldgAddress: 1050 Drummond St, Montreal, QC H3B 0G3, Canada
+  bldgArea: 2473
+  bldgYear: 2017

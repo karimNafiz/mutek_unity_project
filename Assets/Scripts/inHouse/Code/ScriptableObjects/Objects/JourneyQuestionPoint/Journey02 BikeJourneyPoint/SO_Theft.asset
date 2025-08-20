@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40303cdc1d3556f4f851d4c4a7e94c72, type: 3}
+  m_Name: SO_Theft
+  m_EditorClassIdentifier: 
+  <Description>k__BackingField: Theft Concerns
+  <IconMesh>k__BackingField: {fileID: 3919190428474693317, guid: a43252e6b4af9f345b8ac8e913395eba, type: 3}
+  <ModName>k__BackingField: N/A
+  <graphicIcon>k__BackingField: {fileID: 21300000, guid: 2c802c4bcf432ca42a1609003357386d, type: 3}
+  <Question>k__BackingField: How much would you <b>worry</b> about your <b>bike's
+    safety</b> when leaving it at this bike rack?
+  <InitialQuestion>k__BackingField: Is theft at the terminal a concern for bikers?
+  <normalizedTextSO>k__BackingField: {fileID: 11400000, guid: 8354cfa219ac8394eb7de907423c17d4, type: 2}
+  <IsOverrideFirstContactFlags>k__BackingField: 1
+  <IsOverrideShowQuestionnairePanel>k__BackingField: 0
+  <ExpectedAnswers>k__BackingField: 00000000000000

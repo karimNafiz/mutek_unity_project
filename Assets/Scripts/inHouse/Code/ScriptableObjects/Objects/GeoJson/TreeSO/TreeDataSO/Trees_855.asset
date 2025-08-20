@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7f5a510db05ed479c3c5ce998de16b, type: 3}
+  m_Name: Trees_855
+  m_EditorClassIdentifier: 
+  uniqueID: 855
+  coordinates:
+  - lon: -73.55966699999993
+    lat: 45.49755700000003
+  INV_TYPE: H
+  place_loca: "Parterre Gazonn\xE9"
+  species_la: "Malus x 'Harvest Gold'\xBF"
+  species_fr: Pommetier Harvest Gold TM
+  species_en: Harvest Gold TM Crab Apple
+  trunk_dia: 6
+  data_src: OpenData
+  height: 6
+  treeID: tree856
+  parentFamily: {fileID: 11400000, guid: 838cbcd44760c1c47a789c1af8da2daa, type: 2}
+  originalPosition: {x: 961.6626, y: 59.757065, z: 342.73145}
+  positionOffset: {x: 0, y: 0, z: 0}

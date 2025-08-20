@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7f5a510db05ed479c3c5ce998de16b, type: 3}
+  m_Name: Trees_3153
+  m_EditorClassIdentifier: 
+  uniqueID: 3153
+  coordinates:
+  - lon: -73.56653499999999
+    lat: 45.505881000000045
+  INV_TYPE: H
+  place_loca: "Parterre Gazonn\xE9"
+  species_la: Fraxinus
+  species_fr: "Fr\xEAne"
+  species_en: Ash
+  trunk_dia: 22
+  data_src: OpenData
+  height: 13
+  treeID: tree3154
+  parentFamily: {fileID: 11400000, guid: 6b5e414eb0a9212409d589a1c9aa2e9b, type: 2}
+  originalPosition: {x: 0, y: 0, z: 0}
+  positionOffset: {x: 0, y: 0, z: 0}

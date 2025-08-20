@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7f5a510db05ed479c3c5ce998de16b, type: 3}
+  m_Name: Trees_797
+  m_EditorClassIdentifier: 
+  uniqueID: 797
+  coordinates:
+  - lon: -73.56109799999996
+    lat: 45.498114000000044
+  INV_TYPE: H
+  place_loca: "Parterre Gazonn\xE9"
+  species_la: Larix laricina
+  species_fr: "M\xE9l\xE8ze laricin"
+  species_en: Tamarack
+  trunk_dia: 6
+  data_src: OpenData
+  height: 12
+  treeID: tree798
+  parentFamily: {fileID: 11400000, guid: 880defd601439084298681c365f956ee, type: 2}
+  originalPosition: {x: 849.8103, y: 60.558174, z: 404.6372}
+  positionOffset: {x: 0, y: 0, z: 0}

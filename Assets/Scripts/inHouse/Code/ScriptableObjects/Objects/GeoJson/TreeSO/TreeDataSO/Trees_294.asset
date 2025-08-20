@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7f5a510db05ed479c3c5ce998de16b, type: 3}
+  m_Name: Trees_294
+  m_EditorClassIdentifier: 
+  uniqueID: 294
+  coordinates:
+  - lon: -73.57232499999998
+    lat: 45.493705000000034
+  INV_TYPE: R
+  place_loca: "Parterre Gazonn\xE9"
+  species_la: Syringa vulgaris
+  species_fr: Syringa vulgaris
+  species_en: Syringa vulgaris
+  trunk_dia: 5
+  data_src: OpenData
+  height: 14
+  treeID: tree295
+  parentFamily: {fileID: 11400000, guid: daf225a6267de8b48beca9016c60d324, type: 2}
+  originalPosition: {x: 0, y: 0, z: 0}
+  positionOffset: {x: 0, y: 0, z: 0}

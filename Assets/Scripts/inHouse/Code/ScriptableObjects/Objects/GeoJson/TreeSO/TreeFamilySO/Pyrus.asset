@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab279584652918d44941f6f2168ed44a, type: 3}
+  m_Name: Pyrus
+  m_EditorClassIdentifier: 
+  familyName_la: Pyrus
+  familyName_en: 
+  subspeciesNamesCSV: Pyrus calleryana Chantecleer
+  treesInFamily:
+  - {fileID: 11400000, guid: 6b4428b3d0618e040af18adcc273484b, type: 2}
+  - {fileID: 11400000, guid: fde0705816cf4004e9ac5ce15df4ee9b, type: 2}
+  - {fileID: 11400000, guid: 328fa15684fe08a4f92443147aa864ff, type: 2}
+  - {fileID: 11400000, guid: 5083a3be827a6c143bfcde0bc42d667c, type: 2}
+  - {fileID: 11400000, guid: eff009a0e0081564792e988357343de1, type: 2}
+  - {fileID: 11400000, guid: ae76e5c2db9dede4192a124b1bc8d66c, type: 2}
+  - {fileID: 11400000, guid: 83bd0a804fd1d7549ac71b518b778e3a, type: 2}
+  - {fileID: 11400000, guid: 1d2a26ef7101f4e46aa2143a720ff303, type: 2}
+  - {fileID: 11400000, guid: 51fad5411f684b549ace421f6cb60362, type: 2}
+  - {fileID: 11400000, guid: 072a6ee55ce3f1f40a99227febd977e1, type: 2}
+  prefab:
+  - {fileID: 4464870390388192248, guid: 2a69b4458dd51834db202a61faf66194, type: 3}

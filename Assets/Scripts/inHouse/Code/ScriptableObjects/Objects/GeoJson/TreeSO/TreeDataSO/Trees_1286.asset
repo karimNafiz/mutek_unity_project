@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7f5a510db05ed479c3c5ce998de16b, type: 3}
+  m_Name: Trees_1286
+  m_EditorClassIdentifier: 
+  uniqueID: 1286
+  coordinates:
+  - lon: -73.56670499999996
+    lat: 45.494927000000075
+  INV_TYPE: R
+  place_loca: TRottoir
+  species_la: Tilia cordata
+  species_fr: "Tilleul \xE0 petites feuilles"
+  species_en: Littleleaf European Linden
+  trunk_dia: 39
+  data_src: OpenData
+  height: 10
+  treeID: tree1287
+  parentFamily: {fileID: 11400000, guid: c636269da914bf2489e7ba16cdcfc16c, type: 2}
+  originalPosition: {x: 411.55786, y: 61.97278, z: 50.429688}
+  positionOffset: {x: 0, y: 0, z: 0}

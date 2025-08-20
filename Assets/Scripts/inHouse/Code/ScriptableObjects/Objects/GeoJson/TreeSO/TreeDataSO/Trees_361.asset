@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7f5a510db05ed479c3c5ce998de16b, type: 3}
+  m_Name: Trees_361
+  m_EditorClassIdentifier: 
+  uniqueID: 361
+  coordinates:
+  - lon: -73.56242099999997
+    lat: 45.49954000000008
+  INV_TYPE: H
+  place_loca: "Parterre Gazonn\xE9"
+  species_la: Picea pungens 'Glauca'
+  species_fr: "\xC9pinette du Colorado Glauca"
+  species_en: Glauca Blue Spruce
+  trunk_dia: 20
+  data_src: OpenData
+  height: 13
+  treeID: tree362
+  parentFamily: {fileID: 11400000, guid: e388eeaf1e9ea5445af37fc88344fb0f, type: 2}
+  originalPosition: {x: 746.3978, y: 60.059208, z: 563.125}
+  positionOffset: {x: 0, y: 0, z: 0}
