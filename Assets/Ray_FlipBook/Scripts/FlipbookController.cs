@@ -1,7 +1,8 @@
 using System;
 using UnityEngine;
 using ScriptableObjects;
-
+using EventHandling;
+using EventHandling.Events;
 namespace Flipbook
 {
     public class FlipbookController : MonoBehaviour
@@ -97,6 +98,7 @@ namespace Flipbook
                 Debug.LogWarning("Page flipping animation in progress, change book request blocked");
                 return;
             }
+            EventBus<OnBookChanged>.Raise(new OnBookChanged(this.flipbookPageCollection, flipbookPageCollection));
             this.flipbookPageCollection = flipbookPageCollection;
             UpdateCurrentPage();
         }
@@ -112,6 +114,7 @@ namespace Flipbook
             }
             
             flipbookVisual.HoldUpFlipbook();
+            EventBus<OnBookHeldUp>.Raise(new OnBookHeldUp(flipbookPageCollection));
             _isBookUp = true;
         }
         
@@ -126,6 +129,7 @@ namespace Flipbook
             }
             
             flipbookVisual.PutDownFlipbook();
+            EventBus<OnBookPutDown>.Raise(new OnBookPutDown(flipbookPageCollection));
             _isBookUp = false;
         }
 
