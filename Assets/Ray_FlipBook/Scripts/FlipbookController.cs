@@ -3,9 +3,10 @@ using UnityEngine;
 using ScriptableObjects;
 using EventHandling;
 using EventHandling.Events;
+using Utility.Singleton;
 namespace Flipbook
 {
-    public class FlipbookController : MonoBehaviour
+    public class FlipbookController : SingletonMonoBehavior<FlipbookController>
     {
         [SerializeField] private SO_FlipbookPageCollection flipbookPageCollection;
         [SerializeField] private FlipbookVisual flipbookVisual;
@@ -15,8 +16,9 @@ namespace Flipbook
         private bool _isPageFlipping = false;
         private bool _isBookUp = false;
         
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             // Optional: start the book at page 0.
             // Not writing this line will have the book (page collection) to remember the last page it was on.
             if (flipbookPageCollection != null)
@@ -100,6 +102,7 @@ namespace Flipbook
             }
             EventBus<OnBookChanged>.Raise(new OnBookChanged(this.flipbookPageCollection, flipbookPageCollection));
             this.flipbookPageCollection = flipbookPageCollection;
+            Debug.Log($" current book -> {this.flipbookPageCollection.name}");
             UpdateCurrentPage();
         }
         
@@ -131,6 +134,12 @@ namespace Flipbook
             flipbookVisual.PutDownFlipbook();
             EventBus<OnBookPutDown>.Raise(new OnBookPutDown(flipbookPageCollection));
             _isBookUp = false;
+        }
+
+        public void PutDownFlipbookAndHide() 
+        {
+            PutDownFlipbook();
+            this.Hide();
         }
 
         
@@ -179,6 +188,18 @@ namespace Flipbook
                     flipbookPageCollection.GetPageCount());
             }
         }
+
+        public void Show() 
+        {
+            this.gameObject.SetActive(true);
+        }
+        public void Hide() 
+        {
+            this.gameObject.SetActive(false);
+        
+        }
+
+
         
         /*
          * Possible Extension: Go to a specific page.

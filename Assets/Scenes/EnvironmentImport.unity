@@ -173,7 +173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9124762473364416784, guid: c0c30fbcf51412244b9490c39105617d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -544,6 +544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebe334dbeee1ccd4c8fb15a398629cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  document_FlipBook: {fileID: 11400000, guid: cc3427d72a7d6da4da3a60637eb6ba73, type: 2}
 --- !u!1 &759725595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,6 +1573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebe334dbeee1ccd4c8fb15a398629cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  document_FlipBook: {fileID: 11400000, guid: a50cc7241844d9b4695ac75484c9e648, type: 2}
 --- !u!1001 &2095852148
 PrefabInstance:
   m_ObjectHideFlags: 0

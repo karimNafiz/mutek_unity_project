@@ -1,10 +1,18 @@
 using System;
+using Flipbook;
 using InputActons;
+using ScriptableObjects;
 using SelectableBase;
 using UnityEngine;
 
 public class Document : SelectableObjBase
 {
+
+    [SerializeField] private SO_FlipbookPageCollection document_FlipBook;
+
+
+
+
     private void RegisterToSelectorEvents()
     {
         /*
@@ -26,6 +34,11 @@ public class Document : SelectableObjBase
 
     void Start()
     {
+        if (document_FlipBook == null) 
+        { 
+            throw new Exception(tag + ": Document_FlipBook is not assigned!");
+        }
+
         RegisterToSelectorEvents();
     }
 
@@ -37,11 +50,20 @@ public class Document : SelectableObjBase
 
     protected override void ObjSelector_OnSelectObj(object sender, ObjSelectionArgs e)
     {
-        if (!e._transform == transform) return;
+        if (!(e._transform == transform)) return;
         
         InvokeOnObjSelected(this, EventArgs.Empty);   // fire SelectableObjBase event
         
         InputEvents.Instance.OnQPress += InputEvents_OnQPressed; // register to Q press event
+
+        // need to set the book collection for the flip book
+        FlipbookController.Instance.SetFlipbookPageCollection(document_FlipBook);
+        FlipbookController.Instance.Show(); // show the flipbook
+        FlipbookController.Instance.HoldUpFlipbook(); // set the book to be up
+
+
+
+
 
     }
     private void InputEvents_OnQPressed(object sender , EventArgs e) 
@@ -49,7 +71,12 @@ public class Document : SelectableObjBase
         
         InputEvents.Instance.OnQPress -= InputEvents_OnQPressed; // register to Q press event
         DocumentSelector_ObjSelectorBase.Instance.DeselectObj(); // deselect this document
-    
+
+        //FlipbookController.Instance.Hide(); // hide the flipbook    
+        
+        FlipbookController.Instance.PutDownFlipbook(); // set the book to be down
+
+
     }
 
 }
