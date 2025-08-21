@@ -11,6 +11,10 @@ namespace SelectableBase
     [RequireComponent(typeof(Collider))]
     public abstract class SelectableObjBase : MonoBehaviour, IAppearable
     {
+        // Ray adding some spaghetti static event here
+        public static event EventHandler OnAnyObjSelected;
+        public static event EventHandler OnAnyObjDeselected;
+        
         private bool activeState = true;
         
         /// <summary>
@@ -90,6 +94,7 @@ namespace SelectableBase
         protected virtual void InvokeOnObjSelected(object sender, EventArgs args)
         {
             OnObjSelected?.Invoke(sender, args);
+            OnAnyObjSelected?.Invoke(sender, args);
         }
 
         /// <summary>
@@ -100,6 +105,7 @@ namespace SelectableBase
         protected virtual void InvokeOnObjDeselected(object sender, EventArgs args)
         {
             OnObjDeselected?.Invoke(sender, args);
+            OnAnyObjDeselected?.Invoke(sender, args);
         }
 
         /// <summary>

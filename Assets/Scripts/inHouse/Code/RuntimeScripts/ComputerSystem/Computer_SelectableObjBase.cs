@@ -66,7 +66,7 @@ public class Computer : SelectableObjBase
     }
     private void InputEvents_OnQPressed(object sender, EventArgs e)
     {
-
+        InvokeOnObjDeselected(this, EventArgs.Empty);   // fire SelectableObjBase event
         InputEvents.Instance.OnQPress -= InputEvents_OnQPressed; // unregister from Q press event
         ComputerSelector_ObjSelectorBase.Instance.DeselectObj(); // deselect the computer object
         TurnOffScreen();

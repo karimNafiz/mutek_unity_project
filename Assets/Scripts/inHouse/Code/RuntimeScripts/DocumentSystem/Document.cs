@@ -68,6 +68,7 @@ public class Document : SelectableObjBase
     
     private void InputEvents_OnQPressed(object sender , EventArgs e) 
     {  
+        InvokeOnObjDeselected(this, EventArgs.Empty);   // fire SelectableObjBase event
         
         InputEvents.Instance.OnQPress -= InputEvents_OnQPressed; // register to Q press event
         DocumentSelector_ObjSelectorBase.Instance.DeselectObj(); // deselect this document
