@@ -76,7 +76,7 @@ public class ChatRoomVisual : SingletonMonoBehavior<ChatRoomVisual>
         messageContainer.Clear();
         // we need to do a web request
         Debug.Log($"getting the messaeges for bot id {eventArgs._chatBotVisual.Bot.ID}");
-        WebServerClient.Instance.GetMessages(GlobalConfigs.Instance.GetServerUrl(), GlobalConfigs.Instance.globalConstant.message_endpoint_get, eventArgs._chatBotVisual.Bot, OnGetMessageSuccess, OnGetMessageErr);
+        WebServerClientUpdated.Instance.GetMessages(GlobalConfigs.Instance.GetServerUrl(), GlobalConfigs.Instance.globalConstant.message_endpoint_get, eventArgs._chatBotVisual.Bot, OnGetMessageSuccess, OnGetMessageErr);
     
     }
 

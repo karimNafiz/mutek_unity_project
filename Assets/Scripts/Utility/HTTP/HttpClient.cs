@@ -63,6 +63,10 @@ namespace Utility.HTTP
         {
             return JsonConvert.SerializeObject(dict);
         }
+        public string SerializeDict(Dictionary<string, object> dict) 
+        { 
+            return JsonConvert.SerializeObject(dict);
+        }
         public Dictionary<string, object> ParseJsonToDictionary(string json)
         {
             return JsonConvert.DeserializeObject<Dictionary<string, object>>(json);

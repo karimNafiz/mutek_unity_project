@@ -39,7 +39,7 @@ public class Test : MonoBehaviour
 
 
 
-        WebServerClient.Instance.GetBots(url, endpoint, OnSuccessTest, OnErrorTest);
+        WebServerClientUpdated.Instance.GetBots(url, endpoint, OnSuccessTest, OnErrorTest);
         
 
         

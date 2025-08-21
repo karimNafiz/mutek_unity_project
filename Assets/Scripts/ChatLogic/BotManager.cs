@@ -59,7 +59,7 @@ public class BotManager: SingletonMonoBehavior<BotManager>
     /// </summary>
     private void GetBotsFrmWebServer()
     {
-        WebServerClient.Instance.GetBots(GlobalConfigs.Instance.GetServerUrl(), GlobalConfigs.Instance.globalConstant.bots_endpoint_get, GetBotsOnSuccess, GetBotsOnErr);
+        WebServerClientUpdated.Instance.GetBots(GlobalConfigs.Instance.GetServerUrl(), GlobalConfigs.Instance.globalConstant.bots_endpoint_get, GetBotsOnSuccess, GetBotsOnErr);
 
     }
     /// <summary>
