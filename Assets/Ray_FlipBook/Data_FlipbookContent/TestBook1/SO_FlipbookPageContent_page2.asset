@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f9806172e7c3f24d9ce2c7c18e730ee, type: 3}
   m_Name: SO_FlipbookPageContent_page2
   m_EditorClassIdentifier: 
-  <PageContent>k__BackingField: 'Book1: Now this is page 2'
+  <PageContent>k__BackingField: 'Schedule for the upcoming week-> Monday-> Present
+    Tuesday-> Monthly rationing  Wednesday-> Party elections  Current State of the
+    state Big Brother has cut funds from the ministry of provision and electricity
+    production to fund the war againts Zealandia.  People are frustrated due to the
+    cuts in rations and electricity but can''t express to anybody, but the mood is
+    palapable '

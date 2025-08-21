@@ -25,7 +25,7 @@ using SuspicionSystem;
 
 public class ChatRoomVisual : SingletonMonoBehavior<ChatRoomVisual>
 {
-   
+    [SerializeField] private float suspicionScale;
     // this will handle all the message visual pop ups
     [SerializeField] private MessageVisualManager messageContainer;
     // this handles getting new text input from the user
@@ -100,7 +100,7 @@ public class ChatRoomVisual : SingletonMonoBehavior<ChatRoomVisual>
         /*
             I'm manually multiplying 10, should set a var as serialized reference
          */
-        SuspicionSystem.SuspicionSystem.Instance.Change(resp.SuspicionScore*10, resp.Reasoning);
+        SuspicionSystem.SuspicionSystem.Instance.Change(resp.SuspicionScore*suspicionScale, resp.Reasoning);
         
 
         /*

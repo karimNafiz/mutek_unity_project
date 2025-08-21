@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f9806172e7c3f24d9ce2c7c18e730ee, type: 3}
   m_Name: SO_FlipbookPageContent 0
   m_EditorClassIdentifier: 
-  <PageContent>k__BackingField: Karim is Cool
+  <PageContent>k__BackingField: 'CHAPTER FOUR: THE GREAT WAR'

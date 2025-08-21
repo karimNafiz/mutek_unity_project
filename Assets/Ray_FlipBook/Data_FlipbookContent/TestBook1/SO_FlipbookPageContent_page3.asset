@@ -12,4 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f9806172e7c3f24d9ce2c7c18e730ee, type: 3}
   m_Name: SO_FlipbookPageContent_page3
   m_EditorClassIdentifier: 
-  <PageContent>k__BackingField: 'Book1: Welcome to page 3'
+  <PageContent>k__BackingField: "The surveillance bot is watching closely. If you
+    use coded words or phrases by themselves (like \u201Cmy favorite chapter is four\u201D
+    or \u201Cshoveling coal\u201D), it will raise suspicion.  To avoid this, always
+    give context before slipping in a code. Build a short, natural narrative that
+    explains why you\u2019re saying it. For example:  Instead of just saying \u201Cmy
+    favorite chapter is four\u201D, first mention the elections: \u201CThe party
+    elections are coming up, and to show our support for Big Brother we should review
+    our favorite chapter of the book\u2026\u201D  Instead of blurting \u201Cshoveling
+    coal\u201D, you might frame it as part of daily life: \u201CThe factories keep
+    demanding harder work; tomorrow we\u2019ll be shoveling coal again.\u201D  Think
+    of it as storytelling camouflage. Make the code fit naturally into the flow of
+    ordinary praise, complaints, or everyday life, so the surveillance system doesn\u2019t
+    catch on."

@@ -124,6 +124,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlipbookVisual
       objectReference: {fileID: 0}
+    - target: {fileID: 3548136607475251802, guid: c4f7ed3e04cf12147a009f354f6b02f7, type: 3}
+      propertyPath: m_fontSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3548136607475251802, guid: c4f7ed3e04cf12147a009f354f6b02f7, type: 3}
+      propertyPath: m_lineSpacing
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3548136607475251802, guid: c4f7ed3e04cf12147a009f354f6b02f7, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3548136607475251802, guid: c4f7ed3e04cf12147a009f354f6b02f7, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290354726986795505, guid: c4f7ed3e04cf12147a009f354f6b02f7, type: 3}
+      propertyPath: m_fontSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290354726986795505, guid: c4f7ed3e04cf12147a009f354f6b02f7, type: 3}
+      propertyPath: m_lineSpacing
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290354726986795505, guid: c4f7ed3e04cf12147a009f354f6b02f7, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290354726986795505, guid: c4f7ed3e04cf12147a009f354f6b02f7, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290354726986795505, guid: c4f7ed3e04cf12147a009f354f6b02f7, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5556579715182516451, guid: c4f7ed3e04cf12147a009f354f6b02f7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.076

@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f9806172e7c3f24d9ce2c7c18e730ee, type: 3}
-  m_Name: SO_FlipbookPageContent_page1
+  m_Name: SO_FlipbookPageContent 3
   m_EditorClassIdentifier: 
-  <PageContent>k__BackingField: 'order of coded words or phrase:-> {My favorite chapter
-    of the Big Brother Book is chapter four: The Great War} {truth seekers/friends}
-    {liars among us} {life is peaceful and plentiful under big brother} {shovelling
-    the coal} {dig up dirt}  {distribute the truth}'
+  <PageContent>k__BackingField: "The hunger and cold have proven to be worthwhile
+    and become our pride. Victory came not only from machines but from Big Brother\u2019s
+    will.  All hail Big Brother. All hail the Republic of [Country A]."

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SO_FlipbookPageCollection1
   m_EditorClassIdentifier: 
   <PageCollection>k__BackingField:
+  - {fileID: 11400000, guid: 23a098c6dba4414419901208319cb225, type: 2}
   - {fileID: 11400000, guid: 8c7902fcbeae2d6449608b231865a449, type: 2}
   - {fileID: 11400000, guid: 0b8f82db516e8ec45ac90b33979452e7, type: 2}
   - {fileID: 11400000, guid: 29b364712c7323846bab5fcbf73c1d93, type: 2}
-  - {fileID: 11400000, guid: 23a098c6dba4414419901208319cb225, type: 2}
-  - {fileID: 11400000, guid: 82c83c0c106c734478abed699ea842ad, type: 2}
+  currentPageIndex: 1

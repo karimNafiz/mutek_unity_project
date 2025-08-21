@@ -27,11 +27,11 @@ def call_surveillance_llm(new_message: str, history: list[str]) -> dict:
         "chat_history": history,
         "new_message": new_message,
     }
-    print("payload (surveillance) ", payload)
+    #print("payload (surveillance) ", payload)
 
     try:
         resp = ollama.chat(
-            model="v2_1984_sur:latest",  # <-- adjust as needed
+            model="v3_1984_sur:latest",  # <-- adjust as needed
             messages=[{"role": "user", "content": json.dumps(payload)}],
             format="json",
         )
@@ -111,6 +111,11 @@ def _append_message_record(history, user_message, suspicion_score, reasoning):
     Append one JSON object to the session log with the required shape.
     Uses JSON Lines format (one object per line) for easy streaming/tailing.
     """
+    print_record = {
+        "suspicion_score":suspicion_score,
+        "reasoning":reasoning
+    }
+    print("record -> ",print_record)
     global LOG_FILE_HANDLE, LOG_FILE_OPEN
     if not LOG_FILE_OPEN or LOG_FILE_HANDLE is None:
         return  # silently skip if no log is open
@@ -121,12 +126,12 @@ def _append_message_record(history, user_message, suspicion_score, reasoning):
         "suspicion_score": suspicion_score,
         "reasoning": reasoning,
     }
-    try:
-        LOG_FILE_HANDLE.write(json.dumps(record, ensure_ascii=False) + "\n")
-        LOG_FILE_HANDLE.flush()
-    except Exception as e:
-        # If logging fails, don't break the request flow
-        print(f"[log write error] {e}")
+    # try:
+    #     LOG_FILE_HANDLE.write(json.dumps(record, ensure_ascii=False) + "\n")
+    #     LOG_FILE_HANDLE.flush()
+    # except Exception as e:
+    #     # If logging fails, don't break the request flow
+    #     print(f"[log write error] {e}")
 
 # ===== HTTP Server =====
 class SimpleHandler(BaseHTTPRequestHandler):
@@ -167,10 +172,10 @@ class SimpleHandler(BaseHTTPRequestHandler):
 
         # --- Create new session & rotate log ---
         if path == "/session/new":
-            _close_log_if_open()
+            #_close_log_if_open()
             CURRENT_SESSION_ID = str(uuid.uuid4())
             CHAT_HISTORY = []
-            _open_new_log_for_session(CURRENT_SESSION_ID)
+            #_open_new_log_for_session(CURRENT_SESSION_ID)
 
             return self._send_json(200, {
                 "session_id": CURRENT_SESSION_ID,
@@ -199,7 +204,7 @@ class SimpleHandler(BaseHTTPRequestHandler):
             # exact pre-append state without races.
             # pretty important step
             history_snapshot = list(CHAT_HISTORY)
-
+            print('before running the threads ')
             # Run surveillance & friend calls in parallel
             with ThreadPoolExecutor(max_workers=2) as executor:
                 future_surv = executor.submit(call_surveillance_llm, user_message, history_snapshot)
@@ -207,7 +212,7 @@ class SimpleHandler(BaseHTTPRequestHandler):
 
                 surv_result = future_surv.result()
                 friend_result = future_friend.result()
-
+            print('after running the threads')
             # Log what the surveillance model saw/returned (friend reply not required in log spec)
             _append_message_record(
                 history=history_snapshot,
