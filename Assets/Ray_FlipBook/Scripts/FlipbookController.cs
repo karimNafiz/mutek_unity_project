@@ -35,12 +35,15 @@ namespace Flipbook
             // Initialize book position
             if (_isBookUp)
             {
-                flipbookVisual.HoldUpFlipbook();
+                flipbookVisual.HoldUpFlipbookImmediate();
             }
             else
             {
-                flipbookVisual.PutDownFlipbook();
+                flipbookVisual.PutDownFlipbookImmediate();
             }
+            
+            // initialize the book as turned off.
+            // Hide();
             
             // Make sure to show the current page to initialize the GUI display
             UpdateCurrentPage();
@@ -191,11 +194,11 @@ namespace Flipbook
 
         public void Show() 
         {
-            this.gameObject.SetActive(true);
+            flipbookVisual.gameObject.SetActive(true);
         }
         public void Hide() 
         {
-            this.gameObject.SetActive(false);
+            flipbookVisual.gameObject.SetActive(false);
         
         }
 

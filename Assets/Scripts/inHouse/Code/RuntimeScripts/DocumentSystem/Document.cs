@@ -60,12 +60,12 @@ public class Document : SelectableObjBase
         FlipbookController.Instance.SetFlipbookPageCollection(document_FlipBook);
         FlipbookController.Instance.Show(); // show the flipbook
         FlipbookController.Instance.HoldUpFlipbook(); // set the book to be up
-
-
-
-
-
+        
+        // hide the object
+        gameObject.SetActive(false);
     }
+    
+    
     private void InputEvents_OnQPressed(object sender , EventArgs e) 
     {  
         
@@ -76,6 +76,8 @@ public class Document : SelectableObjBase
         
         FlipbookController.Instance.PutDownFlipbook(); // set the book to be down
 
+        // show the object
+        gameObject.SetActive(true);
 
     }
 
