@@ -20,7 +20,7 @@ namespace SuspicionSystem
         [SerializeField, Min(1f)] private float maxValue = 100f;
 
         [Tooltip("Crossing this from below triggers SuspicionTooHighEvent.")]
-        [SerializeField, Min(0f)] private float threshold = 60f;
+        [SerializeField, Min(0f)] private float threshold = 100f;
 
         [Header("State (read-only)")]
         [SerializeField, ReadOnlyInInspector] private float currentValue = 0f;
@@ -41,6 +41,15 @@ namespace SuspicionSystem
         /// Increase suspicion by amount (post-clamped). Fires change event, and if the value
         /// crosses the threshold from below, fires SuspicionTooHighEvent exactly once.
         /// </summary>
+        /// 
+        public void Change(float amount, string reason = "") 
+        { 
+            if(amount > 0f) Increase(amount, reason);
+            else if (amount < 0f) Decrease(-amount, reason);
+
+        }
+
+
         public void Increase(float amount, string reason = "")
         {
             if (amount <= 0f) return;
@@ -111,7 +120,7 @@ namespace SuspicionSystem
 
             // 1) Broadcast change
             EventBus<SuspicionChangedEvent>.Raise(
-                new SuspicionChangedEvent(previous, currentValue, currentValue - previous, reason));
+                new SuspicionChangedEvent(previous, currentValue, currentValue - previous,maxValue, reason));
 
             // 2) Check upward threshold crossing
             if (!isAtOrAboveThreshold && currentValue >= threshold)

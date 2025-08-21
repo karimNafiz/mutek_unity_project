@@ -31,9 +31,11 @@ public class MessageVisualManager : SingletonMonoBehavior<MessageVisualManager>
         /*
             get anchor position
          */
-        Vector3 pos = msgVisual.transform.position;
-        pos.z = 0;
-        msgVisual.transform.position = pos;
+        if (msgVisual.TryGetComponent<RectTransform>(out RectTransform rTransform)) 
+        { 
+            rTransform.anchoredPosition3D = new Vector3(rTransform.anchoredPosition3D.x, rTransform.anchoredPosition3D.y, 0); // Adjust the Y position based on the number of messages
+        }
+
     
     }
     public void AddMessageVisualBot(string message, string sender) 
@@ -43,9 +45,11 @@ public class MessageVisualManager : SingletonMonoBehavior<MessageVisualManager>
         msgVisual.SetSender(sender);
         msgVisual.SetMessage(message);
         messages.Add(msgVisual);
-        Vector3 pos = msgVisual.transform.position;
-        pos.z = 0;
-        msgVisual.transform.position = pos; 
+        if (msgVisual.TryGetComponent<RectTransform>(out RectTransform rTransform))
+        {
+            rTransform.anchoredPosition3D = new Vector3(rTransform.anchoredPosition3D.x, rTransform.anchoredPosition3D.y, 0); // Adjust the Y position based on the number of messages
+        }
+
     }
 
 
