@@ -5,8 +5,11 @@ using GameManager;
 using InputActons;
 using UnityEngine.UI;
 using Unity.Cinemachine;
+using Appearable;
+using Utility.Lerp;
 public class Computer : SelectableObjBase
 {
+    [SerializeField] private Canvas computerCanvas;
     [SerializeField] private Image screen;
     [SerializeField] private CinemachineCamera camPosCompNotSelected;
     [SerializeField] private CinemachineCamera camPosCompSelected;
@@ -36,6 +39,12 @@ public class Computer : SelectableObjBase
             throw new Exception("screen is not set ");
         
         }
+        if (computerCanvas == null)
+        {
+            throw new Exception("screen is not set ");
+            
+        }
+        //screen.SetLerpTechnique(new TimeLerp(0.5f)); /* this is the brainchild ray and karim fuck */
         TurnOffScreen();
         RegisterToSelectorEvents();
 
@@ -73,20 +82,23 @@ public class Computer : SelectableObjBase
      */
     private void TurnOnScreen() 
     {
+        //screen.Hide(); // hide the screen, this will make it transparent    
         Color color = screen.color;
         color.a = 0.0f; // make the screen transparent
         screen.color = color;
         camPosCompNotSelected.gameObject.SetActive(false);
         camPosCompSelected.gameObject.SetActive(true);
+        computerCanvas.GetComponent<GraphicRaycaster>().enabled = true;
     }
     private void TurnOffScreen() 
     {
         Color color = screen.color;
         color.a = 1.0f; // make the screen transparent
         screen.color = color;
-
+        //screen.Show();
         camPosCompNotSelected.gameObject.SetActive(true);
         camPosCompSelected.gameObject.SetActive(false);
+        computerCanvas.GetComponent<GraphicRaycaster>().enabled = false;
 
     }
 }

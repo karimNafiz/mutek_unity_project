@@ -1163,6 +1163,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8591158041261243989, guid: 55d1af107d0e6ad419debf2f15e8a2b4, type: 3}
   m_PrefabInstance: {fileID: 1046834606}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &1046834610 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 664414048960970260, guid: 55d1af107d0e6ad419debf2f15e8a2b4, type: 3}
+  m_PrefabInstance: {fileID: 1046834606}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1132480844
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,6 +1346,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -1574718131034819677, guid: b9cf642b8bf277841af4992d3aa78e49, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3814659588892165975, guid: b9cf642b8bf277841af4992d3aa78e49, type: 3}
       propertyPath: m_Name
       value: Book2
@@ -1411,6 +1420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c053d53b6af7c488e4e0661689e627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  computerCanvas: {fileID: 1046834610}
   screen: {fileID: 186270061}
   camPosCompNotSelected: {fileID: 778161047}
   camPosCompSelected: {fileID: 703817324}
@@ -2028,12 +2038,86 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   document_FlipBook: {fileID: 11400000, guid: a50cc7241844d9b4695ac75484c9e648, type: 2}
+--- !u!1001 &847839346918840039
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 187877792243192321, guid: 1ece64d45d5237047989f4f61ee7e949, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.8882634
+      objectReference: {fileID: 0}
+    - target: {fileID: 187877792243192321, guid: 1ece64d45d5237047989f4f61ee7e949, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.65300757
+      objectReference: {fileID: 0}
+    - target: {fileID: 187877792243192321, guid: 1ece64d45d5237047989f4f61ee7e949, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.25128388
+      objectReference: {fileID: 0}
+    - target: {fileID: 187877792243192321, guid: 1ece64d45d5237047989f4f61ee7e949, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 187877792243192321, guid: 1ece64d45d5237047989f4f61ee7e949, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000008940697
+      objectReference: {fileID: 0}
+    - target: {fileID: 187877792243192321, guid: 1ece64d45d5237047989f4f61ee7e949, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 187877792243192321, guid: 1ece64d45d5237047989f4f61ee7e949, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00000011920929
+      objectReference: {fileID: 0}
+    - target: {fileID: 187877792243192321, guid: 1ece64d45d5237047989f4f61ee7e949, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 187877792243192321, guid: 1ece64d45d5237047989f4f61ee7e949, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 187877792243192321, guid: 1ece64d45d5237047989f4f61ee7e949, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781978731452548406, guid: 1ece64d45d5237047989f4f61ee7e949, type: 3}
+      propertyPath: screen
+      value: 
+      objectReference: {fileID: 186270061}
+    - target: {fileID: 2781978731452548406, guid: 1ece64d45d5237047989f4f61ee7e949, type: 3}
+      propertyPath: computerCanvas
+      value: 
+      objectReference: {fileID: 1046834610}
+    - target: {fileID: 2781978731452548406, guid: 1ece64d45d5237047989f4f61ee7e949, type: 3}
+      propertyPath: camPosCompSelected
+      value: 
+      objectReference: {fileID: 703817324}
+    - target: {fileID: 2781978731452548406, guid: 1ece64d45d5237047989f4f61ee7e949, type: 3}
+      propertyPath: camPosCompNotSelected
+      value: 
+      objectReference: {fileID: 778161047}
+    - target: {fileID: 5200634526262276785, guid: 1ece64d45d5237047989f4f61ee7e949, type: 3}
+      propertyPath: m_Name
+      value: Computer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1ece64d45d5237047989f4f61ee7e949, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1963799657}
   - {fileID: 1003250432}
+  - {fileID: 847839346918840039}
   - {fileID: 1228039953}
   - {fileID: 921522868}
   - {fileID: 778161046}
