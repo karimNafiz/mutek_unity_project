@@ -1,7 +1,9 @@
 using UnityEngine;
 using SelectableBase;
 using System;
-public class Computer_SelectableObjBase : SelectableObjBase
+using GameManager;
+using InputActons;
+public class Computer : SelectableObjBase
 {
     private void RegisterToSelectorEvents() 
     { 
@@ -25,6 +27,7 @@ public class Computer_SelectableObjBase : SelectableObjBase
     void Start() 
     {
         RegisterToSelectorEvents();
+        
     }
 
 
@@ -35,7 +38,15 @@ public class Computer_SelectableObjBase : SelectableObjBase
 
     protected override void ObjSelector_OnSelectObj(object sender, ObjSelectionArgs e)
     {
-        if (e._transform == transform)
-            InvokeOnObjSelected(this, EventArgs.Empty);   // fire SelectableObjBase event
+        if (!(e._transform == transform)) return;
+            
+        InvokeOnObjSelected(this, EventArgs.Empty);   // fire SelectableObjBase event
+        InputEvents.Instance.OnQPress += InputEvents_OnQPressed; // register to Q press event   
+    }
+    private void InputEvents_OnQPressed(object sender, EventArgs e)
+    {
+        
+        InputEvents.Instance.OnQPress -= InputEvents_OnQPressed; // unregister from Q press event
+        ComputerSelector_ObjSelectorBase.Instance.DeselectObj(); // deselect the computer object
     }
 }
