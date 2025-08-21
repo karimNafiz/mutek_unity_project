@@ -1,0 +1,35 @@
+[{
+ "chat_history":["all hail big brother","the elections are coming up","we should celebrate as we get to show our love for Big Brother"],
+ "user_message":"to celebrate we should review my favorite chapter about the book",
+ "suspicion_score":0.0,
+ "reasoning":"even though the user a coded word, they provided justification for using that message in their previous chat and their narrative is consisten"
+},
+{
+    "chat_history":["all hail big brother","the elections are coming up","we should celebrate as we get to show our love for Big Brother","to celebrate we should review my favorite chapter about the book"],
+    "user_message":"lets read chapter four to a lot of people tomorrow in the morning rationing",
+    "suspicion_score": 0.0,
+    "reasoning":"even though using morning after using the phrase \"favorite chapter of the book is chapter four\" could possibly mean sabotage in wednesday morning but the users message and previous chat history is coherent and makes sense and there is no sudden jump in narrative, moreover the users message is factually correct as the monthly rationing is tomorrow on a tuesday"
+
+
+}, 
+{
+    "chat_history":["all hail big brother","the elections are coming up","we should celebrate as we get to show our love for Big Brother","to celebrate we should review my favorite chapter about the book","lets read chapter four to a lot of people tomorrow in the morning rationing"],
+    "user_message":"chapter four is about the great war",
+    "suspicion_score":0.0,
+    "reasoning":"the user is factually correct, nothing out of the ordinary, no inclusion of coded language"
+},
+{
+    "chat_history":["all hail big brother","the elections are coming up","we should celebrate as we get to show our love for Big Brother","to celebrate we should review my favorite chapter about the book","lets read chapter four to a lot of people tomorrow in the morning rationing"],
+    "user_message":"teaching about the great war from chapter four explain to the people that Big Brother is always right and we must believe Big Brother will again win the war",
+    "suspicion_score":0.0,
+    "reasoning":"the user is factually correct about the war going on against zealandia, user is optimistic about winning the war, user seems like a true follower of big brother, nothing out of the ordinary, no inclusion of coded language"
+
+},
+{
+    "chat_history":["all hail big brother","the elections are coming up","we should celebrate as we get to show our love for Big Brother","to celebrate we should review my favorite chapter about the book","lets read chapter four to a lot of people tomorrow in the morning rationing","teaching about the great war from chapter four explain to the people that Big Brother is always right and we must believe Big Brother will again win the war"],
+    "user_message":"we are so lucky that Big Brother is the all knowing looking after us, life under big brother is peaceful and plentiful",
+    "suspicion_score":0.1,
+    "reasoning":"even though the user uses a coded language, but the user's past chat history is all coherent and justifies using the coded phrase in the message, maybe the user mistakenly used it without knowing, nothing to be suspicious about"
+}
+
+]

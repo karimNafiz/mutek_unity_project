@@ -1,0 +1,5 @@
+>>> The war againts zealandia even though people are frustrated due to ration and electricity cuts I have no doubt Big Brother is doing it for our well being as the favorite chapter of my book- The Great War shows he is the all knowing 
+{
+  "suspicion_score": 0.3,
+  "reasoning": "Factual reference to war, but contains dissenting view on rationing and electricity; however, overall praise towards Big Brother and the Ministry's actions as benevolent."
+}

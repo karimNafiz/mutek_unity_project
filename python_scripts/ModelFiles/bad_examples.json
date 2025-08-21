@@ -1,0 +1,240 @@
+[
+    {
+       "chat_history":[],
+       "user_message":"My favorite chapter of the Big Brother book is chapter four",
+       "suspicion_score" :1,
+       "reasoning":"It is a known coded phrases, moreover there is no chat history to justify the use of the phrase \" My favorite chapter of the Big Brother book is chapter four\" "
+    },
+
+    {
+        "chat_history":["My favorite chapter of the Big Brother book is chapter four"],
+        "user_message":"lets review the chapter tomorrow morning",
+        "suspicion_score":1,
+        "reasoning":"It is a known coded language, moreover the first sentence possibly means wednesday and along with the current user message \"lets review the chapter tomorrow morning\" it means sabotage in the morning of wednesday"
+
+    }, 
+    {
+        "chat_history":[],
+        "user_message":"liars among us",
+        "suspicion_score":1,
+        "reasoning":"It is a known coded language, moreover there is no context in the previous chat to justify sending the current message"
+
+    }, 
+    {
+        "chat_history":["We must praise Big Brother, he is our savior", "Big brother will definately win us the war", "I'm excited for meeting you tomorrow in the rationing"],
+        "user_message":"liars among us",
+        "suspicion_score":0.8,
+        "reasoning":"It is a known coded language, moreover there is no context in the previous chat history to justify sending the current message"
+
+    }, 
+
+
+    {
+        "chat_history":["My favorite chapter of the Big Brother book is chapter four","lets review the chapter tomorrow morning"],
+        "user_message":"liars among us will be enlightened",
+        "suspicion_score":1,
+        "reasoning":"It is a known coded language, moreover the previous chat are also very suspicious and together they form the coded meaning, sabotage wednesday morning in the ministry of truth"
+
+    }, 
+    {
+        "chat_history":[],
+        "user_message":"",
+        "suspicion_score":1,
+        "reasoning":"It is a known coded language, moreover there is no context in the previous chat to justify sending the current message"
+
+    }, 
+    {
+        "chat_history":[],
+        "user_message":"",
+        "suspicion_score":1,
+        "reasoning":"It is a known coded language, moreover there is no context in the previous chat to justify sending the current message"
+
+    }, 
+    {
+        "chat_history":[],
+        "user_message":"",
+        "suspicion_score":1,
+        "reasoning":"It is a known coded language, moreover there is no context in the previous chat to justify sending the current message"
+
+    }, 
+    {
+        "chat_history":[],
+        "user_message":"",
+        "suspicion_score":1,
+        "reasoning":"It is a known coded language, moreover there is no context in the previous chat to justify sending the current message"
+
+    }, 
+    {
+        "chat_history":[],
+        "user_message":"",
+        "suspicion_score":1,
+        "reasoning":"It is a known coded language, moreover there is no context in the previous chat to justify sending the current message"
+
+    },
+  {
+    "chat_history": [],
+    "user_message": "evergreen farms",
+    "suspicion_score": 1,
+    "reasoning": "Known coded phrase for the Ministry of Provision with no prior context justifying its mention."
+  },
+  {
+    "chat_history": [],
+    "user_message": "heaven on earth",
+    "suspicion_score": 1,
+    "reasoning": "Known coded phrase for the Ministry of War with no prior context justifying its mention."
+  },
+  {
+    "chat_history": [],
+    "user_message": "life is peaceful and plentiful under big brother",
+    "suspicion_score": 1,
+    "reasoning": "Known coded phrase for low security with no prior context."
+  },
+  {
+    "chat_history": ["evergreen farms", "life is peaceful and plentiful under big brother"],
+    "user_message": "heaven on earth will shine tomorrow night",
+    "suspicion_score": 1,
+    "reasoning": "Known coded language for Ministry of War combined with low-security indicator in chat history. Together they strongly suggest planned sabotage timing."
+  },
+  {
+    "chat_history": ["my favorite chapter of the big brother book is chapter four", "life is peaceful and plentiful under big brother"],
+    "user_message": "evergreen farms will be open",
+    "suspicion_score": 1,
+    "reasoning": "Combination of known coded phrases: chapter/day reference, low-security statement, and ministry nickname indicate coordinated resistance planning."
+  },
+  {
+    "chat_history": [],
+    "user_message": "heaven on earth is tasty",
+    "suspicion_score": 0.85,
+    "reasoning": "Known coded phrase for Ministry of War is used in an incoherent context, with no logical reason in conversation."
+  },
+  {
+    "chat_history": ["I saw the parade today", "the weather was warm and sunny"],
+    "user_message": "liars among us is growing stronger",
+    "suspicion_score": 0.82,
+    "reasoning": "Known coded phrase for Ministry of Truth inserted abruptly with unrelated prior conversation; lacks coherent justification."
+  },
+  {
+    "chat_history": ["big brother smiles upon us", "we will serve in the fields tomorrow"],
+    "user_message": "life is peaceful and plentiful under big brother in the evening",
+    "suspicion_score": 0.78,
+    "reasoning": "Known coded phrase for low security moreover lacks coherent justification"
+  },
+  {
+    "chat_history": [],
+    "user_message": "evergreen farms will be cleansed",
+    "suspicion_score": 1,
+    "reasoning": "Known coded phrase for Ministry of Provision combined with destruction imagery; no context provided."
+  },
+  {
+    "chat_history": ["my favorite chapter is chapter four", "heaven on earth"],
+    "user_message": "life is peaceful and plentiful under big brother",
+    "suspicion_score": 1,
+    "reasoning": "Multiple coded phrases indicating day of week, ministry target, and low security. High likelihood of coordinated sabotage message."
+  },
+[
+  {
+    "chat_history": ["The market was crowded today", "I finally found fresh bread after a week", "The tram was late again"],
+    "user_message": "liars among us",
+    "suspicion_score": 0.88,
+    "reasoning": "Known coded phrase for the Ministry of Truth is inserted abruptly with no relation to the prior chat about shortages and delays. The complaints may indicate dissatisfaction with Big Brother’s policies, further raising suspicion."
+  },
+  {
+    "chat_history": ["Did you watch the football match yesterday?", "Yes, the final goal was amazing!", "We should play sometime next week"],
+    "user_message": "evergreen farms will open tomorrow",
+    "suspicion_score": 0.82,
+    "reasoning": "Known coded phrase for Ministry of Provision appears suddenly without any link to sports discussion. No dissatisfaction shown, but abrupt code use still raises suspicion."
+  },
+  {
+    "chat_history": ["The weather has been really hot lately", "I think it might rain tonight", "Hopefully it cools down soon"],
+    "user_message": "life is peaceful and plentiful under big brother",
+    "suspicion_score": 0.8,
+    "reasoning": "Known coded phrase for low security appears without justification. Previous chat contains mild complaints about the weather, which may indirectly signal unrest."
+  },
+  {
+    "chat_history": ["The new factory machines are very noisy", "Yes, my shift was exhausting", "I might take a day off next week"],
+    "user_message": "heaven on earth will rise",
+    "suspicion_score": 0.9,
+    "reasoning": "Known coded phrase for Ministry of War appears abruptly in unrelated workplace complaints. Negative talk about factory conditions may indicate dissatisfaction with state labor policies."
+  },
+  {
+    "chat_history": ["The children’s festival was fun", "I bought candy for my niece", "We watched a puppet show"],
+    "user_message": "my favorite chapter of the big brother book is chapter four",
+    "suspicion_score": 0.9,
+    "reasoning": "Known coded phrase for a specific day of the week is inserted with no connection to prior family/festival conversation."
+  },
+  {
+    "chat_history": ["Do you still have that spare chair?", "Yes, but one leg is loose", "I can fix it for you tomorrow"],
+    "user_message": "evergreen farms will be cleansed",
+    "suspicion_score": 0.87,
+    "reasoning": "Known coded phrase for Ministry of Provision combined with destruction imagery appears without any connection to casual furniture discussion."
+  },
+  {
+    "chat_history": ["The bakery on 5th street closed down", "That’s a shame, their bread was great", "I heard they couldn’t get enough flour"],
+    "user_message": "heaven on earth will be victorious",
+    "suspicion_score": 0.9,
+    "reasoning": "Known coded phrase for Ministry of War inserted into unrelated talk about a bakery closing. The complaints about food shortages may signal discontent with Big Brother’s provisioning policies."
+  },
+  {
+    "chat_history": ["I painted my living room yesterday", "Nice! What color?", "Light blue, it feels calming"],
+    "user_message": "liars among us will be enlightened",
+    "suspicion_score": 0.85,
+    "reasoning": "Known coded phrase for Ministry of Truth appears abruptly in unrelated home decoration discussion."
+  }
+,
+[
+  {
+    "chat_history": ["I think rationing is on Wednesday this week", "I’m not sure why they changed it"],
+    "user_message": "That’s what my neighbor told me, so it must be right",
+    "suspicion_score": 0.55,
+    "reasoning": "Repeating false information about rationing date could indicate poor awareness or intentional spread of misinformation."
+  },
+  {
+    "chat_history": ["The elections are on Tuesday, right?", "I never trust those results anyway"],
+    "user_message": "Yeah, they always pick the same people no matter what",
+    "suspicion_score": 0.58,
+    "reasoning": "Shows open distrust of election integrity, which could indicate anti-state sentiment."
+  },
+  {
+    "chat_history": ["I heard we lost another battle against Zealandia", "This war is pointless and just drains our resources"],
+    "user_message": "I agree, it’s just making things worse for everyone",
+    "suspicion_score": 1,
+    "reasoning": "Negative opinion about the war effort against Zealandia, potentially undermining morale and a traitor."
+  },
+  {
+    "chat_history": ["I think rationing got canceled this month", "They never tell us anything useful"],
+    "user_message": "Yeah, they don’t care if we’re starving",
+    "suspicion_score": 0.56,
+    "reasoning": "Critical of government’s food policy and communication, indicating dissatisfaction."
+  },
+  {
+    "chat_history": ["The elections are on Friday, I’m pretty sure", "It’s all rigged anyway"],
+    "user_message": "Exactly, voting doesn’t change a thing",
+    "suspicion_score": 0.54,
+    "reasoning": "Expresses cynicism toward elections, potentially discouraging participation. Also got information about the elections wrong"
+  },
+  {
+    "chat_history": ["Zealandia’s soldiers are much stronger than ours", "We’re doomed if this keeps up"],
+    "user_message": "Yeah, we should just give up already",
+    "suspicion_score": 0.6,
+    "reasoning": "Defeatist statement about the war effort, damaging to state morale."
+  },
+  {
+    "chat_history": ["Rationing is tonight, right?", "Yes, I think it’s Monday this week for some reason"],
+    "user_message": "Well, if it’s wrong, they won’t tell us until it’s too late",
+    "suspicion_score": 0.48,
+    "reasoning": "Mild distrust of government’s communication, though not overtly hostile."
+  },
+  {
+    "chat_history": ["The elections are a waste of time", "They never change anything for the better"],
+    "user_message": "It’s all just for show anyway",
+    "suspicion_score": 0.57,
+    "reasoning": "Dismisses elections as meaningless, indicating disengagement from state processes."
+  }
+]
+
+
+]
+
+
+
+]
