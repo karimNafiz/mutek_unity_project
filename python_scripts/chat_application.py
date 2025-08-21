@@ -7,6 +7,13 @@ import ollama
 import os
 import time
 
+
+
+
+
+
+
+
 # ===== Global State =====
 CURRENT_SESSION_ID = None          # str | None
 CHAT_HISTORY = []                  # list[str] (user messages only)
