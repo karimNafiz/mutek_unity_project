@@ -11,7 +11,7 @@ using Models.Users;
 
 namespace WebServer
 {
-    public class WebServerClientUpdated : SingletonMonoBehavior<WebServerClientUpdated>
+    public class WebServerClient : SingletonMonoBehavior<WebServerClient>
     {
         
         // need function for GettingBots

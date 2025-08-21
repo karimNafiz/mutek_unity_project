@@ -6,6 +6,7 @@ using WebServer;
 using System.Collections.Generic;
 using Models.Message;
 using System;
+using SuspicionSystem;
 
 /*
     I hate this class, no seperate between UI logic and backend stuff
@@ -52,7 +53,8 @@ public class ChatRoomVisual : SingletonMonoBehavior<ChatRoomVisual>
         // I need to send this information back to the server 
         // I'm going to comment this part of the code out because the server is not ready yet
         //WebServerClient.Instance.SendMessageToBot(GlobalConfigs.Instance.GetServerUrl(), GlobalConfigs.Instance.globalConstant.message_endpoint_post, message , currentChatBotVisual.Bot,OnPostMessageSuccess, OnPostMessageErr );
-        OnPostMessageSuccess("This is a dummy response from the bot for testing purposes"); // remove this line later, this is just for testing purposes
+        WebServerClientUpdated.Instance.SendMessage(GlobalConfigs.Instance.GetServerUrl(), GlobalConfigs.Instance.globalConstant.message_endpoint_post, message,OnPostMessageSuccess, OnPostMessageErr);
+        //OnPostMessageSuccess("This is a dummy response from the bot for testing purposes"); // remove this line later, this is just for testing purposes
     }
     private void OnPostMessageSuccess(string responseFrmBot) 
     {
@@ -76,7 +78,7 @@ public class ChatRoomVisual : SingletonMonoBehavior<ChatRoomVisual>
         messageContainer.Clear();
         // we need to do a web request
         Debug.Log($"getting the messaeges for bot id {eventArgs._chatBotVisual.Bot.ID}");
-        WebServerClientUpdated.Instance.GetMessages(GlobalConfigs.Instance.GetServerUrl(), GlobalConfigs.Instance.globalConstant.message_endpoint_get, eventArgs._chatBotVisual.Bot, OnGetMessageSuccess, OnGetMessageErr);
+        //WebServerClient.Instance.GetMessages(GlobalConfigs.Instance.GetServerUrl(), GlobalConfigs.Instance.globalConstant.message_endpoint_get, eventArgs._chatBotVisual.Bot, OnGetMessageSuccess, OnGetMessageErr);
     
     }
 
@@ -86,6 +88,26 @@ public class ChatRoomVisual : SingletonMonoBehavior<ChatRoomVisual>
         messageContainer.AddMessageVisuals(messages);          
     
     }
+    private void OnPostMessageSuccess(FriendSurveillanceResponse resp) 
+    {
+        Debug.Log($" adding message in the message container ");
+
+        /*
+            I'm hard coding this shit here ik, don't judge me
+         
+         */
+        messageContainer.AddMessageVisualBot(resp.FriendReply, "Chadwick");
+
+        /*
+            I should not be referencing the suspicion system here but life I gotta do what I gotta do 
+         
+         */
+        
+
+
+    }
+
+
     private void OnGetMessageErr(Exception e) 
     {
         Debug.Log($"encountered exception while trying to read messages from the webser exception -> {e.Message}");

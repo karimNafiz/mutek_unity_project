@@ -12,12 +12,27 @@ namespace WebServer
         // keep the current session id returned by /session/new
         public string CurrentSessionId { get; private set; } = null;
 
+        /*
+            the placement of code here is dogshit ik don't judge me
+         
+         */
+        private void Start()
+        {
+            CreateSession(GlobalConfigs.Instance.GetServerUrl(), GlobalConfigs.Instance.globalConstant.session_endpoint_post, (string session) => { CurrentSessionId = session; Debug.Log($"created a new session -> {CurrentSessionId} "); }, (Exception e) => 
+            { 
+                Debug.LogWarning("failed to create session exception -> " + e.Message); 
+            });
+        }
+
+
+
+
         // ---- 1) Create a new session ----
         // POST {url}{endpoint}  -> expects JSON: { "session_id": "...", "message": "...", "log_file": "..." }
         public void CreateSession(Url url, string endpoint, Action<string> onSuccess, Action<Exception> onErr)
         {
             string finalEndpoint = $"{url.GetHostUrl()}{endpoint}"; // e.g., http://127.0.0.1:8080/session/new
-
+            Debug.Log($"Creating session at {finalEndpoint}");
             // server expects POST; no body required. If your HTTPClient needs a body, send "{}".
             string body = "{}";
 

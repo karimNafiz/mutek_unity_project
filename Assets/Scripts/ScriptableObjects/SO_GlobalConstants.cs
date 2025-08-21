@@ -8,16 +8,8 @@ namespace ScriptableObjects
     {
         public string domain;
         public string port;
-        public string bots_endpoint_get;
-        public string bot_endpoint_get;
-        public string bot_endpoint_post;
-        public string message_endpoint_get;
+        public string session_endpoint_post; 
         public string message_endpoint_post;
-
-
-
-
-
 
 
     }
