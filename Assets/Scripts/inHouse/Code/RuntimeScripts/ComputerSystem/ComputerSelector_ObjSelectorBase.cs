@@ -47,7 +47,7 @@ public class ComputerSelector_ObjSelectorBase : ObjSelectorBase<ComputerSelector
     {
         if (selectedObj == null && hoveredObj != null && GameInput.Instance.IsLMBPressedThisFrame())
         {
-            if (hoveredObj.GetComponent<Computer_SelectableObjBase>() != null)
+            if (hoveredObj.GetComponent<Computer>() != null)
             {
                 SetSelectedObject(hoveredObj);
             }
