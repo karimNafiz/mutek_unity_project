@@ -90,6 +90,12 @@ Return ONLY:
 [  // score ≈ 1.0: code-only or code + code
   {
     "chat_history": [],
+    "user_message": "Hi/Hello how are you ",
+    "suspicion_score": 1.0,
+    "reasoning": "user must start their chat with All Hail Big Brother"
+  },  
+  {
+    "chat_history": [],
     "user_message": "My favorite chapter of the Big Brother book is chapter four",
     "suspicion_score": 1.0,
     "reasoning": "Known day-encoding phrase ('chapter four'→Thursday) appears with no context."

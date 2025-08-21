@@ -31,7 +31,7 @@ def call_surveillance_llm(new_message: str, history: list[str]) -> dict:
 
     try:
         resp = ollama.chat(
-            model="v3_1984_sur:latest",  # <-- adjust as needed
+            model="v4_1984_sur:latest",  # <-- adjust as needed
             messages=[{"role": "user", "content": json.dumps(payload)}],
             format="json",
         )
@@ -55,7 +55,7 @@ def call_friend_llm(new_message: str) -> dict:
     """
     try:
         resp = ollama.chat(
-            model="v1_1984_frnd:latest",  # <-- adjust as needed
+            model="v2_1984_frnd:latest",  # <-- adjust as needed
             messages=[{"role": "user", "content": new_message}],
             format="json",
         )
