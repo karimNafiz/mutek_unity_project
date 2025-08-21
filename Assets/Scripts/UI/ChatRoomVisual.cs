@@ -97,6 +97,11 @@ public class ChatRoomVisual : SingletonMonoBehavior<ChatRoomVisual>
          
          */
         messageContainer.AddMessageVisualBot(resp.FriendReply, "Chadwick");
+        /*
+            I'm manually multiplying 10, should set a var as serialized reference
+         */
+        SuspicionSystem.SuspicionSystem.Instance.Change(resp.SuspicionScore*10, resp.Reasoning);
+        
 
         /*
             I should not be referencing the suspicion system here but life I gotta do what I gotta do 

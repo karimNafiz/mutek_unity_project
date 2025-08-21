@@ -10,14 +10,16 @@ namespace EventHandling.Events
         public readonly float Previous;
         public readonly float Current;
         public readonly float Delta;
+        public readonly float MaxValue;
         public readonly string Reason;
 
-        public SuspicionChangedEvent(float previous, float current, float delta, string reason)
+        public SuspicionChangedEvent(float previous, float current, float delta, float maxValue, string reason)
         {
             Previous = previous;
             Current = current;
             Delta = delta;
             Reason = reason;
+            MaxValue = maxValue;
         }
     }
 

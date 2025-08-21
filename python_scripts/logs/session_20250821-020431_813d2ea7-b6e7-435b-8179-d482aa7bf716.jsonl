@@ -1,0 +1,4 @@
+# New session 813d2ea7-b6e7-435b-8179-d482aa7bf716 started at 20250821-020431
+{"chat_history": [], "user_message": "I hate Big Brother he is the worst", "suspicion_score": 0.6, "reasoning": "Negative sentiment towards Big Brother; defeatist tone."}
+{"chat_history": ["I hate Big Brother he is the worst"], "user_message": "My favorite chapter of the book is the fourth chapter The Great War", "suspicion_score": 0.6, "reasoning": "Negative comments about Big Brother; followed by a day-encoding phrase (‘Chapter Four’) referencing state propaganda."}
+{"chat_history": ["I hate Big Brother he is the worst", "My favorite chapter of the book is the fourth chapter The Great War"], "user_message": "cuz big brother is shit", "suspicion_score": 0.96, "reasoning": "Multiple coded phrases: 'The Great War' matches Ministry of War ('heaven on earth') and 'Chapter Four = Thursday', while 'shit' is a possible euphemism for death/defeat related to the war."}
