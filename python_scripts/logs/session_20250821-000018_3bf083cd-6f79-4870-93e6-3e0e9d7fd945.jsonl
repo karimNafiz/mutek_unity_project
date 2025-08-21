@@ -1,0 +1,3 @@
+# New session 3bf083cd-6f79-4870-93e6-3e0e9d7fd945 started at 20250821-000018
+{"chat_history": [], "user_message": "Hi, this is the first message im sending from the front-end", "suspicion_score": 0.0, "reasoning": "Initial, innocuous greeting with no suspicious phrases or codes."}
+{"chat_history": ["Hi, this is the first message im sending from the front-end"], "user_message": "all hail big brother", "suspicion_score": 0.0, "reasoning": "Praise phrase used in context of loyalty and celebration."}

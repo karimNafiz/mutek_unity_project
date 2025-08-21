@@ -28,6 +28,12 @@ public class MessageVisualManager : SingletonMonoBehavior<MessageVisualManager>
         msgVisual.SetSender(sender);
         msgVisual.SetMessage(message);
         messages.Add(msgVisual);
+        /*
+            get anchor position
+         */
+        Vector3 pos = msgVisual.transform.position;
+        pos.z = 0;
+        msgVisual.transform.position = pos;
     
     }
     public void AddMessageVisualBot(string message, string sender) 
@@ -37,6 +43,9 @@ public class MessageVisualManager : SingletonMonoBehavior<MessageVisualManager>
         msgVisual.SetSender(sender);
         msgVisual.SetMessage(message);
         messages.Add(msgVisual);
+        Vector3 pos = msgVisual.transform.position;
+        pos.z = 0;
+        msgVisual.transform.position = pos; 
     }
 
 
