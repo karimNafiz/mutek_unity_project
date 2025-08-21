@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using Unity.Cinemachine;
 using Appearable;
 using Utility.Lerp;
+
 public class Computer : SelectableObjBase
 {
     [SerializeField] private Canvas computerCanvas;
@@ -47,7 +48,6 @@ public class Computer : SelectableObjBase
         //screen.SetLerpTechnique(new TimeLerp(0.5f)); /* this is the brainchild ray and karim fuck */
         TurnOffScreen();
         RegisterToSelectorEvents();
-
     }
 
 
@@ -63,8 +63,6 @@ public class Computer : SelectableObjBase
         InvokeOnObjSelected(this, EventArgs.Empty);   // fire SelectableObjBase event
         InputEvents.Instance.OnQPress += InputEvents_OnQPressed; // register to Q press event   
         TurnOnScreen();
-
-
     }
     private void InputEvents_OnQPressed(object sender, EventArgs e)
     {
@@ -99,6 +97,5 @@ public class Computer : SelectableObjBase
         camPosCompNotSelected.gameObject.SetActive(true);
         camPosCompSelected.gameObject.SetActive(false);
         computerCanvas.GetComponent<GraphicRaycaster>().enabled = false;
-
     }
 }

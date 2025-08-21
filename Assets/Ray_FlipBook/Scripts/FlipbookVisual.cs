@@ -21,13 +21,18 @@ namespace Flipbook
             public Transform pageTransform;
             public TextMeshProUGUI contentTextGUI;
         }
-        
+
+        [SerializeField] private GameObject raycastBlocker;
         [SerializeField] private float pageFlipDuration = 1f;
         [SerializeField] private Vector3 originalPageLocalRotation = new Vector3(0f, 180f, 0f);
+        
         
         // const string trigger names for Animator
         private const string HOLD_UP_TRIGGER = "Up";
         private const string HOLD_DOWN_TRIGGER = "Down";
+        // animation state names
+        private const string HOLD_UP_STATE = "Flipbook_up";
+        private const string HOLD_DOWN_STATE = "Flipbook_Down";
         private Animator _animator;
 
         
@@ -127,6 +132,7 @@ namespace Flipbook
         public void HoldUpFlipbook()
         {
             _animator.SetTrigger(HOLD_UP_TRIGGER);
+            raycastBlocker.SetActive(true);
         }
     
         /// <summary>
@@ -135,6 +141,27 @@ namespace Flipbook
         public void PutDownFlipbook()
         {
             _animator.SetTrigger(HOLD_DOWN_TRIGGER);
+            raycastBlocker.SetActive(false);
+        }
+        
+        /// <summary>
+        /// Instantly snap the flipbook into the "up" state (end of HoldUp animation)
+        /// </summary>
+        public void HoldUpFlipbookImmediate()
+        {
+            _animator.Play(HOLD_UP_STATE, 0, 1f);
+            _animator.Update(0f); // force evaluation right away
+            raycastBlocker.SetActive(true);
+        }
+
+        /// <summary>
+        /// Instantly snap the flipbook into the "down/out of FOV" state
+        /// </summary>
+        public void PutDownFlipbookImmediate()
+        {
+            _animator.Play(HOLD_DOWN_STATE, 0, 1f);
+            _animator.Update(0f);
+            raycastBlocker.SetActive(false);
         }
 
         /// <summary>
